@@ -37,5 +37,6 @@
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

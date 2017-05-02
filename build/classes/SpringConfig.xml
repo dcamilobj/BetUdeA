@@ -30,6 +30,15 @@
 		<property name="sessionFactory" ref="SessionFactory"></property>
 		<property name="dataSource" ref="DataSource"></property>
 	</bean>
+		
+	<bean name="usuarioDAO" class="co.edu.udea.iw.dao.imp.UsuarioDAOImp">
+	<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+	
+		
+	<bean name="UsuarioBL" class="co.edu.udea.iw.bl.UsuarioBL">
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+	</bean>
 	
 	
 </beans>

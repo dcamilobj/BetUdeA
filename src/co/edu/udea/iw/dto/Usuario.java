@@ -14,10 +14,10 @@ public class Usuario {
 	 * Atributos de la clase
 	 */
 	private String cedula;	
-	private String nombres;
+	private String nombre;
 	private String apellidos;
 	private String email;
-	private String contrasena;
+	private String password;
 	/**
 	 * @return the cedula
 	 */
@@ -31,16 +31,16 @@ public class Usuario {
 		this.cedula = cedula;
 	}
 	/**
-	 * @return the nombres
+	 * @return the nombre
 	 */
-	public String getNombres() {
-		return nombres;
+	public String getNombre() {
+		return nombre;
 	}
 	/**
-	 * @param nombres the nombres to set
+	 * @param nombres the nombre to set
 	 */
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	/**
 	 * @return the apellidos
@@ -67,16 +67,16 @@ public class Usuario {
 		this.email = email;
 	}
 	/**
-	 * @return the contrasena
+	 * @return the password
 	 */
-	public String getContrasena() {
-		return contrasena;
+	public String getPassword() {
+		return password;
 	}
 	/**
-	 * @param contrasena the contrasena to set
+	 * @param contrasena the password to set
 	 */
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

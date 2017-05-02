@@ -14,20 +14,17 @@ import co.edu.udea.iw.exception.MyException;
 public interface UsuarioDAO {
 
 	/**
-	 * 
+	 * Definición de método para registrar un usuario en la base de datos.
+	 * @param usuario
 	 * @throws MyException
 	 */
 	public void registrar(Usuario usuario) throws MyException;
 	
 	/**
-	 * 
+	 * Definición de método para obtener un usuario de la base de datos dado su email.
+	 * @param email
+	 * @return usuario con el email dado
 	 * @throws MyException
 	 */
 	public Usuario obtener(String email) throws MyException;
-	
-	/**
-	 * 
-	 * @throws MyException
-	 */
-	public void editar(Usuario usuario) throws MyException;
 }
