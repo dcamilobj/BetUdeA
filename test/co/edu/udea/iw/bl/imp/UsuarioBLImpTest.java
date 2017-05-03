@@ -1,7 +1,7 @@
 /**
  * 
  */
-package co.edu.udea.iw.bl;
+package co.edu.udea.iw.bl.imp;
 
 import static org.junit.Assert.*;
 
