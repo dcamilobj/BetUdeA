@@ -2,8 +2,15 @@ package co.edu.udea.iw.dao.imp;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+
 import co.edu.udea.iw.dao.ApuestaDAO;
 import co.edu.udea.iw.dto.Apuesta;
+import co.edu.udea.iw.exception.MyException;
 
 /**
  * Implementacion de {@link ApuestaDAO}
@@ -37,7 +44,7 @@ public class ApuestaDAOImp implements ApuestaDAO {
 	 * @param apuesta - apuesta a registrar
 	 */
 	@Override
-	public void registrar(Apuesta apuesta) {
+	public void registrar(Apuesta apuesta) throws MyException {
 		Session session = null;
 		try {
 			session = sessionFactory.getCurrentSession();
@@ -53,13 +60,15 @@ public class ApuestaDAOImp implements ApuestaDAO {
 	 * @return Lista de apuestas
 	 */
 	@Override
-	public List<Apuesta> consultar(Integer periodoSimulacion) {
+	public List<Apuesta> consultar(Integer periodoSimulacion) throws MyException{
 		List<Apuesta> apuestas = null;
 		Session session = null;
 		Criteria criteria = null;
 		try {
 			session = sessionFactory.getCurrentSession();
-			// TODO: Buscar como seria la consulta
+			criteria = session.createCriteria(Apuesta.class);
+			criteria.add(Restrictions.eq("periodo_simulacion_id", periodoSimulacion));
+			apuestas = criteria.list();
 		} catch(HibernateException e) {
 			throw new MyException("Error consultando la lista de apuestas");
 		}

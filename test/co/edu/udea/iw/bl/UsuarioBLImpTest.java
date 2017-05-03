@@ -15,6 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.udea.iw.bl.imp.UsuarioBLImp;
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
@@ -26,12 +27,12 @@ import co.edu.udea.iw.exception.MyException;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional 
 @ContextConfiguration(locations="classpath:SpringConfig.xml")
-public class UsuarioBLTest {
+public class UsuarioBLImpTest {
 
 	@Autowired
-	private UsuarioBL usuarioBL;
+	private UsuarioBLImp usuarioBL;
 	/**
-	 * Test method for {@link co.edu.udea.iw.bl.UsuarioBL#registrar(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for {@link co.edu.udea.iw.bl.imp.UsuarioBLImp#registrar(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	@Rollback(false)

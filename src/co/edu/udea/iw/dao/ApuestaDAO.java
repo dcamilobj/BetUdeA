@@ -6,6 +6,7 @@ package co.edu.udea.iw.dao;
 import java.util.List;
 
 import co.edu.udea.iw.dto.Apuesta;
+import co.edu.udea.iw.exception.MyException;
 
 /**
  * Define los métodos para la capa de acceso a datos de las apuestas
@@ -20,7 +21,7 @@ public interface ApuestaDAO {
 	 * @param apuesta - DTO con los datos de la apuesta a registrar
 	 * @throws MyException
 	 */
-	public void registrar(Apuesta apuesta);
+	public void registrar(Apuesta apuesta) throws MyException;
 	
 	/**
 	 * Entrega la lista de apuestas de un periodo de simulacion dado
@@ -28,5 +29,5 @@ public interface ApuestaDAO {
 	 * @param periodoSimulacion - codigo del periodo de simulacion a consultar
 	 * @throws MyException cuando hay un error en la consulta
 	 */
-	public List<Apuesta> consultar(Integer periodoSimulacion);
+	public List<Apuesta> consultar(Integer periodoSimulacion) throws MyException;
 }
