@@ -15,7 +15,7 @@ public interface UsuarioDAO {
 
 	/**
 	 * Definición de método para registrar un usuario en la base de datos.
-	 * @param usuario
+	 * @param usuario - DTO con los datos del usuario a registrar
 	 * @throws MyException
 	 */
 	public void registrar(Usuario usuario) throws MyException;

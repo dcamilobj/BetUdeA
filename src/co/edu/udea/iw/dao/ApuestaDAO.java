@@ -17,7 +17,7 @@ import co.edu.udea.iw.exception.MyException;
 public interface ApuestaDAO {
 
 	/**
-	 * Registrar una apuesta en la base de datos
+	 * Registra una apuesta en la base de datos
 	 * @param apuesta - DTO con los datos de la apuesta a registrar
 	 * @throws MyException
 	 */

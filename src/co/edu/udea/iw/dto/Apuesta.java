@@ -6,22 +6,24 @@ package co.edu.udea.iw.dto;
 import java.util.Date;
 
 /**
- * Clase DTO para la tabla apuesta
+ * Clase DTO para la tabla "apuesta"
  * @author Andres Ceballos Sanchez - andres.ceballoss@udea.edu.co
  * @version 1.0
  *
  */
 public class Apuesta {
 	
+	/*Atributos de la clase*/
 	private Long id;	
 	private String evento;
 	private Date fechaEvento;
-	private Long valorApostado;
-	private Long cuota;
+	private Double valorApostado;	
+	private Double cuota;
 	private String opcionSeleccionada;
 	private String estado;
 	private Date fechaApuesta;
 	private Simulacion periodoSimulacion;
+	
 	/**
 	 * @return the periodoSimulacion
 	 */
@@ -74,25 +76,25 @@ public class Apuesta {
 	/**
 	 * @return the valorApostado
 	 */
-	public Long getValorApostado() {
+	public Double getValorApostado() {
 		return valorApostado;
 	}
 	/**
 	 * @param valorApostado the valorApostado to set
 	 */
-	public void setValorApostado(Long valorApostado) {
+	public void setValorApostado(Double valorApostado) {
 		this.valorApostado = valorApostado;
 	}
 	/**
 	 * @return the cuota
 	 */
-	public Long getCuota() {
+	public Double getCuota() {
 		return cuota;
 	}
 	/**
 	 * @param cuota the cuota to set
 	 */
-	public void setCuota(Long cuota) {
+	public void setCuota(Double cuota) {
 		this.cuota = cuota;
 	}
 	/**

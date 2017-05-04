@@ -5,44 +5,44 @@
 	<class name="co.edu.udea.iw.dto.Apuesta" table="apuesta">
 		<id name="id" type="java.lang.Long">
 			<column name="id" precision="12"/>
-			<generator class="assigned"/>
+			<generator class="identity"/>
 		</id>
 		
 		<property name="evento" type="java.lang.String">
-			<column name="evento" length="50" not-null="true"/>
+			<column name="EVENTO" length="50" not-null="true"/>
 		</property>
 		
 		<property name="fechaEvento" type="java.util.Date">
-			<column name="fecha_evento" not-null="true"/>
+			<column name="FECHA_EVENTO" not-null="true"/>
 		</property>
 		
-		<property name="valorApostado" type="java.lang.Long">
-			<column name="valor_apostado" precision="12" not-null="true"/>
+		<property name="valorApostado" type="java.lang.Double">
+			<column name="VALOR_APOSTADO" precision="12" not-null="true"/>
 		</property>
 		
-		<property name="cuota" type="java.lang.Long">
-			<column name="cuota" precision="5" not-null="true"/>
+		<property name="cuota" type="java.lang.Double">
+			<column name="CUOTA" precision="5" not-null="true"/>
 		</property>
 		
 		<property name="opcionSeleccionada" type="java.lang.String">
-			<column name="opcion_seleccionada" length="15" not-null="true"/>
+			<column name="OPCION_SELECCIONADA" length="15" not-null="true"/>
 		</property>
 		
 		<property name="estado" type="java.lang.String">
-			<column name="estado" length="20" not-null="true"/>
+			<column name="ESTADO" length="20" not-null="true"/>
 		</property>
 		
 		<property name="fechaApuesta" type="java.util.Date">
-			<column name="fecha_apuesta" not-null="true"/>
+			<column name="FECHA_APUESTA" not-null="true"/>
 		</property>
 		
 		<property name="opcionCorrecta" type="java.lang.String">
-			<column name="opcion_correcta" length="15" not-null="true"/>
+			<column name="OPCION_CORRECTA" length="15"/>
 		</property>
 	
 	<!-- Mirar lo de LAZY y FETCH -->
 	<many-to-one class="co.edu.udea.iw.dto.Simulacion" name="periodoSimulacion" lazy="false" fetch="join">
-			<column name="periodo_simulacion_id" precision="12" not-null="true"/>
+			<column name="PERIODO_SIMULACION_ID" precision="12" not-null="true"/>
 		</many-to-one> 
 		
 	</class>

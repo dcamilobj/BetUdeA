@@ -6,7 +6,7 @@ package co.edu.udea.iw.dto;
 import java.util.Date;
 
 /**
- *Clase implementa todos los atributos de la tabla "usuario" junto a sus getters an setters. 
+ *Clase implementa todos los atributos de la tabla "usuario" junto a sus getters y setters. 
  *@author Duban Camilo Bedoya Jiménez
  *@version 1.0
  */

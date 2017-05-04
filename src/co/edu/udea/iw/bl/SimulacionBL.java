@@ -20,7 +20,7 @@ import co.edu.udea.iw.exception.MyException;
 public interface SimulacionBL {
 
 
-	public void ingresarPeriodo(Long id, String usuario_id, Long saldo, Date fecha_inicio, Date fecha_fin) throws MyException;
+	public void ingresarPeriodo(String usuario_id, Double saldo, Date fecha_inicio, Date fecha_fin) throws MyException;
 	
 	public List<Simulacion> consultarPeriodos (String usuario_id) throws MyException; 
 	

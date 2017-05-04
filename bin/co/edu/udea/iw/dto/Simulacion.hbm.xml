@@ -8,22 +8,22 @@
    
         <id name="id" type="java.lang.Long">
             <column name="ID"  length="12"/> 
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         
-        <many-to-one class="co.edu.udea.iw.dto.Usuario" name="usuario_id" lazy="false" fetch="join">
+        <many-to-one class="co.edu.udea.iw.dto.Usuario" name="usuario" lazy="false" fetch="join">
             <column name="USUARIO_ID" length="15" not-null="true" />
         </many-to-one >
         
-         <property name="saldo" type="java.lang.Long">
+         <property name="saldo" type="java.lang.Double">
             <column name="SALDO" length="8" not-null="true" />
         </property>
         
-        <property name="fecha_inicio" type="java.util.Date">
+        <property name="fechaInicio" type="java.util.Date">
             <column name="FECHA_INICIO" not-null="true" />
         </property>
                 
-        <property name="fecha_fin" type="java.util.Date">
+        <property name="fechaFin" type="java.util.Date">
             <column name="FECHA_FIN" />
         </property>
             

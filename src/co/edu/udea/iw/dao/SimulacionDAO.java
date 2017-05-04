@@ -17,32 +17,36 @@ import co.edu.udea.iw.exception.MyException;
 public interface SimulacionDAO {
 
 	/**
+	 * Registra un periodo de simulacion en la base de datos
 	 * @param simulacion - DTO con los datos de la simulacion a registrar
 	 * @throws MyException
 	 */
 	
-	public void ingresarPeriodo(Simulacion simulacion) throws MyException;
+	public void registrarPeriodo(Simulacion simulacion) throws MyException;
 	
 	/**
-	 * @param usuario_id - Identificacion del usuario al cual se le van a consultar los periodos
+	 * Entrega la lista de periodos de simulacion de un usuario dado
+	 * @param nombreUsuario - nombre de usuario a consultar 
 	 * @throws MyException
 	 */
 	
-	public  List<Simulacion>  consultarPeriodos (String usuario_id) throws MyException;
+	public List<Simulacion> obtenerPeriodos (String nombreUsuario) throws MyException;
 	
 	/**
-	 * @param periodoSimulacionId - Identificacion del periodo al cual vamos a obtener
-	 * @throws MyException
+	 * Consulta la informacion de un periodo de simulacion dado su id
+	 * @param periodoSimulacionId - id del periodo a consultar
+	 * @throws MyException cuando se presenta algun error consultando
 	 */
 	
 	public Simulacion obtenerPeriodo(Long periodoSimulacionId) throws MyException;
 	
 	/**
-	 * @param usuario_id - Identificacion del usuario al cual se le va a consultar un periodo
+	 * Retorna el periodo de simulacion activo dado un usuario
+	 * @param nombreUsuario - nombre de usuario a consultar
 	 * @throws MyException
 	 */
 	
-	public Simulacion periodoActivo(String usuario_id) throws MyException;
+	public Simulacion obtenerPeriodoActivo(String nombreUsuario) throws MyException;
 	
 	
 }

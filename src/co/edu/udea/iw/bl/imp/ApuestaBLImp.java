@@ -30,7 +30,7 @@ public class ApuestaBLImp implements ApuestaBL{
 	private SimulacionDAO simulacionDAO;
 	
 	public static final Integer VALOR_MINIMO_APUESTA = 3000;
-	
+	public static final String ESTADO_INCIAL = "Abierta";
 	
 	/**
 	 * @return the apuestaDAO
@@ -75,7 +75,7 @@ public class ApuestaBLImp implements ApuestaBL{
 	}
 
 	@Override
-	public void registrar(String evento, String fechaEvento, Long valorApostado, Long cuota, String opcionSeleccionada,
+	public void registrar(String evento, Date fechaEvento, Double valorApostado, Double cuota, String opcionSeleccionada,
 			String usuarioId) throws MyException {
 		
 		/*Validar que la información de la apuesta no sea nula o este vacia*/
@@ -83,7 +83,7 @@ public class ApuestaBLImp implements ApuestaBL{
 			throw new MyException("El evento de la apuesta no puede ser nulo o vacio");
 		}
 		
-		if(fechaEvento == null || fechaEvento.isEmpty()) {
+		if(fechaEvento == null || fechaEvento.toString().isEmpty()) {
 			throw new MyException("La fecha del evento es nula o esta vacia");
 		}
 		
@@ -109,27 +109,32 @@ public class ApuestaBLImp implements ApuestaBL{
 			throw new MyException("El valor apostado debe ser mayor a " + VALOR_MINIMO_APUESTA);
 		}
 		
-		Simulacion periodoSimulacion = simulacionDAO.periodoActivo(usuarioId);
+		System.out.println("\n\n" + usuarioId + "\n\n");
+		Simulacion periodoSimulacion = simulacionDAO.obtenerPeriodoActivo(usuarioId);
 		if(periodoSimulacion == null) {
 			throw new MyException("El usuario no tiene ningun periodo de simulación activo");
-		}
+		} 
 		
-		Long saldo = periodoSimulacion.getSaldo();
+		Double saldo = periodoSimulacion.getSaldo();
 		
 		if(valorApostado > saldo) {
 			throw new MyException("El valor apostado no puede superar el saldo actual");
 		}
 		
-		/*TODO: Validar formato fecha dd-MM-yyy*/
-		Date fechaEventoDate = new Date();
+		/*Validacion: 10 minutos antes de la hora del evento se deshabilita el evento*/
+		Long fechaActual = System.currentTimeMillis();
+		Long diferenciaFechas = fechaEvento.getTime() - fechaActual;
+		if(diferenciaFechas < 600000) {
+			throw new MyException("El evento ya no esta disponible");
+		}
 		
 		Apuesta apuesta = new Apuesta();
 		apuesta.setEvento(evento);
-		apuesta.setFechaApuesta(fechaEventoDate);
+		apuesta.setFechaEvento(fechaEvento);
 		apuesta.setValorApostado(valorApostado);
 		apuesta.setCuota(cuota);
 		apuesta.setOpcionSeleccionada(opcionSeleccionada);
-		apuesta.setEstado("Abierta");
+		apuesta.setEstado(ESTADO_INCIAL);
 		apuesta.setFechaApuesta(new Date());
 		apuesta.setPeriodoSimulacion(periodoSimulacion);
 		apuesta.setOpcionCorrecta(null);

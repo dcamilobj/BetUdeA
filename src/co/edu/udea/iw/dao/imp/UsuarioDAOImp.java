@@ -17,8 +17,9 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * 
+ * Implementacion de {@link UsuarioDAO}
  * @author Duban Camilo Bedoya Jiménez 
+ * @see UsuarioDAO
  * @version 1.0
  */
 public class UsuarioDAOImp implements UsuarioDAO {
@@ -90,22 +91,14 @@ public class UsuarioDAOImp implements UsuarioDAO {
 	 */
 	@Override
 	public Usuario obtenerPorEmail(String email) throws MyException {
-		Usuario usuario = new Usuario();
+		Usuario usuario = null;
 		Session session = null;
-		//List<Usuario> usuarios= null;
 		
 		try{
 			session= sessionFactory.getCurrentSession();
-			//usuario = (Usuario) session.get(Usuario.class, email);
 			Criteria criteria = session.createCriteria(Usuario.class);
 			criteria.add(Restrictions.eq("email", email));
-			usuario = (Usuario) criteria.uniqueResult();
-			
-			/*Criteria criteria = session.createCriteria(Usuario.class);  
-			criteria.add(Restrictions.eqProperty("email", email));
-			usuarios = criteria.list();
-			usuario =(Usuario)usuarios.get(0);*/
-			
+			usuario = (Usuario) criteria.uniqueResult();			
 		}catch(HibernateException e)
 		{
 			throw new MyException("Error consultando el usuario por email.");

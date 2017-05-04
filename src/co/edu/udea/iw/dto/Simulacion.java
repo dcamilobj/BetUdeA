@@ -6,8 +6,8 @@ package co.edu.udea.iw.dto;
 import java.util.Date;
 
 /**
- *Clase implementa todos los atributos de la tabla "periodo_simulacion" con sus getters y setters. 
- * @author Sergio
+ * Clase implementa todos los atributos de la tabla "periodo_simulacion" con sus getters y setters. 
+ * @author Sergio Llanos Garcia
  * @version 1.0
  */
 public class Simulacion {
@@ -15,10 +15,10 @@ public class Simulacion {
 	 * Atributos de la clase
 	 */
 	private Long id;
-	private Usuario usuario_id;
-	private Long saldo;
-	private Date fecha_inicio;
-	private Date fecha_fin;
+	private Usuario usuario;
+	private Double saldo;
+	private Date fechaInicio;
+	private Date fechaFin;
 	/**
 	 * @return the id
 	 */
@@ -31,53 +31,54 @@ public class Simulacion {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	/**
-	 * @return the usuario_id
-	 */
-	public Usuario getUsuario_id() {
-		return usuario_id;
-	}
-	/**
-	 * @param usuario_id the usuario_id to set
-	 */
-	public void setUsuario_id(Usuario usuario_id) {
-		this.usuario_id = usuario_id;
-	}
+	
 	/**
 	 * @return the saldo
 	 */
-	public Long getSaldo() {
+	public Double getSaldo() {
 		return saldo;
 	}
 	/**
 	 * @param saldo the saldo to set
 	 */
-	public void setSaldo(Long saldo) {
+	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 	/**
-	 * @return the fecha_inicio
+	 * @return the usuario
 	 */
-	public Date getFecha_inicio() {
-		return fecha_inicio;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 	/**
-	 * @param fecha_inicio the fecha_inicio to set
+	 * @param usuario the usuario to set
 	 */
-	public void setFecha_inicio(Date fecha_inicio) {
-		this.fecha_inicio = fecha_inicio;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	/**
-	 * @return the fecha_fin
+	 * @return the fechaInicio
 	 */
-	public Date getFecha_fin() {
-		return fecha_fin;
+	public Date getFechaInicio() {
+		return fechaInicio;
 	}
 	/**
-	 * @param fecha_fin the fecha_fin to set
+	 * @param fechaInicio the fechaInicio to set
 	 */
-	public void setFecha_fin(Date fecha_fin) {
-		this.fecha_fin = fecha_fin;
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+	/**
+	 * @return the fechaFin
+	 */
+	public Date getFechaFin() {
+		return fechaFin;
+	}
+	/**
+	 * @param fechaFin the fechaFin to set
+	 */
+	public void setFechaFin(Date fechaFin) {
+		this.fechaFin = fechaFin;
 	}
 	
 	

@@ -39,14 +39,14 @@ public class ApuestaDAOImp implements ApuestaDAO {
 	}
 	
 	/**
-	 * Implementacion del metodo registrar(Apuesta)
+	 * Implementacion del metodo registrar
 	 * Registra una apuesta en la base de datos
 	 * @param apuesta - apuesta a registrar
 	 */
 	@Override
 	public void registrar(Apuesta apuesta) throws MyException {
 		Session session = null;
-		try {
+		try {			
 			session = sessionFactory.getCurrentSession();
 			session.save(apuesta);
 		} catch(HibernateException e) {

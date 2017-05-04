@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -39,22 +40,18 @@ public class SimulacionBLImpTest {
 	 */
 	@Test
 	@Rollback(false)
-	public void testIngresarPeriodo() {
-		/*Deprecated
-		Date fecha = new Date(17, 1, 1);
-		Date fecha2= new Date(17,1,30); */
+	public void testIngresarPeriodo() {		
 		
-		LocalDate localDate = LocalDate.of(2017, 1, 1);
-		Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		
-		localDate = LocalDate.of(2017, 1, 30);
-		Date fecha2 = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, 2017);
+		calendar.set(Calendar.MONTH, Calendar.JANUARY);
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		Date fecha = calendar.getTime();		
 		
 		try{
-			simulacionBL.ingresarPeriodo( 100001L, "dcamolaay", 30000L, fecha , null);
+			simulacionBL.ingresarPeriodo("dcamolaay", 30000D, fecha , null);
 		}catch(MyException e)
 		{
-		    //e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -66,13 +63,11 @@ public class SimulacionBLImpTest {
 	public void testConsultarPeriodos() {
 		List<Simulacion> periodos = null;
 		try{
-			//periodos = simulacionBL.consultarPeriodos("10345607a");
 			periodos = simulacionBL.consultarPeriodos("dcamolaay");
 			assertNotNull(periodos);			
 		}
 		catch(MyException e)
 		{
-		    e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -84,12 +79,11 @@ public class SimulacionBLImpTest {
 	public void testObtenerPeriodo() {
 		Simulacion periodo = null;
 		try{
-			periodo = simulacionBL.obtenerPeriodo(100000L);
+			periodo = simulacionBL.obtenerPeriodo(100003L);
 			assertNotNull(periodo);
 		}
 		catch(MyException e)
 		{
-		    e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
@@ -99,12 +93,14 @@ public class SimulacionBLImpTest {
 	 */
 	@Test
 	public void testPeriodoActivo() {
+		Simulacion periodo = null;
 		try{
-			simulacionBL.periodoActivo("10345607a");
+			periodo = simulacionBL.periodoActivo("dcamolaay");
+			assertNotNull(periodo);
 		}
 		catch(MyException e)
 		{
-		    e.printStackTrace();
+			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
