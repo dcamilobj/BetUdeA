@@ -10,8 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.bl.ApuestaBL;
 import co.edu.udea.iw.dao.ApuestaDAO;
+import co.edu.udea.iw.dao.SimulacionDAO;
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Apuesta;
+import co.edu.udea.iw.dto.Simulacion;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
@@ -25,13 +27,13 @@ public class ApuestaBLImp implements ApuestaBL{
 
 	private ApuestaDAO apuestaDAO;
 	private UsuarioDAO usuarioDAO;
-	
+	private SimulacionDAO simulacionDAO;
 	public static final Integer VALOR_MINIMO_APUESTA = 3000;
 	
 	
 	@Override
 	public void registrar(String evento, String fechaEvento, Long valorApostado, Long cuota, String opcionSeleccionada,
-			Integer usuarioId) throws MyException {
+			String usuarioId) throws MyException {
 		
 		/*Validar que la información de la apuesta no sea nula o este vacia*/
 		if(evento == null || evento.isEmpty()) {
@@ -64,7 +66,7 @@ public class ApuestaBLImp implements ApuestaBL{
 			throw new MyException("El valor apostado debe ser mayor a " + VALOR_MINIMO_APUESTA);
 		}
 		
-		PeriodoSimulacion periodoSimulacion = periodoSimulacionDAO.obtener(usuarioId);
+		Simulacion periodoSimulacion = simulacionDAO.periodoActivo(usuarioId);
 		if(periodoSimulacion == null) {
 			throw new MyException("El usuario no tiene ningun periodo de simulación activo");
 		}
@@ -95,13 +97,13 @@ public class ApuestaBLImp implements ApuestaBL{
 	}
 
 	@Override
-	public List<Apuesta> consultar(Integer periodoSimulacionId) throws MyException {
+	public List<Apuesta> consultar(Long periodoSimulacionId) throws MyException {
 		
 		if(periodoSimulacionId == null) {
 			throw new MyException("El periodo de simulacion es nulo");
 		}
 		
-		PeriodoSimulacion periodoSimulacion = periodoSimulacionDAO.obtener(periodoSimulacionId);
+		Simulacion periodoSimulacion = simulacionDAO.obtenerPeriodo(periodoSimulacionId);
 		if(periodoSimulacion == null) {
 			throw new MyException("El periodo de simulacion no existe en el sistema");
 		}
