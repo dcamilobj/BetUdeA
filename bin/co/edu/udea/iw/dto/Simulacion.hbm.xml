@@ -12,7 +12,7 @@
         </id>
         
         <many-to-one class="co.edu.udea.iw.dto.Usuario" name="usuario_id" lazy="false" fetch="join">
-            <column name="USUARIOID" length="15" not-null="true" />
+            <column name="USUARIO_ID" length="15" not-null="true" />
         </many-to-one >
         
          <property name="saldo" type="java.lang.Long">
