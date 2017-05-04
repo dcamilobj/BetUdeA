@@ -21,8 +21,8 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * @author camilo
- *
+ * @author Duban Camilo Bedoya Jiménez
+ * @version 1.0
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional 
@@ -38,9 +38,10 @@ public class UsuarioBLImpTest {
 	@Rollback(false)
 	public void testRegistrar() {
 		
+		Date fecha = new Date(96, 4, 4);
 		try{
-			usuarioBL.registrar("10345607a","Camilo",
-					"Bedoya","a@gmail.com","cualquiercosa");
+			usuarioBL.registrar("dcamolaay","CC","10345697a","Camilo",
+					"Bedoya",fecha,"a@gmail.com","cualquiercosa");
 			
 		}catch(MyException e)
 		{
@@ -54,13 +55,28 @@ public class UsuarioBLImpTest {
 	public void testAutenticar()
 	{
 		try{
-			usuarioBL.autenticar("a@gmail.com", "cualquiercosa");
+			usuarioBL.autenticar("dcamilbj", "cualquiercosa");
 		}
 		catch(MyException e)
+		{
+		    //e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	@Rollback(false)
+	public void testEditarEmail() {
+
+		
+		try{
+			usuarioBL.editarEmail("a@gmail.com", "cualquiercosa", "b@gmail.com");
+		}catch(MyException e)
 		{
 		    e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
+	
 
 }

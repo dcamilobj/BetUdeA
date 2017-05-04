@@ -3,6 +3,7 @@
  */
 package co.edu.udea.iw.bl.imp;
 
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,8 +53,9 @@ public class UsuarioBLImp implements UsuarioBL{
 	 * @param password
 	 * @throws MyException
 	 */
-	public void registrar(String cedula, String nombre, String apellidos, 
-			String email, String password) throws MyException
+	public void registrar(String nombreUsuario, String tipoDocumento,
+			String numeroDocumento, String nombres, String apellidos, 
+			Date fechaNacimiento, String email, String password) throws MyException
 	{
 		Cipher cipher = new Cipher();
 		
@@ -61,17 +63,29 @@ public class UsuarioBLImp implements UsuarioBL{
 		 * Condiciones para verificar que los atributos de un usuario no sean nulos
 		 * o vacíos
 		 */
-		if(cedula == null || cedula.isEmpty())
+		if(nombreUsuario == null || nombreUsuario.isEmpty())
 		{
-			throw new MyException("La cédula ingresada es vacía o nula");
+			throw new MyException("El nombre de usuario ingresado es vacío o nulo");
 		}
-		if(nombre == null || nombre.isEmpty())
+		if(tipoDocumento == null || tipoDocumento.isEmpty())
+		{
+			throw new MyException("El tipo de documento ingresado es vacío o nulo");
+		}
+		if(numeroDocumento == null || numeroDocumento.isEmpty())
+		{
+			throw new MyException("El número de documento ingresado es vacío o nulo");
+		}
+		if(nombres == null || nombres.isEmpty())
 		{
 			throw new MyException("El nombre ingresado es vacío o nulo");
 		}
 		if(apellidos == null || apellidos.isEmpty())
 		{
 			throw new MyException("Los apellidos ingresados están vacíos o son nulos");
+		}
+		if(fechaNacimiento == null || fechaNacimiento.toString().isEmpty())
+		{
+			throw new MyException("La fecha de nacimiento ingresada es vacía o nula");
 		}
 		if(email == null || email.isEmpty())
 		{
@@ -94,7 +108,7 @@ public class UsuarioBLImp implements UsuarioBL{
 	    }
 		
 		/*Validar longitud de los campos*/
-		if(cedula.length() < 5)
+		if(numeroDocumento.length() < 5)
 		{
 			throw new MyException("La cédula debe tener más de 5 caracteres");
 		}
@@ -102,11 +116,34 @@ public class UsuarioBLImp implements UsuarioBL{
 		{
 			throw new MyException("La contraseña debe tener más de 5 caracteres");
 		}
+		if(nombreUsuario.length()<5)
+		{
+			throw new MyException("El nombre de usuario debe tener más de 5 caracteres");
+		}
 		
+		/*Validar que la cuenta no haya sido creada previamente*/
+		Usuario comprobarUsuario = new Usuario();
+		comprobarUsuario = usuarioDAO.obtener(nombreUsuario);
+		if(comprobarUsuario != null)
+		{
+			throw new MyException("El nombre de usuario ingresado ya existe");
+		}
+		
+		/*Validar que el usuario sea mayor de edad*/
+		Date fechaActual = new Date();
+		Long diferenciaFechas = fechaActual.getTime() - fechaNacimiento.getTime();
+		if(diferenciaFechas < 568156314877L)
+		{
+			throw new MyException("El sistema sólo permite usuarios mayores de edad.");
+		}		
+		/*Si se cumplen todas las validaciones se registra el usuario*/
 		Usuario usuario = new Usuario();
-		usuario.setCedula(cedula);
-		usuario.setNombre(nombre);
+		usuario.setNombreUsuario(nombreUsuario);
+		usuario.setTipoDocumento(tipoDocumento);
+		usuario.setNumeroDocumento(numeroDocumento);
+		usuario.setNombres(nombres);
 		usuario.setApellidos(apellidos);
+		usuario.setFechaNacimiento(fechaNacimiento);
 		usuario.setEmail(email);
 		usuario.setPassword(cipher.encrypt(password));
 		
@@ -121,12 +158,12 @@ public class UsuarioBLImp implements UsuarioBL{
 	 * @param password
 	 * @throws MyException
 	 */
-	public void autenticar(String email, String password) throws MyException
+	public void autenticar(String nombreUsuario, String password) throws MyException
 	{
 		Cipher cipher = new Cipher();
-		if(email == null || email.isEmpty())
+		if(nombreUsuario == null || nombreUsuario.isEmpty())
 		{
-			throw new MyException("Se debe ingresar un correo electrónico");
+			throw new MyException("Se debe ingresar un nombre de usuario");
 		}
 		if(password == null || password.isEmpty())
 		{
@@ -135,18 +172,16 @@ public class UsuarioBLImp implements UsuarioBL{
 		
 		/*Validar si el usuario está registrado en el sistema*/
 		Usuario usuario = new Usuario();
-		usuario = usuarioDAO.obtener(email);
+		usuario = usuarioDAO.obtener(nombreUsuario);
 		if(usuario == null)
 		{
-			System.out.println("\n\n Entré al null papo \n\n");
-			throw new MyException("El correo o la contraseña ingresada no se encuentra en"
-					+ " el sistema");
+			throw new MyException("El nombre de usuario o la contraseña "
+					+ "ingresada no se encuentra en el sistema");
 		}
-		System.out.println("\n\n\n" +usuario.getNombre()+ "\n\n\n");
 		if(!usuario.getPassword().equals(cipher.encrypt(password)))
 		{
-			throw new MyException("El correo o la contraseña ingresada no se encuentra en"
-					+ " el sistema");			
+			throw new MyException("El nombre de usuario o la contraseña "
+					+ "ingresada no se encuentra en el sistema");		
 		}
 	}
 	
@@ -174,17 +209,31 @@ public class UsuarioBLImp implements UsuarioBL{
 			throw new MyException("Se debe ingresar el nuevo correo");
 		}
 		
+		/*Validar formato del email*/ 
+		
+	    String pattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+	    		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	    Pattern r = Pattern.compile(pattern);  	    // Crear un objeto 'Pattern'
+	    Matcher matcher = r.matcher(newEmail);
+	    if(matcher.matches()==false)
+	    {
+	    	throw new MyException("La nuevo correo electrónico no es válido");
+	    }
+		
 		/*Validar si el usuario está registrado en el sistema*/
 		Usuario usuario = new Usuario();
-		usuario = usuarioDAO.obtener(currentEmail);
+		usuario = usuarioDAO.obtenerPorEmail(currentEmail);
 		if(usuario == null)
 		{
+			System.out.println("\n\n Siempre me vengo por null \n\n");
 			throw new MyException("Correo inválido");
 		}
 		if(!usuario.getPassword().equals(cipher.encrypt(currentPassword)))
 		{
 			throw new MyException("Contraseña incorrecta.");
 		}
+		
+		
 		usuario.setEmail(newEmail);
 	}
 	
@@ -214,7 +263,7 @@ public class UsuarioBLImp implements UsuarioBL{
 		
 		/*Validar si el usuario está registrado en el sistema*/
 		Usuario usuario = new Usuario();
-		usuario = usuarioDAO.obtener(currentEmail);
+		usuario = usuarioDAO.obtenerPorEmail(currentEmail);
 		if(usuario == null)
 		{
 			throw new MyException("Correo inválido");

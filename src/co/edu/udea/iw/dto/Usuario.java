@@ -3,6 +3,8 @@
  */
 package co.edu.udea.iw.dto;
 
+import java.util.Date;
+
 /**
  *Clase implementa todos los atributos de la tabla "usuario" junto a sus getters an setters. 
  *@author Duban Camilo Bedoya Jiménez
@@ -13,34 +15,74 @@ public class Usuario {
 	/**
 	 * Atributos de la clase
 	 */
-	private String cedula;	
-	private String nombre;
+	private String nombreUsuario;
+	private String tipoDocumento;
+	private String numeroDocumento;	
+	private String nombres;
 	private String apellidos;
+	private Date fechaNacimiento;
 	private String email;
 	private String password;
+
 	/**
-	 * @return the cedula
+	 * @return the nombres
 	 */
-	public String getCedula() {
-		return cedula;
+	public String getNombres() {
+		return nombres;
 	}
 	/**
-	 * @param cedula the cedula to set
+	 * @return the nombreUsuario
 	 */
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
+	public String getNombreUsuario() {
+		return nombreUsuario;
 	}
 	/**
-	 * @return the nombre
+	 * @param nombreUsuario the nombreUsuario to set
 	 */
-	public String getNombre() {
-		return nombre;
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 	/**
-	 * @param nombres the nombre to set
+	 * @return the tipoDocumento
 	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+	/**
+	 * @param tipoDocumento the tipoDocumento to set
+	 */
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+	/**
+	 * @return the numeroDocumento
+	 */
+	public String getNumeroDocumento() {
+		return numeroDocumento;
+	}
+	/**
+	 * @param numeroDocumento the numeroDocumento to set
+	 */
+	public void setNumeroDocumento(String numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
+	/**
+	 * @return the fechaNacimiento
+	 */
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	/**
+	 * @param fechaNacimiento the fechaNacimiento to set
+	 */
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	/**
+	 * @param nombres the nombres to set
+	 */
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
 	}
 	/**
 	 * @return the apellidos

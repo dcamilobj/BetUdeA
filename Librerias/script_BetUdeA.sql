@@ -4,12 +4,15 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Estructura de la tabla usuario
 --
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `cedula`        VARCHAR(15)   NOT NULL,
-  `nombre`        VARCHAR(30)   NOT NULL,
-  `apellidos`  	  VARCHAR(30)   NOT NULL,
-  `email`         VARCHAR(125)  NOT NULL,
-  `password`      VARCHAR(125)  NOT NULL,
-  PRIMARY KEY(`cedula`)
+  `nombre_usuario` VARCHAR(10) NOT NULL,
+  `tipo_documento` VARCHAR(10) NOT NULL,
+  `numero_documento`    VARCHAR(15) NOT NULL UNIQUE,
+  `nombres`    VARCHAR(30)   NOT NULL,
+  `apellidos` VARCHAR(30)   NOT NULL,
+  `fecha_nacimiento` DATE NOT NULL,
+  `email`     VARCHAR(125)  NOT NULL UNIQUE,
+  `password`  VARCHAR(125)  NOT NULL,
+  PRIMARY KEY(`nombre_usuario`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 
@@ -18,12 +21,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 CREATE TABLE IF NOT EXISTS `periodo_simulacion` (
   `id`            INT(12)     NOT NULL AUTO_INCREMENT,
-  `usuario_id`    VARCHAR(15) NOT NULL,
+  `usuario_id`    VARCHAR(10) NOT NULL,
   `saldo`         INT(8)      NOT NULL,
   `fecha_inicio`  DATE        NOT NULL,
   `fecha_fin`     DATE,
   PRIMARY KEY(`id`),
-  FOREIGN KEY(`usuario_id`) REFERENCES usuario(`cedula`)
+  FOREIGN KEY(`usuario_id`) REFERENCES usuario(`nombre_usuario`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 --

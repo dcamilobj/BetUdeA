@@ -21,10 +21,19 @@ public interface UsuarioDAO {
 	public void registrar(Usuario usuario) throws MyException;
 	
 	/**
+	 * Definición de método para obtener un usuario de la base de datos dado su
+	 * nombre de usuario.
+	 * @param nombre de usuario
+	 * @return usuario con el nombre de usuario dado
+	 * @throws MyException
+	 */
+	public Usuario obtener(String nombreUsuario) throws MyException;
+	
+	/**
 	 * Definición de método para obtener un usuario de la base de datos dado su email.
 	 * @param email
 	 * @return usuario con el email dado
 	 * @throws MyException
 	 */
-	public Usuario obtener(String email) throws MyException;
+	public Usuario obtenerPorEmail(String email) throws MyException;
 }
