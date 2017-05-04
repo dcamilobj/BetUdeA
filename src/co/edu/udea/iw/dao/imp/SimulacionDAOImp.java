@@ -42,7 +42,7 @@ public class SimulacionDAOImp implements SimulacionDAO{
 	}
 	
 	/**
-	 * @param El usuario a el cual se quiere ingresar un periodo de simulacion
+	 * @param El usuario al cual se quiere ingresar un periodo de simulacion
 	 * @throws MyException
 	 */
 	public void ingresarPeriodo(Simulacion simulacion) throws MyException {

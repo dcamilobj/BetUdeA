@@ -28,9 +28,52 @@ public class ApuestaBLImp implements ApuestaBL{
 	private ApuestaDAO apuestaDAO;
 	private UsuarioDAO usuarioDAO;
 	private SimulacionDAO simulacionDAO;
+	
 	public static final Integer VALOR_MINIMO_APUESTA = 3000;
 	
 	
+	/**
+	 * @return the apuestaDAO
+	 */
+	public ApuestaDAO getApuestaDAO() {
+		return apuestaDAO;
+	}
+
+	/**
+	 * @param apuestaDAO the apuestaDAO to set
+	 */
+	public void setApuestaDAO(ApuestaDAO apuestaDAO) {
+		this.apuestaDAO = apuestaDAO;
+	}
+
+	/**
+	 * @return the usuarioDAO
+	 */
+	public UsuarioDAO getUsuarioDAO() {
+		return usuarioDAO;
+	}
+
+	/**
+	 * @param usuarioDAO the usuarioDAO to set
+	 */
+	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
+		this.usuarioDAO = usuarioDAO;
+	}
+
+	/**
+	 * @return the simulacionDAO
+	 */
+	public SimulacionDAO getSimulacionDAO() {
+		return simulacionDAO;
+	}
+
+	/**
+	 * @param simulacionDAO the simulacionDAO to set
+	 */
+	public void setSimulacionDAO(SimulacionDAO simulacionDAO) {
+		this.simulacionDAO = simulacionDAO;
+	}
+
 	@Override
 	public void registrar(String evento, String fechaEvento, Long valorApostado, Long cuota, String opcionSeleccionada,
 			String usuarioId) throws MyException {
@@ -88,8 +131,8 @@ public class ApuestaBLImp implements ApuestaBL{
 		apuesta.setOpcionSeleccionada(opcionSeleccionada);
 		apuesta.setEstado("Abierta");
 		apuesta.setFechaApuesta(new Date());
-		//apuesta.setPeriodoSimulacion(periodoSimulacion.getId());
-		//apuesta.setOpcionCorrecta(NULL);
+		apuesta.setPeriodoSimulacion(periodoSimulacion);
+		apuesta.setOpcionCorrecta(null);
 		
 		apuestaDAO.registrar(apuesta);
 		

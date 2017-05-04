@@ -39,7 +39,23 @@ public class SimulacionBLImp implements SimulacionBL{
 	public void setSimulacionDAO(SimulacionDAO simulacionDAO) {
 		this.simulacionDAO = simulacionDAO;
 	}
+	
+	
 
+
+	/**
+	 * @return the usuarioDAO
+	 */
+	public UsuarioDAO getUsuarioDAO() {
+		return usuarioDAO;
+	}
+
+	/**
+	 * @param usuarioDAO the usuarioDAO to set
+	 */
+	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
+		this.usuarioDAO = usuarioDAO;
+	}
 
 	/**
 	 * Metodo para registrar un periodo en la base de datos,
@@ -58,25 +74,33 @@ public class SimulacionBLImp implements SimulacionBL{
 		if(fecha_inicio == null) {
 			throw new MyException("La fecha de inicio no puede ser nula");
 		}
+		
+		System.out.println("\n\n" + "entrÃ©" +"\n\n");
+		
 		/*validar el usuario en la base de datos*/
 		Usuario usuario = usuarioDAO.obtener(usuario_id);
 		if(usuario == null) {
+			System.out.println("\n\n" + "dentro" +"\n\n");
 			throw new MyException("El usuario no existe en el sistema");
 		}
+		System.out.println("\n\n" + "fuera" +"\n\n");
+		
+		
 		/* validar que el periodo de finalizacion sea vacio
 		 *  o que el saldo sea 0 y la fecha de inicializacion sea de hace 30 dias  */
-		if(fecha_fin==null || saldo==0 && fecha_fin.getTime()-fecha_inicio.getTime()>=2592000000L ){
+		//if(fecha_fin==null || saldo==0 && fecha_fin.getTime()-fecha_inicio.getTime()>=2592000000L ){
 			
 			Simulacion simulacion = new Simulacion();
 			simulacion.setId(id);
 			simulacion.setUsuario_id(usuario_id);
 			simulacion.setSaldo(saldo);
 			simulacion.setFecha_inicio(fecha_inicio);
+			simulacion.setFecha_fin(fecha_fin);
 			
 			
 			simulacionDAO.ingresarPeriodo(simulacion);
 				
-			}
+			//}
 	}
 	
 	/**
@@ -101,7 +125,7 @@ public class SimulacionBLImp implements SimulacionBL{
 	public Simulacion obtenerPeriodo(Long periodoSimulacionId) throws MyException{
 	/*validar que el dato del usuario no sea vacio */
 	if(periodoSimulacionId == null) {
-		throw new MyException("El periodo de simulación no existe en el sistema");
+		throw new MyException("El periodo de simulaciï¿½n no existe en el sistema");
 	}
 	return simulacionDAO.obtenerPeriodo(periodoSimulacionId);
 	}

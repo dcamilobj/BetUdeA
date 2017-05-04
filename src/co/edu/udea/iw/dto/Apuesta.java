@@ -21,7 +21,19 @@ public class Apuesta {
 	private String opcionSeleccionada;
 	private String estado;
 	private Date fechaApuesta;
-	//private PeriodoSimulacion periodoSimulacion;
+	private Simulacion periodoSimulacion;
+	/**
+	 * @return the periodoSimulacion
+	 */
+	public Simulacion getPeriodoSimulacion() {
+		return periodoSimulacion;
+	}
+	/**
+	 * @param periodoSimulacion the periodoSimulacion to set
+	 */
+	public void setPeriodoSimulacion(Simulacion periodoSimulacion) {
+		this.periodoSimulacion = periodoSimulacion;
+	}
 	private String opcionCorrecta;
 	/**
 	 * @return the id

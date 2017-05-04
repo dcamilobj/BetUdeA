@@ -2,24 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
-		<attributes>
-			<attribute name="owner.project.facets" value="jst.web"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-<<<<<<< HEAD
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/com.springsource.org.aopalliance-1.0.0.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/commons-logging.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-aop-4.1.6.RELEASE.jar"/>
@@ -32,8 +14,6 @@
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasLog/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/commons-collections-3.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/dom4j-1.6.1.jar"/>
@@ -43,5 +23,10 @@
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/jta-1.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasLog/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

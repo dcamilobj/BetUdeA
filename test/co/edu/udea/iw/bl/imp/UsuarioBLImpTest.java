@@ -55,7 +55,7 @@ public class UsuarioBLImpTest {
 	public void testAutenticar()
 	{
 		try{
-			usuarioBL.autenticar("dcamilbj", "cualquiercosa");
+			usuarioBL.autenticar("dcamoleay", "cualquiercosa");
 		}
 		catch(MyException e)
 		{

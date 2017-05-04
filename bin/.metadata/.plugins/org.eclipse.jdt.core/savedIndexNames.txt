@@ -1,1 +1,0 @@
-INDEX VERSION 1.129+C:\Users\Sergio\Documents\sergio\Udea\IngWeb-Proyecto\BetUdeA\.metadata\.plugins\org.eclipse.jdt.core

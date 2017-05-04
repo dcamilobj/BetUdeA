@@ -24,7 +24,7 @@ import co.edu.udea.iw.exception.MyException;
 @Transactional
 public class UsuarioBLImp implements UsuarioBL{
 	
-	UsuarioDAO usuarioDAO;
+	private UsuarioDAO usuarioDAO;
 	
 	
 	/**
