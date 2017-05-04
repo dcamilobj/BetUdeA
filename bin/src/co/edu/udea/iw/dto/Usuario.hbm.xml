@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/04/2017 01:20:51 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+<!-- Archivo de mapeo correspondiente a la tabla usuario -->
+    <class name="co.edu.udea.iw.dto.Usuario" table="usuario">
+   
+   		
+        <id name="nombreUsuario" type="java.lang.String">
+            <column name="NOMBRE_USUARIO"  length="10"/> 
+            <generator class="assigned" />
+        </id>
+        
+        <property name="tipoDocumento" type="java.lang.String">
+            <column name="TIPO_DOCUMENTO" length="10" not-null="true" /> 
+        </property>
+        
+        <property name="numeroDocumento" type="java.lang.String">
+            <column name="NUMERO_DOCUMENTO" length="15" not-null="true" unique="true" /> 
+        </property>
+        
+        <property name="nombres" type="java.lang.String">
+            <column name="NOMBRES" length="30" not-null="true" /> 
+        </property>
+        
+         <property name="apellidos" type="java.lang.String">
+            <column name="APELLIDOS" length="30" not-null="true" />
+        </property>
+        
+        <property name="fechaNacimiento" type="java.util.Date">
+            <column name="FECHA_NACIMIENTO" not-null="true" />
+        </property>
+        
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" length="125" not-null="true" unique="true"/>
+        </property>
+                
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" length="125" not-null="true" />
+        </property>
+            
+    </class>
+</hibernate-mapping>
