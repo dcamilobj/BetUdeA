@@ -39,7 +39,8 @@
 		<property name="opcionCorrecta" type="java.lang.String">
 			<column name="opcion_correcta" length="15" not-null="true"/>
 		</property>
-		
+	
+	<!-- Mirar lo de LAZY y FETCH -->
 	<many-to-one class="co.edu.udea.iw.dto.Simulacion" name="periodoSimulacion" lazy="false" fetch="join">
 			<column name="periodo_simulacion_id" precision="12" not-null="true"/>
 		</many-to-one> 

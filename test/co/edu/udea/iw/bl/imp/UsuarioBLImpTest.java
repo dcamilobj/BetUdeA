@@ -5,6 +5,8 @@ package co.edu.udea.iw.bl.imp;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Test;
@@ -38,7 +40,18 @@ public class UsuarioBLImpTest {
 	@Rollback(false)
 	public void testRegistrar() {
 		
-		Date fecha = new Date(96, 4, 4);
+		/*Date fecha = new Date(96, 4, 4);* Deprecated*/
+		
+		/*Until Java 7*/
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, 1996);
+		calendar.set(Calendar.MONTH, Calendar.APRIL);
+		calendar.set(Calendar.DAY_OF_MONTH, 4);
+		Date fecha = calendar.getTime();
+		
+		/*Java 8
+		LocalDate localDate = LocalDate.of(1996, 4, 4);
+		Date fecha = Date.from(localDate);*/
 		try{
 			usuarioBL.registrar("dcamolaay","CC","10345697a","Camilo",
 					"Bedoya",fecha,"a@gmail.com","cualquiercosa");

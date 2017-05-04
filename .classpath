@@ -2,31 +2,31 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/commons-logging.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate3.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasLog/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/commons-logging.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-aop-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-expression-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-jdbc-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-orm-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasLog/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate3.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

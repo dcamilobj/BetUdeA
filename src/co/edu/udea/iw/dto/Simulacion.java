@@ -15,7 +15,7 @@ public class Simulacion {
 	 * Atributos de la clase
 	 */
 	private Long id;
-	private String usuario_id;
+	private Usuario usuario_id;
 	private Long saldo;
 	private Date fecha_inicio;
 	private Date fecha_fin;
@@ -34,13 +34,13 @@ public class Simulacion {
 	/**
 	 * @return the usuario_id
 	 */
-	public String getUsuario_id() {
+	public Usuario getUsuario_id() {
 		return usuario_id;
 	}
 	/**
 	 * @param usuario_id the usuario_id to set
 	 */
-	public void setUsuario_id(String usuario_id) {
+	public void setUsuario_id(Usuario usuario_id) {
 		this.usuario_id = usuario_id;
 	}
 	/**

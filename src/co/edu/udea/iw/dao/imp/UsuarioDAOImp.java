@@ -47,7 +47,6 @@ public class UsuarioDAOImp implements UsuarioDAO {
 	 */
 	@Override
 	public void registrar(Usuario usuario) throws MyException {
-		// TODO Auto-generated method stub
 		Session session = null; 
 		try{
 			
@@ -69,7 +68,6 @@ public class UsuarioDAOImp implements UsuarioDAO {
 	 */
 	@Override
 	public Usuario obtener(String nombreUsuario) throws MyException {
-		// TODO Auto-generated method stub
 		Usuario usuario = new Usuario();
 		Session session = null; 
 		try{
@@ -92,14 +90,17 @@ public class UsuarioDAOImp implements UsuarioDAO {
 	 */
 	@Override
 	public Usuario obtenerPorEmail(String email) throws MyException {
-		// TODO Auto-generated method stub
 		Usuario usuario = new Usuario();
 		Session session = null;
 		//List<Usuario> usuarios= null;
 		
 		try{
 			session= sessionFactory.getCurrentSession();
-			usuario = (Usuario) session.get(Usuario.class, email);
+			//usuario = (Usuario) session.get(Usuario.class, email);
+			Criteria criteria = session.createCriteria(Usuario.class);
+			criteria.add(Restrictions.eq("email", email));
+			usuario = (Usuario) criteria.uniqueResult();
+			
 			/*Criteria criteria = session.createCriteria(Usuario.class);  
 			criteria.add(Restrictions.eqProperty("email", email));
 			usuarios = criteria.list();

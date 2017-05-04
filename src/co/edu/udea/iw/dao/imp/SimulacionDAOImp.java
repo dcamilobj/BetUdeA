@@ -10,7 +10,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import org.hibernate.criterion.Restrictions;
 
 import co.edu.udea.iw.dao.SimulacionDAO;
 import co.edu.udea.iw.dto.Apuesta;
@@ -61,13 +61,14 @@ public class SimulacionDAOImp implements SimulacionDAO{
 	 * @throws MyException
 	 */
 	public List<Simulacion> consultarPeriodos (String usuario_id) throws MyException {
-		List<Simulacion> periodos=new ArrayList<>();
+		List<Simulacion> periodos = null;
 		Session session = null;
 		Criteria criteria = null;
 		try {
 			session = sessionFactory.getCurrentSession();
 			criteria = session.createCriteria(Simulacion.class);
-			periodos = criteria.list();
+			//criteria.add(Restrictions.eq("usuario_id", usuario_id));
+			periodos = criteria.list();			
 		} catch(HibernateException e) {
 			throw new MyException("Error consultando la lista de periodos");
 		}

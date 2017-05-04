@@ -92,7 +92,7 @@ public class SimulacionBLImp implements SimulacionBL{
 			
 			Simulacion simulacion = new Simulacion();
 			simulacion.setId(id);
-			simulacion.setUsuario_id(usuario_id);
+			simulacion.setUsuario_id(usuario);
 			simulacion.setSaldo(saldo);
 			simulacion.setFecha_inicio(fecha_inicio);
 			simulacion.setFecha_fin(fecha_fin);

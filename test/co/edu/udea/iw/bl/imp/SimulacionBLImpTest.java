@@ -5,7 +5,10 @@ package co.edu.udea.iw.bl.imp;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +18,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.udea.iw.dto.Simulacion;
 import co.edu.udea.iw.exception.MyException;
 
 /**
@@ -36,10 +40,18 @@ public class SimulacionBLImpTest {
 	@Test
 	@Rollback(false)
 	public void testIngresarPeriodo() {
+		/*Deprecated
 		Date fecha = new Date(17, 1, 1);
-		Date fecha2= new Date(17,1,30);
+		Date fecha2= new Date(17,1,30); */
+		
+		LocalDate localDate = LocalDate.of(2017, 1, 1);
+		Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		
+		localDate = LocalDate.of(2017, 1, 30);
+		Date fecha2 = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		
 		try{
-			simulacionBL.ingresarPeriodo( 100000L,"dcamoleay",30000L, fecha , null);
+			simulacionBL.ingresarPeriodo( 100001L, "dcamolaay", 30000L, fecha , null);
 		}catch(MyException e)
 		{
 		    //e.printStackTrace();
@@ -52,8 +64,11 @@ public class SimulacionBLImpTest {
 	 */
 	@Test
 	public void testConsultarPeriodos() {
+		List<Simulacion> periodos = null;
 		try{
-			simulacionBL.consultarPeriodos("10345607a");
+			//periodos = simulacionBL.consultarPeriodos("10345607a");
+			periodos = simulacionBL.consultarPeriodos("dcamolaay");
+			assertNotNull(periodos);
 		}
 		catch(MyException e)
 		{
