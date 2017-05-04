@@ -68,7 +68,7 @@ public class SimulacionBLImpTest {
 		try{
 			//periodos = simulacionBL.consultarPeriodos("10345607a");
 			periodos = simulacionBL.consultarPeriodos("dcamolaay");
-			assertNotNull(periodos);
+			assertNotNull(periodos);			
 		}
 		catch(MyException e)
 		{
@@ -82,8 +82,10 @@ public class SimulacionBLImpTest {
 	 */
 	@Test
 	public void testObtenerPeriodo() {
+		Simulacion periodo = null;
 		try{
-			simulacionBL.obtenerPeriodo(2L);
+			periodo = simulacionBL.obtenerPeriodo(100000L);
+			assertNotNull(periodo);
 		}
 		catch(MyException e)
 		{

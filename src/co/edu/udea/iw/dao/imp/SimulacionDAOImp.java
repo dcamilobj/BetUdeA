@@ -67,7 +67,7 @@ public class SimulacionDAOImp implements SimulacionDAO{
 		try {
 			session = sessionFactory.getCurrentSession();
 			criteria = session.createCriteria(Simulacion.class);
-			//criteria.add(Restrictions.eq("usuario_id", usuario_id));
+			criteria.add(Restrictions.eq("usuario_id.nombreUsuario", usuario_id));
 			periodos = criteria.list();			
 		} catch(HibernateException e) {
 			throw new MyException("Error consultando la lista de periodos");
