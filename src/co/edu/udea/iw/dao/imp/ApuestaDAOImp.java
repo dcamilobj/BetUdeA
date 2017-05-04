@@ -60,7 +60,7 @@ public class ApuestaDAOImp implements ApuestaDAO {
 	 * @return Lista de apuestas
 	 */
 	@Override
-	public List<Apuesta> consultar(Integer periodoSimulacion) throws MyException{
+	public List<Apuesta> consultar(Long periodoSimulacion) throws MyException{
 		List<Apuesta> apuestas = null;
 		Session session = null;
 		Criteria criteria = null;

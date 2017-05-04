@@ -29,5 +29,5 @@ public interface ApuestaDAO {
 	 * @param periodoSimulacion - codigo del periodo de simulacion a consultar
 	 * @throws MyException cuando hay un error en la consulta
 	 */
-	public List<Apuesta> consultar(Integer periodoSimulacion) throws MyException;
+	public List<Apuesta> consultar(Long periodoSimulacion) throws MyException;
 }

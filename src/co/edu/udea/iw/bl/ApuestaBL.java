@@ -16,9 +16,9 @@ public interface ApuestaBL {
 	
 	//fecha es Date o es String en este metodo
 	public void registrar(String evento, String fechaEvento, Long valorApostado,
-			Long cuota, String opcionSeleccionada, Integer usuario) throws MyException;
+			Long cuota, String opcionSeleccionada, String usuario) throws MyException;
 	
-	public List<Apuesta> consultar(Integer periodoSimulacion) throws MyException;
+	public List<Apuesta> consultar(Long periodoSimulacion) throws MyException;
 	
 	
 }
