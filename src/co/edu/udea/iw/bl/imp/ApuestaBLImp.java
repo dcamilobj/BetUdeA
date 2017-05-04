@@ -76,7 +76,7 @@ public class ApuestaBLImp implements ApuestaBL{
 
 	@Override
 	public void registrar(String evento, Date fechaEvento, Double valorApostado, Double cuota, String opcionSeleccionada,
-			String usuarioId) throws MyException {
+			String nombreUsuario) throws MyException {
 		
 		/*Validar que la información de la apuesta no sea nula o este vacia*/
 		if(evento == null || evento.isEmpty()) {
@@ -100,23 +100,24 @@ public class ApuestaBLImp implements ApuestaBL{
 		}
 		
 		/*Validar que el usuario exista en la base de datos*/
-		Usuario usuario = usuarioDAO.obtener(usuarioId);
+		Usuario usuario = usuarioDAO.obtener(nombreUsuario);
 		if(usuario == null) {
 			throw new MyException("El usuario no existe en el sistema");
 		}
 		
+		/*Validar que el valor de la apuesta no sea menor al valor permitido*/
 		if(valorApostado < VALOR_MINIMO_APUESTA) {
 			throw new MyException("El valor apostado debe ser mayor a " + VALOR_MINIMO_APUESTA);
 		}
 		
-		System.out.println("\n\n" + usuarioId + "\n\n");
-		Simulacion periodoSimulacion = simulacionDAO.obtenerPeriodoActivo(usuarioId);
+		/*Obtener el periodo activo del usuario*/
+		Simulacion periodoSimulacion = simulacionDAO.obtenerPeriodoActivo(nombreUsuario);
 		if(periodoSimulacion == null) {
 			throw new MyException("El usuario no tiene ningun periodo de simulación activo");
 		} 
 		
-		Double saldo = periodoSimulacion.getSaldo();
-		
+		/*Validar que el valor de la apuesta no supere el saldo del usuario*/
+		Double saldo = periodoSimulacion.getSaldo();		
 		if(valorApostado > saldo) {
 			throw new MyException("El valor apostado no puede superar el saldo actual");
 		}
@@ -156,8 +157,15 @@ public class ApuestaBLImp implements ApuestaBL{
 			throw new MyException("El periodo de simulacion no existe en el sistema");
 		}
 		
+		List<Apuesta> apuestas = apuestaDAO.consultar(periodoSimulacionId);
+	
+		if(apuestas.isEmpty()){
+			throw new MyException("No hay apuestas en este periodo de simulacion");
+		}
+		
+		
 		/*¿Debo validar que el periodo pertenezca al usuario dado?*/
-		return apuestaDAO.consultar(periodoSimulacionId);
+		return apuestas;
 }
 
 }

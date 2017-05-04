@@ -16,15 +16,19 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * Clase para implementar todos los metodos de la logica del negocio correspondiente a simulacion
+ * Clase para implementar todos los metodos de la logica del negocio
+ * correspondiente a simulacion
+ * 
  * @author Sergio Llanos
  * @version 1.0
  */
 @Transactional
-public class SimulacionBLImp implements SimulacionBL{
-	
+public class SimulacionBLImp implements SimulacionBL {
+
 	private SimulacionDAO simulacionDAO;
 	private UsuarioDAO usuarioDAO;
+	
+	public static final Double SALDO_INICIAL = 30000D;
 
 	/**
 	 * @return the simulacionDAO
@@ -34,14 +38,12 @@ public class SimulacionBLImp implements SimulacionBL{
 	}
 
 	/**
-	 * @param simulacionDAO the simulacionDAO to set
+	 * @param simulacionDAO
+	 *            the simulacionDAO to set
 	 */
 	public void setSimulacionDAO(SimulacionDAO simulacionDAO) {
 		this.simulacionDAO = simulacionDAO;
 	}
-	
-	
-
 
 	/**
 	 * @return the usuarioDAO
@@ -51,14 +53,16 @@ public class SimulacionBLImp implements SimulacionBL{
 	}
 
 	/**
-	 * @param usuarioDAO the usuarioDAO to set
+	 * @param usuarioDAO
+	 *            the usuarioDAO to set
 	 */
 	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
 		this.usuarioDAO = usuarioDAO;
 	}
 
 	/**
-	 * Metodo para registrar un periodo en la base de datos,
+	 * Metodo para registrar un periodo en la base de datos
+	 * 
 	 * @param id
 	 * @param usuario
 	 * @param saldo
@@ -66,86 +70,87 @@ public class SimulacionBLImp implements SimulacionBL{
 	 * @param fechaFin
 	 * @throws MyException
 	 */
-	public void ingresarPeriodo(String nombreUsuario, Double saldo, 
-			Date fechaInicio, Date fechaFin) throws MyException
-	{
-		
-		/*Validar que la fecha_inicio del periodo no sea nulo o este vacia*/		
-		if(fechaInicio == null) {
-			throw new MyException("La fecha de inicio no puede ser nula");
-		}
-		
-		System.out.println("\n\n" + "entré" +"\n\n");
-		
-		/*validar el usuario en la base de datos*/
+	public void registrarPeriodo(String nombreUsuario)
+			throws MyException {		
+
+		/* validar el usuario en la base de datos */
 		Usuario usuario = usuarioDAO.obtener(nombreUsuario);
-		if(usuario == null) {
-			System.out.println("\n\n" + "dentro" +"\n\n");
+		if (usuario == null) {
 			throw new MyException("El usuario no existe en el sistema");
 		}
-		System.out.println("\n\n" + "fuera" +"\n\n");
 		
+		Simulacion simulacionActiva = simulacionDAO.obtenerPeriodoActivo(nombreUsuario);
 		
-		/* validar que el periodo de finalizacion sea vacio
-		 *  o que el saldo sea 0 y la fecha de inicializacion sea de hace 30 dias  */
-		//if(fecha_fin==null || saldo==0 && fecha_fin.getTime()-fecha_inicio.getTime()>=2592000000L ){
-			
-			Simulacion simulacion = new Simulacion();
-			simulacion.setUsuario(usuario);
-			simulacion.setSaldo(saldo);
-			simulacion.setFechaInicio(fechaInicio);
-			simulacion.setFechaFin(fechaFin);
-			
-			
-			simulacionDAO.registrarPeriodo(simulacion);
-				
-			//}
+		if(simulacionActiva.getSaldo() > 0) {
+			throw new MyException("No se puede registrar el periodo si el"
+					+ " saldo es mayor a 0");
+		}
+		
+		/*Validar que no se registre mas de un periodo de simulacion por semana*/
+		Long fechaInicioActivo = simulacionActiva.getFechaInicio().getTime();
+		Long diferenciaFecha = System.currentTimeMillis() - fechaInicioActivo;		
+		if(diferenciaFecha < 604800000) {
+			throw new MyException("No se pueden registrar mas periodos de"
+					+ " simulacion esta semana");
+		}		
+
+		Simulacion simulacion = new Simulacion();
+		simulacion.setUsuario(usuario);
+		simulacion.setSaldo(SALDO_INICIAL);
+		simulacion.setFechaInicio(new Date());
+		simulacion.setFechaFin(null);
+
+		simulacionDAO.registrarPeriodo(simulacion);
+
 	}
-	
+
 	/**
-	 * Metodo para validar la consulta de una lista de periodos segun un id del usuario
+	 * Metodo para consultar la lista de periodos dado el nombre de usuario
+	 * 
 	 * @param nombreUsuario
 	 * @throws MyException
 	 */
-	public List<Simulacion> consultarPeriodos (String nombreUsuario) throws MyException{
-		
-		/*validar que el dato del usuario no sea vacio */
-		if(nombreUsuario == null) {
+	public List<Simulacion> obtenerPeriodos(String nombreUsuario) throws MyException {
+
+		/* validar que el dato del usuario no sea vacio */
+		if (nombreUsuario == null) {
 			throw new MyException("El usuario no existe en el sistema");
 		}
 		return simulacionDAO.obtenerPeriodos(nombreUsuario);
 	}
-	
+
 	/**
-	 * Metodo para validar consultar de un periodo segun un id del usuario
+	 * Metodo para consultar un periodo de simulacion dado el nombre de usuario
+	 * 
 	 * @param usuario_id
 	 * @throws MyException
 	 */
-	public Simulacion obtenerPeriodo(Long periodoSimulacionId) throws MyException{
-	/*validar que el dato del usuario no sea vacio */
-	if(periodoSimulacionId == null) {
-		throw new MyException("El periodo de simulaci�n no existe en el sistema");
+	public Simulacion obtenerPeriodo(Long periodoSimulacionId) throws MyException {
+		/* validar que el dato del usuario no sea vacio */
+		if (periodoSimulacionId == null) {
+			throw new MyException("El periodo de simulaci�n no existe en el sistema");
+		}
+		return simulacionDAO.obtenerPeriodo(periodoSimulacionId);
 	}
-	return simulacionDAO.obtenerPeriodo(periodoSimulacionId);
-	}
-	
+
 	/**
-	 * Metodo para validar consultar de un periodo segun un id del usuario
+	 * Metodo para consultar el periodo de simulacion activo de un usuario
+	 * 
 	 * @param nombreUsuario
 	 * @throws MyException
 	 */
-	public Simulacion periodoActivo(String nombreUsuario) throws MyException{
-	/*validar que el dato del usuario no sea vacio */
-	if(nombreUsuario == null) {
-		throw new MyException("El usuario no existe en el sistema");
-	}
-	
-	Simulacion periodo = simulacionDAO.obtenerPeriodoActivo(nombreUsuario);
-	if(periodo == null) {
-		throw new MyException("El periodo es nulo");
-	}
-	
-	return periodo;
-	
+	public Simulacion obtenerPeriodoActivo(String nombreUsuario) throws MyException {
+		/* validar que el dato del usuario no sea vacio */
+		if (nombreUsuario == null) {
+			throw new MyException("El usuario no existe en el sistema");
+		}
+
+		Simulacion periodo = simulacionDAO.obtenerPeriodoActivo(nombreUsuario);
+		if (periodo == null) {
+			throw new MyException("El periodo es nulo");
+		}
+
+		return periodo;
+
 	}
 }

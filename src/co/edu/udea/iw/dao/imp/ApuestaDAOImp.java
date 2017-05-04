@@ -60,14 +60,14 @@ public class ApuestaDAOImp implements ApuestaDAO {
 	 * @return Lista de apuestas
 	 */
 	@Override
-	public List<Apuesta> consultar(Long periodoSimulacion) throws MyException{
+	public List<Apuesta> consultar(Long periodoSimulacionId) throws MyException{
 		List<Apuesta> apuestas = null;
 		Session session = null;
 		Criteria criteria = null;
 		try {
 			session = sessionFactory.getCurrentSession();
 			criteria = session.createCriteria(Apuesta.class);
-			criteria.add(Restrictions.eq("periodo_simulacion_id", periodoSimulacion));
+			criteria.add(Restrictions.eq("periodoSimulacion.id", periodoSimulacionId));
 			apuestas = criteria.list();
 		} catch(HibernateException e) {
 			throw new MyException("Error consultando la lista de apuestas");

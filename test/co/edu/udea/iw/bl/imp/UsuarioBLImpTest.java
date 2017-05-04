@@ -32,20 +32,21 @@ public class UsuarioBLImpTest {
 	private UsuarioBLImp usuarioBL;
 	/**
 	 * Test method for {@link co.edu.udea.iw.bl.imp.UsuarioBLImp#registrar(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Prueba que valida el registro de un usuario
 	 */
 	@Test
-	@Rollback(false)
+	@Rollback(false)	
 	public void testRegistrar() {
 		
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.YEAR, 1991);
+		calendar.set(Calendar.YEAR, 1990);
 		calendar.set(Calendar.MONTH, Calendar.APRIL);
 		calendar.set(Calendar.DAY_OF_MONTH, 4);
 		Date fecha = calendar.getTime();		
 		
 		try{
-			usuarioBL.registrar("dcamoleaay","CC","10345697a","Camilo",
-					"Bedoya",fecha,"a@gmail.com","cualquiercosa");
+			usuarioBL.registrar("sergio","CC","103412317","Camilo",
+					"Bedoya",fecha,"s@gmail.com","cualquiercosa");
 			
 		}catch(MyException e)
 		{
@@ -54,31 +55,53 @@ public class UsuarioBLImpTest {
 	}
 	
 	
+	/**
+	 * Prueba que valida la autenticacion del usuario
+	 */
 	@Test
 	public void testAutenticar()
 	{
 		try{
-			usuarioBL.autenticar("dcamolaay", "cualquiercosa");
+			usuarioBL.autenticar("dcamoleaay", "cualquiercosa");
 		}
 		catch(MyException e)
 		{
-		    //e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
 	
+	/**
+	 * Prueba para validar la edicion del email
+	 */
 	@Test
 	@Rollback(false)
 	public void testEditarEmail() {
 
 		
 		try{
-			usuarioBL.editarEmail("a@gmail.com", "cualquiercosa", "b@gmail.com");
+			usuarioBL.editarEmail("s@gmail.com", "cualquiercosa", "pepe@gmail.com");
 		}catch(MyException e)
 		{
 			fail(e.getMessage());
 		}
 	}
+	
+	/**
+	 * Prueba para validar la edicion de la contraseña
+	 */
+	@Test
+	@Rollback(false)	
+	public void testEditarPassword() {
+
+		
+		try{
+			usuarioBL.editarPassword("a@gmail.com", "cualquiercosa", "sergitoencriptado");
+		}catch(MyException e)
+		{
+			fail(e.getMessage());
+		}
+	}
+	
 	
 
 }

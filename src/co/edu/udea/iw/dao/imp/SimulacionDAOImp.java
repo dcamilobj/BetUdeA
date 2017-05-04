@@ -69,7 +69,7 @@ public class SimulacionDAOImp implements SimulacionDAO{
 		try {
 			session = sessionFactory.getCurrentSession();
 			criteria = session.createCriteria(Simulacion.class);
-			criteria.add(Restrictions.eq("usuario_id.nombreUsuario", nombreUsuario));
+			criteria.add(Restrictions.eq("usuario.nombreUsuario", nombreUsuario));
 			periodos = criteria.list();			
 		} catch(HibernateException e) {
 			throw new MyException("Error consultando la lista de periodos");
@@ -102,15 +102,15 @@ public class SimulacionDAOImp implements SimulacionDAO{
 	 * @param El usuario del cual se quiere obtener el periodo de simulacion
 	 * @throws MyException
 	 */
-	public Simulacion obtenerPeriodoActivo(String usuario_id) throws MyException{
+	public Simulacion obtenerPeriodoActivo(String nombreUsuario) throws MyException{
 		Simulacion periodo = null;
 		Session session = null;
 		Criteria criteria = null;
 		try {
 			session = sessionFactory.getCurrentSession();
 			criteria = session.createCriteria(Simulacion.class);
-			criteria.add(Restrictions.eq("usuario_id.nombreUsuario", usuario_id));
-			criteria.add(Restrictions.isNull("fecha_fin"));
+			criteria.add(Restrictions.eq("usuario.nombreUsuario", nombreUsuario));
+			criteria.add(Restrictions.isNull("fechaFin"));
 			periodo = (Simulacion) criteria.uniqueResult();
 		} catch(HibernateException e) {
 			throw new MyException("Error obteniendo el periodo activo");

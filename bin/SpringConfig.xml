@@ -8,7 +8,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/apuestas"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value=""></property>
+		<property name="password" value="root"></property>
 	</bean>
 
 	<bean id="SessionFactory"
@@ -50,6 +50,7 @@
 	
 	<bean name="UsuarioBL" class="co.edu.udea.iw.bl.imp.UsuarioBLImp">
 		<property name="usuarioDAO" ref="usuarioDAO"></property>
+		<property name="simulacionDAO" ref="simulacionDAO"></property>
 	</bean>	
 
 	<bean name="apuestaBL" class="co.edu.udea.iw.bl.imp.ApuestaBLImp">

@@ -13,7 +13,7 @@ import org.apache.log4j.PropertyConfigurator;
  */
 public class MyException extends Exception {
 
-	Logger log = Logger.getLogger(this.getClass());
+	private Logger log = Logger.getLogger(this.getClass());
 	
 	public MyException() {
 		super();

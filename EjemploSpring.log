@@ -1,0 +1,779 @@
+13:22:04,194 DEBUG SpringJUnit4ClassRunner:113 - SpringJUnit4ClassRunner constructor called with [class co.edu.udea.iw.bl.imp.SimulacionBLImpTest].
+13:22:04,202 DEBUG BootstrapUtils:78 - Instantiating TestContextBootstrapper from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+13:22:04,210 DEBUG ContextLoaderUtils:296 - Retrieved @ContextConfiguration attributes [{locations=[classpath:SpringConfig.xml], inheritInitializers=true, initializers=[], inheritLocations=true, name=, value=[], classes=[], loader=interface org.springframework.test.context.ContextLoader}] for declaring class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest].
+13:22:04,213 DEBUG ContextLoaderUtils:302 - Resolved context configuration attributes: [ContextConfigurationAttributes@3ab39c39 declaringClass = 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest', classes = '{}', locations = '{classpath:SpringConfig.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader']
+13:22:04,214 DEBUG DefaultTestContextBootstrapper:437 - Resolving ContextLoader for context configuration attributes [ContextConfigurationAttributes@3ab39c39 declaringClass = 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest', classes = '{}', locations = '{classpath:SpringConfig.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader']
+13:22:04,215 DEBUG DefaultTestContextBootstrapper:405 - Using ContextLoader class [org.springframework.test.context.support.DelegatingSmartContextLoader] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,219 DEBUG DefaultTestContextBootstrapper:343 - Processing locations and classes for context configuration attributes [ContextConfigurationAttributes@3ab39c39 declaringClass = 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest', classes = '{}', locations = '{classpath:SpringConfig.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader']
+13:22:04,219 DEBUG AbstractDelegatingSmartContextLoader:97 - Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@3ab39c39 declaringClass = 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest', classes = '{}', locations = '{classpath:SpringConfig.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+13:22:04,221 DEBUG ApplicationContextInitializerUtils:81 - Processing context initializers for context configuration attributes [ContextConfigurationAttributes@3ab39c39 declaringClass = 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest', classes = '{}', locations = '{classpath:SpringConfig.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader']
+13:22:04,221 DEBUG ActiveProfilesUtils:83 - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,225 DEBUG DefaultTestContextBootstrapper:113 - @TestExecutionListeners is not present for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]: using defaults.
+13:22:04,229  INFO DefaultTestContextBootstrapper:256 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:22:04,236  INFO DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+13:22:04,238  INFO DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@327471b5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4157f54e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@90f6bfd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@47f6473]
+13:22:04,238 DEBUG TestContextManager:131 - Registering TestExecutionListener: org.springframework.test.context.support.DependencyInjectionTestExecutionListener@327471b5
+13:22:04,238 DEBUG TestContextManager:131 - Registering TestExecutionListener: org.springframework.test.context.support.DirtiesContextTestExecutionListener@4157f54e
+13:22:04,239 DEBUG TestContextManager:131 - Registering TestExecutionListener: org.springframework.test.context.transaction.TransactionalTestExecutionListener@90f6bfd
+13:22:04,239 DEBUG TestContextManager:131 - Registering TestExecutionListener: org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@47f6473
+13:22:04,240 DEBUG ProfileValueUtils:71 - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,241 DEBUG ProfileValueUtils:83 - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,243 DEBUG ProfileValueUtils:71 - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,243 DEBUG ProfileValueUtils:83 - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,250 DEBUG ProfileValueUtils:71 - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,250 DEBUG ProfileValueUtils:83 - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,251 DEBUG ProfileValueUtils:71 - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,252 DEBUG ProfileValueUtils:83 - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,252 DEBUG ProfileValueUtils:71 - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,252 DEBUG ProfileValueUtils:83 - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,253 DEBUG TestContextManager:173 - beforeTestClass(): class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,253 DEBUG ProfileValueUtils:71 - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,253 DEBUG ProfileValueUtils:83 - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:04,254 DEBUG TestContextManager:206 - prepareTestInstance(): instance [co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225]
+13:22:04,254 DEBUG DependencyInjectionTestExecutionListener:81 - Performing dependency injection for test context [[DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]].
+13:22:04,255 DEBUG AbstractDelegatingSmartContextLoader:107 - Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+13:22:04,255 DEBUG AbstractGenericContextLoader:107 - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+13:22:04,300 DEBUG StandardEnvironment:109 - Adding [systemProperties] PropertySource with lowest search precedence
+13:22:04,302 DEBUG StandardEnvironment:109 - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:22:04,302 DEBUG StandardEnvironment:126 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:22:04,307  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [SpringConfig.xml]
+13:22:04,319 DEBUG DefaultDocumentLoader:73 - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+13:22:04,340 DEBUG PluggableSchemaResolver:106 - Trying to resolve XML entity with public id [null] and system id [http://www.springframework.org/schema/beans/spring-beans.xsd]
+13:22:04,340 DEBUG PluggableSchemaResolver:141 - Loading schema mappings from [META-INF/spring.schemas]
+13:22:04,341 DEBUG PluggableSchemaResolver:147 - Loaded schema mappings: {http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/aop/spring-aop-4.1.xsd=org/springframework/aop/config/spring-aop-4.1.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd=org/springframework/jdbc/config/spring-jdbc-4.1.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-4.1.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-4.1.xsd=org/springframework/scripting/config/spring-lang-4.1.xsd, http://www.springframework.org/schema/context/spring-context-4.0.xsd=org/springframework/context/config/spring-context-4.0.xsd, http://www.springframework.org/schema/tool/spring-tool-4.1.xsd=org/springframework/beans/factory/xml/spring-tool-4.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-4.1.xsd=org/springframework/ejb/config/spring-jee-4.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-4.1.xsd, http://www.springframework.org/schema/cache/spring-cache-4.1.xsd=org/springframework/cache/config/spring-cache-4.1.xsd, http://www.springframework.org/schema/aop/spring-aop-4.0.xsd=org/springframework/aop/config/spring-aop-4.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd=org/springframework/jdbc/config/spring-jdbc-4.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-4.0.xsd=org/springframework/scripting/config/spring-lang-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans-4.1.xsd=org/springframework/beans/factory/xml/spring-beans-4.1.xsd, http://www.springframework.org/schema/tool/spring-tool-4.0.xsd=org/springframework/beans/factory/xml/spring-tool-4.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.2.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-4.0.xsd=org/springframework/ejb/config/spring-jee-4.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/task/spring-task-4.1.xsd=org/springframework/scheduling/config/spring-task-4.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-4.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-4.1.xsd=org/springframework/transaction/config/spring-tx-4.1.xsd, http://www.springframework.org/schema/cache/spring-cache-4.0.xsd=org/springframework/cache/config/spring-cache-4.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-4.1.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-4.0.xsd=org/springframework/beans/factory/xml/spring-beans-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-4.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/task/spring-task-4.0.xsd=org/springframework/scheduling/config/spring-task-4.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-4.0.xsd=org/springframework/transaction/config/spring-tx-4.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/util/spring-util-4.1.xsd=org/springframework/beans/factory/xml/spring-util-4.1.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-4.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-4.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/util/spring-util-4.0.xsd=org/springframework/beans/factory/xml/spring-util-4.0.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-4.1.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-4.1.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-4.1.xsd, http://www.springframework.org/schema/context/spring-context-4.1.xsd=org/springframework/context/config/spring-context-4.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-4.1.xsd}
+13:22:04,342 DEBUG PluggableSchemaResolver:119 - Found XML schema [http://www.springframework.org/schema/beans/spring-beans.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-4.1.xsd
+13:22:04,378 DEBUG DefaultBeanDefinitionDocumentReader:98 - Loading bean definitions
+13:22:04,390 DEBUG BeanDefinitionParserDelegate:465 - No XML 'id' specified - using 'usuarioDAO' as bean name and [] as aliases
+13:22:04,390 DEBUG BeanDefinitionParserDelegate:465 - No XML 'id' specified - using 'apuestaDAO' as bean name and [] as aliases
+13:22:04,390 DEBUG BeanDefinitionParserDelegate:465 - No XML 'id' specified - using 'simulacionDAO' as bean name and [] as aliases
+13:22:04,390 DEBUG BeanDefinitionParserDelegate:465 - No XML 'id' specified - using 'UsuarioBL' as bean name and [] as aliases
+13:22:04,391 DEBUG BeanDefinitionParserDelegate:465 - No XML 'id' specified - using 'apuestaBL' as bean name and [] as aliases
+13:22:04,391 DEBUG BeanDefinitionParserDelegate:465 - No XML 'id' specified - using 'SimulacionBL' as bean name and [] as aliases
+13:22:04,391 DEBUG XmlBeanDefinitionReader:224 - Loaded 9 bean definitions from location pattern [classpath:SpringConfig.xml]
+13:22:04,400  INFO GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@2a2d45ba: startup date [Thu May 04 13:22:04 COT 2017]; root of context hierarchy
+13:22:04,401 DEBUG GenericApplicationContext:540 - Bean factory for org.springframework.context.support.GenericApplicationContext@2a2d45ba: org.springframework.beans.factory.support.DefaultListableBeanFactory@782663d3: defining beans [DataSource,SessionFactory,transactionManager,usuarioDAO,apuestaDAO,simulacionDAO,UsuarioBL,apuestaBL,SimulacionBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor]; root of factory hierarchy
+13:22:04,415 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:22:04,415 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:22:04,424 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+13:22:04,425 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:22:04,447 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:22:04,447 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:22:04,448 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+13:22:04,448 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:22:04,448 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:22:04,448 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:22:04,448 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+13:22:04,448 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:22:04,448 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:22:04,449 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:22:04,451 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+13:22:04,451 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:22:04,451 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+13:22:04,451 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor' to allow for resolving potential circular references
+13:22:04,452 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+13:22:04,452 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:22:04,452 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor' to allow for resolving potential circular references
+13:22:04,453 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:22:04,460 DEBUG GenericApplicationContext:646 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@145eaa29]
+13:22:04,461 DEBUG GenericApplicationContext:670 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@157632c9]
+13:22:04,463 DEBUG DefaultListableBeanFactory:724 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@782663d3: defining beans [DataSource,SessionFactory,transactionManager,usuarioDAO,apuestaDAO,simulacionDAO,UsuarioBL,apuestaBL,SimulacionBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor]; root of factory hierarchy
+13:22:04,463 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'DataSource'
+13:22:04,463 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'DataSource'
+13:22:04,466 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'DataSource' to allow for resolving potential circular references
+13:22:04,467 DEBUG SpringFactoriesLoader:87 - Loaded [org.springframework.beans.BeanInfoFactory] names: [org.springframework.beans.ExtendedBeanInfoFactory]
+13:22:04,468 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.jdbc.datasource.DriverManagerDataSource]
+13:22:04,471 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.jdbc.datasource.DriverManagerDataSource]
+13:22:04,471 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:04,473 DEBUG CachedIntrospectionResults:297 - Found bean property 'connection' of type [java.sql.Connection]
+13:22:04,473 DEBUG CachedIntrospectionResults:297 - Found bean property 'connectionProperties' of type [java.util.Properties]
+13:22:04,473 DEBUG CachedIntrospectionResults:297 - Found bean property 'driverClassName' of type [java.lang.String]
+13:22:04,474 DEBUG CachedIntrospectionResults:297 - Found bean property 'logWriter' of type [java.io.PrintWriter]
+13:22:04,474 DEBUG CachedIntrospectionResults:297 - Found bean property 'loginTimeout' of type [int]
+13:22:04,474 DEBUG CachedIntrospectionResults:297 - Found bean property 'parentLogger' of type [java.util.logging.Logger]
+13:22:04,474 DEBUG CachedIntrospectionResults:297 - Found bean property 'password' of type [java.lang.String]
+13:22:04,474 DEBUG CachedIntrospectionResults:297 - Found bean property 'url' of type [java.lang.String]
+13:22:04,474 DEBUG CachedIntrospectionResults:297 - Found bean property 'username' of type [java.lang.String]
+13:22:04,484  INFO DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+13:22:04,485 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'DataSource'
+13:22:04,485 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'SessionFactory'
+13:22:04,485 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'SessionFactory'
+13:22:04,491 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'SessionFactory' to allow for resolving potential circular references
+13:22:04,491 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.orm.hibernate3.LocalSessionFactoryBean]
+13:22:04,495 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.orm.hibernate3.LocalSessionFactoryBean]
+13:22:04,495 DEBUG CachedIntrospectionResults:297 - Found bean property 'beanClassLoader' of type [java.lang.ClassLoader]
+13:22:04,495 DEBUG CachedIntrospectionResults:297 - Found bean property 'cacheRegionFactory' of type [org.hibernate.cache.RegionFactory]
+13:22:04,495 DEBUG CachedIntrospectionResults:297 - Found bean property 'cacheableMappingLocations' of type [[Lorg.springframework.core.io.Resource;]
+13:22:04,495 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:04,496 DEBUG CachedIntrospectionResults:297 - Found bean property 'collectionCacheStrategies' of type [java.util.Properties]
+13:22:04,496 DEBUG CachedIntrospectionResults:297 - Found bean property 'configLocation' of type [org.springframework.core.io.Resource]
+13:22:04,496 DEBUG CachedIntrospectionResults:297 - Found bean property 'configLocations' of type [[Lorg.springframework.core.io.Resource;]
+13:22:04,496 DEBUG CachedIntrospectionResults:297 - Found bean property 'configuration' of type [org.hibernate.cfg.Configuration]
+13:22:04,496 DEBUG CachedIntrospectionResults:297 - Found bean property 'configurationClass' of type [java.lang.Class]
+13:22:04,496 DEBUG CachedIntrospectionResults:297 - Found bean property 'dataSource' of type [javax.sql.DataSource]
+13:22:04,497 DEBUG CachedIntrospectionResults:297 - Found bean property 'entityCacheStrategies' of type [java.util.Properties]
+13:22:04,497 DEBUG CachedIntrospectionResults:297 - Found bean property 'entityInterceptor' of type [org.hibernate.Interceptor]
+13:22:04,497 DEBUG CachedIntrospectionResults:297 - Found bean property 'eventListeners' of type [java.util.Map]
+13:22:04,497 DEBUG CachedIntrospectionResults:297 - Found bean property 'exposeTransactionAwareSessionFactory' of type [boolean]
+13:22:04,497 DEBUG CachedIntrospectionResults:297 - Found bean property 'filterDefinitions' of type [[Lorg.hibernate.engine.FilterDefinition;]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'hibernateProperties' of type [java.util.Properties]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'jdbcExceptionTranslator' of type [org.springframework.jdbc.support.SQLExceptionTranslator]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'jtaTransactionManager' of type [javax.transaction.TransactionManager]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'lobHandler' of type [org.springframework.jdbc.support.lob.LobHandler]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'mappingDirectoryLocations' of type [[Lorg.springframework.core.io.Resource;]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'mappingJarLocations' of type [[Lorg.springframework.core.io.Resource;]
+13:22:04,498 DEBUG CachedIntrospectionResults:297 - Found bean property 'mappingLocations' of type [[Lorg.springframework.core.io.Resource;]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'mappingResources' of type [[Ljava.lang.String;]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'namingStrategy' of type [org.hibernate.cfg.NamingStrategy]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'object' of type [org.hibernate.SessionFactory]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'objectType' of type [java.lang.Class]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'schemaUpdate' of type [boolean]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'singleton' of type [boolean]
+13:22:04,499 DEBUG CachedIntrospectionResults:297 - Found bean property 'typeDefinitions' of type [[Lorg.springframework.orm.hibernate3.TypeDefinitionBean;]
+13:22:04,500 DEBUG CachedIntrospectionResults:297 - Found bean property 'useTransactionAwareDataSource' of type [boolean]
+13:22:04,500 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'DataSource'
+13:22:04,508 DEBUG DefaultListableBeanFactory:1616 - Invoking afterPropertiesSet() on bean with name 'SessionFactory'
+13:22:04,524 DEBUG BasicTypeRegistry:147 - Adding type registration boolean -> org.hibernate.type.BooleanType@3f197a46
+13:22:04,527 DEBUG BasicTypeRegistry:147 - Adding type registration boolean -> org.hibernate.type.BooleanType@3f197a46
+13:22:04,527 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@3f197a46
+13:22:04,528 DEBUG BasicTypeRegistry:147 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@1725dc0f
+13:22:04,528 DEBUG BasicTypeRegistry:147 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@3d74bf60
+13:22:04,529 DEBUG BasicTypeRegistry:147 - Adding type registration yes_no -> org.hibernate.type.YesNoType@2145b572
+13:22:04,529 DEBUG BasicTypeRegistry:147 - Adding type registration byte -> org.hibernate.type.ByteType@481a996b
+13:22:04,529 DEBUG BasicTypeRegistry:147 - Adding type registration byte -> org.hibernate.type.ByteType@481a996b
+13:22:04,529 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@481a996b
+13:22:04,530 DEBUG BasicTypeRegistry:147 - Adding type registration character -> org.hibernate.type.CharacterType@647e447
+13:22:04,530 DEBUG BasicTypeRegistry:147 - Adding type registration char -> org.hibernate.type.CharacterType@647e447
+13:22:04,530 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@647e447
+13:22:04,531 DEBUG BasicTypeRegistry:147 - Adding type registration short -> org.hibernate.type.ShortType@619713e5
+13:22:04,532 DEBUG BasicTypeRegistry:147 - Adding type registration short -> org.hibernate.type.ShortType@619713e5
+13:22:04,532 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@619713e5
+13:22:04,532 DEBUG BasicTypeRegistry:147 - Adding type registration integer -> org.hibernate.type.IntegerType@243c4f91
+13:22:04,532 DEBUG BasicTypeRegistry:147 - Adding type registration int -> org.hibernate.type.IntegerType@243c4f91
+13:22:04,533 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@243c4f91
+13:22:04,533 DEBUG BasicTypeRegistry:147 - Adding type registration long -> org.hibernate.type.LongType@1ea9f6af
+13:22:04,533 DEBUG BasicTypeRegistry:147 - Adding type registration long -> org.hibernate.type.LongType@1ea9f6af
+13:22:04,533 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@1ea9f6af
+13:22:04,534 DEBUG BasicTypeRegistry:147 - Adding type registration float -> org.hibernate.type.FloatType@393671df
+13:22:04,534 DEBUG BasicTypeRegistry:147 - Adding type registration float -> org.hibernate.type.FloatType@393671df
+13:22:04,534 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@393671df
+13:22:04,535 DEBUG BasicTypeRegistry:147 - Adding type registration double -> org.hibernate.type.DoubleType@1afd44cb
+13:22:04,535 DEBUG BasicTypeRegistry:147 - Adding type registration double -> org.hibernate.type.DoubleType@1afd44cb
+13:22:04,535 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@1afd44cb
+13:22:04,536 DEBUG BasicTypeRegistry:147 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@402bba4f
+13:22:04,536 DEBUG BasicTypeRegistry:147 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@402bba4f
+13:22:04,537 DEBUG BasicTypeRegistry:147 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@dbf57b3
+13:22:04,537 DEBUG BasicTypeRegistry:147 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@dbf57b3
+13:22:04,538 DEBUG BasicTypeRegistry:147 - Adding type registration string -> org.hibernate.type.StringType@1d9b7cce
+13:22:04,538 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.String -> org.hibernate.type.StringType@1d9b7cce
+13:22:04,538 DEBUG BasicTypeRegistry:147 - Adding type registration url -> org.hibernate.type.UrlType@6c80d78a
+13:22:04,538 DEBUG BasicTypeRegistry:147 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@6c80d78a
+13:22:04,539 DEBUG BasicTypeRegistry:147 - Adding type registration date -> org.hibernate.type.DateType@8dbdac1
+13:22:04,539 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@8dbdac1
+13:22:04,540 DEBUG BasicTypeRegistry:147 - Adding type registration time -> org.hibernate.type.TimeType@47af7f3d
+13:22:04,540 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@47af7f3d
+13:22:04,541 DEBUG BasicTypeRegistry:147 - Adding type registration timestamp -> org.hibernate.type.TimestampType@694abbdc
+13:22:04,541 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@694abbdc
+13:22:04,541 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@694abbdc
+13:22:04,542 DEBUG BasicTypeRegistry:147 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@5ffead27
+13:22:04,543 DEBUG BasicTypeRegistry:147 - Adding type registration calendar -> org.hibernate.type.CalendarType@4f6ee6e4
+13:22:04,543 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@4f6ee6e4
+13:22:04,543 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@4f6ee6e4
+13:22:04,543 DEBUG BasicTypeRegistry:147 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@6b927fb
+13:22:04,544 DEBUG BasicTypeRegistry:147 - Adding type registration locale -> org.hibernate.type.LocaleType@7b9a4292
+13:22:04,544 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@7b9a4292
+13:22:04,545 DEBUG BasicTypeRegistry:147 - Adding type registration currency -> org.hibernate.type.CurrencyType@67d48005
+13:22:04,545 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@67d48005
+13:22:04,545 DEBUG BasicTypeRegistry:147 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@5876a9af
+13:22:04,545 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5876a9af
+13:22:04,546 DEBUG BasicTypeRegistry:147 - Adding type registration class -> org.hibernate.type.ClassType@2a798d51
+13:22:04,546 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@2a798d51
+13:22:04,547 DEBUG BasicTypeRegistry:147 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@222545dc
+13:22:04,547 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@222545dc
+13:22:04,547 DEBUG BasicTypeRegistry:147 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5158b42f
+13:22:04,548 DEBUG BasicTypeRegistry:147 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@38c6f217
+13:22:04,548 DEBUG BasicTypeRegistry:147 - Adding type registration binary -> org.hibernate.type.BinaryType@7e07db1f
+13:22:04,548 DEBUG BasicTypeRegistry:147 - Adding type registration byte[] -> org.hibernate.type.BinaryType@7e07db1f
+13:22:04,548 DEBUG BasicTypeRegistry:147 - Adding type registration [B -> org.hibernate.type.BinaryType@7e07db1f
+13:22:04,549 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@49ec71f8
+13:22:04,549 DEBUG BasicTypeRegistry:147 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@49ec71f8
+13:22:04,549 DEBUG BasicTypeRegistry:147 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@49ec71f8
+13:22:04,550 DEBUG BasicTypeRegistry:147 - Adding type registration image -> org.hibernate.type.ImageType@436813f3
+13:22:04,550 DEBUG BasicTypeRegistry:147 - Adding type registration characters -> org.hibernate.type.CharArrayType@158d2680
+13:22:04,550 DEBUG BasicTypeRegistry:147 - Adding type registration char[] -> org.hibernate.type.CharArrayType@158d2680
+13:22:04,550 DEBUG BasicTypeRegistry:147 - Adding type registration [C -> org.hibernate.type.CharArrayType@158d2680
+13:22:04,551 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@7f0eb4b4
+13:22:04,551 DEBUG BasicTypeRegistry:147 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@7f0eb4b4
+13:22:04,551 DEBUG BasicTypeRegistry:147 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@7f0eb4b4
+13:22:04,551 DEBUG BasicTypeRegistry:147 - Adding type registration text -> org.hibernate.type.TextType@4550bb58
+13:22:04,554 DEBUG BasicTypeRegistry:147 - Adding type registration blob -> org.hibernate.type.BlobType@49e53c76
+13:22:04,554 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@49e53c76
+13:22:04,555 DEBUG BasicTypeRegistry:147 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@55b699ef
+13:22:04,555 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@18078bef
+13:22:04,557 DEBUG BasicTypeRegistry:147 - Adding type registration clob -> org.hibernate.type.ClobType@48f2bd5b
+13:22:04,557 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@48f2bd5b
+13:22:04,557 DEBUG BasicTypeRegistry:147 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@1aafa419
+13:22:04,558 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@55182842
+13:22:04,558 DEBUG BasicTypeRegistry:147 - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@5656be13
+13:22:04,559 DEBUG BasicTypeRegistry:147 - Adding type registration serializable -> org.hibernate.type.SerializableType@73a1e9a9
+13:22:04,560 DEBUG BasicTypeRegistry:147 - Adding type registration object -> org.hibernate.type.ObjectType@33d512c1
+13:22:04,560 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@33d512c1
+13:22:04,560 DEBUG BasicTypeRegistry:147 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5fe94a96
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@443118b0
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@765d7657
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@74235045
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@618b19ad
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@2d3379b4
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@30c15d8b
+13:22:04,561 DEBUG BasicTypeRegistry:147 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@5e0e82ae
+13:22:04,569  INFO Version:37 - Hibernate Commons Annotations 3.2.0.Final
+13:22:04,571  INFO Environment:603 - Hibernate 3.6.10.Final
+13:22:04,572  INFO Environment:636 - hibernate.properties not found
+13:22:04,574  INFO Environment:814 - Bytecode provider name : javassist
+13:22:04,575  INFO Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+13:22:04,594 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [uuid2] -> [class org.hibernate.id.UUIDGenerator]
+13:22:04,594 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [guid] -> [class org.hibernate.id.GUIDGenerator]
+13:22:04,594 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [uuid] -> [class org.hibernate.id.UUIDHexGenerator]
+13:22:04,594 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [uuid.hex] -> [class org.hibernate.id.UUIDHexGenerator]
+13:22:04,595 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [hilo] -> [class org.hibernate.id.TableHiLoGenerator]
+13:22:04,595 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [assigned] -> [class org.hibernate.id.Assigned]
+13:22:04,596 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [identity] -> [class org.hibernate.id.IdentityGenerator]
+13:22:04,596 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [select] -> [class org.hibernate.id.SelectGenerator]
+13:22:04,596 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [sequence] -> [class org.hibernate.id.SequenceGenerator]
+13:22:04,596 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [seqhilo] -> [class org.hibernate.id.SequenceHiLoGenerator]
+13:22:04,597 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [increment] -> [class org.hibernate.id.IncrementGenerator]
+13:22:04,597 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [foreign] -> [class org.hibernate.id.ForeignGenerator]
+13:22:04,597 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [sequence-identity] -> [class org.hibernate.id.SequenceIdentityGenerator]
+13:22:04,598 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [class org.hibernate.id.enhanced.SequenceStyleGenerator]
+13:22:04,598 DEBUG DefaultIdentifierGeneratorFactory:100 - Registering IdentifierGenerator strategy [enhanced-table] -> [class org.hibernate.id.enhanced.TableGenerator]
+13:22:04,615 TRACE EJB3DTDEntityResolver:56 - Resolving XML entity -//Hibernate/Hibernate Mapping DTD 3.0//EN : http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd
+13:22:04,615 DEBUG DTDEntityResolver:67 - trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd]
+13:22:04,615  WARN DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+13:22:04,616 DEBUG DTDEntityResolver:77 - attempting to resolve on classpath under org/hibernate/
+13:22:04,616 DEBUG DTDEntityResolver:109 - located [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd] in classpath
+13:22:04,642 TRACE EJB3DTDEntityResolver:56 - Resolving XML entity -//Hibernate/Hibernate Mapping DTD 3.0//EN : http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd
+13:22:04,642 DEBUG DTDEntityResolver:67 - trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd]
+13:22:04,642  WARN DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+13:22:04,643 DEBUG DTDEntityResolver:77 - attempting to resolve on classpath under org/hibernate/
+13:22:04,643 DEBUG DTDEntityResolver:109 - located [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd] in classpath
+13:22:04,653 TRACE EJB3DTDEntityResolver:56 - Resolving XML entity -//Hibernate/Hibernate Mapping DTD 3.0//EN : http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd
+13:22:04,654 DEBUG DTDEntityResolver:67 - trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd]
+13:22:04,654  WARN DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+13:22:04,654 DEBUG DTDEntityResolver:77 - attempting to resolve on classpath under org/hibernate/
+13:22:04,654 DEBUG DTDEntityResolver:109 - located [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd] in classpath
+13:22:04,661 TRACE Configuration:1379 - Starting secondPassCompile() processing
+13:22:04,674 DEBUG Configuration:3995 - Processing hbm.xml files
+13:22:04,684  INFO HbmBinder:353 - Mapping class: co.edu.udea.iw.dto.Usuario -> usuario
+13:22:04,686 DEBUG HbmBinder:1354 - Mapped property: nombreUsuario -> NOMBRE_USUARIO
+13:22:04,689 DEBUG HbmBinder:1354 - Mapped property: tipoDocumento -> TIPO_DOCUMENTO
+13:22:04,689 DEBUG HbmBinder:1354 - Mapped property: numeroDocumento -> NUMERO_DOCUMENTO
+13:22:04,689 DEBUG HbmBinder:1354 - Mapped property: nombres -> NOMBRES
+13:22:04,689 DEBUG HbmBinder:1354 - Mapped property: apellidos -> APELLIDOS
+13:22:04,690 DEBUG HbmBinder:1354 - Mapped property: fechaNacimiento -> FECHA_NACIMIENTO
+13:22:04,690 DEBUG HbmBinder:1354 - Mapped property: email -> EMAIL
+13:22:04,690 DEBUG HbmBinder:1354 - Mapped property: password -> PASSWORD
+13:22:04,690  INFO HbmBinder:353 - Mapping class: co.edu.udea.iw.dto.Apuesta -> apuesta
+13:22:04,690 DEBUG HbmBinder:1354 - Mapped property: id -> id
+13:22:04,690 DEBUG HbmBinder:1354 - Mapped property: evento -> EVENTO
+13:22:04,690 DEBUG HbmBinder:1354 - Mapped property: fechaEvento -> FECHA_EVENTO
+13:22:04,691 DEBUG HbmBinder:1354 - Mapped property: valorApostado -> VALOR_APOSTADO
+13:22:04,691 DEBUG HbmBinder:1354 - Mapped property: cuota -> CUOTA
+13:22:04,691 DEBUG HbmBinder:1354 - Mapped property: opcionSeleccionada -> OPCION_SELECCIONADA
+13:22:04,691 DEBUG HbmBinder:1354 - Mapped property: estado -> ESTADO
+13:22:04,691 DEBUG HbmBinder:1354 - Mapped property: fechaApuesta -> FECHA_APUESTA
+13:22:04,691 DEBUG HbmBinder:1354 - Mapped property: opcionCorrecta -> OPCION_CORRECTA
+13:22:04,693 DEBUG HbmBinder:1354 - Mapped property: periodoSimulacion -> PERIODO_SIMULACION_ID
+13:22:04,693  INFO HbmBinder:353 - Mapping class: co.edu.udea.iw.dto.Simulacion -> periodo_simulacion
+13:22:04,693 DEBUG HbmBinder:1354 - Mapped property: id -> ID
+13:22:04,694 DEBUG HbmBinder:1354 - Mapped property: usuario -> USUARIO_ID
+13:22:04,694 DEBUG HbmBinder:1354 - Mapped property: saldo -> SALDO
+13:22:04,694 DEBUG HbmBinder:1354 - Mapped property: fechaInicio -> FECHA_INICIO
+13:22:04,694 DEBUG HbmBinder:1354 - Mapped property: fechaFin -> FECHA_FIN
+13:22:04,694 DEBUG Configuration:4025 - Process annotated classes
+13:22:04,695 DEBUG Configuration:1466 - processing fk mappings (*ToOne and JoinedSubclass)
+13:22:04,695 DEBUG Configuration:1708 - processing extends queue
+13:22:04,695 DEBUG Configuration:1762 - processing extends queue
+13:22:04,695 DEBUG Configuration:1711 - processing collection mappings
+13:22:04,695 DEBUG Configuration:1721 - processing native query and ResultSetMapping mappings
+13:22:04,695 DEBUG Configuration:1729 - processing association property references
+13:22:04,695 DEBUG Configuration:1751 - processing foreign key constraints
+13:22:04,696 DEBUG Configuration:1820 - resolving reference to class: co.edu.udea.iw.dto.Simulacion
+13:22:04,696 DEBUG Configuration:1820 - resolving reference to class: co.edu.udea.iw.dto.Usuario
+13:22:04,697  INFO Configuration:1676 - Hibernate Validator not found: ignoring
+13:22:04,698  INFO LocalSessionFactoryBean:713 - Building new Hibernate SessionFactory
+13:22:04,699 DEBUG Configuration:1854 - Preparing to build session factory with filters : {}
+13:22:04,699 TRACE Configuration:1379 - Starting secondPassCompile() processing
+13:22:04,699 DEBUG Configuration:3995 - Processing hbm.xml files
+13:22:04,699 DEBUG Configuration:4025 - Process annotated classes
+13:22:04,699 DEBUG Configuration:1466 - processing fk mappings (*ToOne and JoinedSubclass)
+13:22:04,699 DEBUG Configuration:1708 - processing extends queue
+13:22:04,699 DEBUG Configuration:1762 - processing extends queue
+13:22:04,699 DEBUG Configuration:1711 - processing collection mappings
+13:22:04,699 DEBUG Configuration:1721 - processing native query and ResultSetMapping mappings
+13:22:04,699 DEBUG Configuration:1729 - processing association property references
+13:22:04,700 DEBUG Configuration:1751 - processing foreign key constraints
+13:22:04,700 DEBUG Configuration:1820 - resolving reference to class: co.edu.udea.iw.dto.Simulacion
+13:22:04,700 DEBUG Configuration:1820 - resolving reference to class: co.edu.udea.iw.dto.Usuario
+13:22:04,700 DEBUG Configuration:1896 - Legacy Validator not present in classpath, ignoring event listener registration
+13:22:04,701 DEBUG HibernateSearchEventListenerRegister:231 - Search not present in classpath, ignoring event listener registration.
+13:22:04,701  INFO HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+13:22:04,703  INFO ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+13:22:04,704 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/apuestas]
+13:22:04,866  INFO Dialect:136 - Using dialect: org.hibernate.dialect.MySQLDialect
+13:22:04,871  INFO SettingsFactory:126 - Database ->
+       name : MySQL
+    version : 5.5.52-0ubuntu0.14.04.1
+      major : 5
+      minor : 5
+13:22:04,871  INFO SettingsFactory:132 - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+13:22:04,873  INFO TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+13:22:04,873  INFO TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+13:22:04,874  INFO SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+13:22:04,874  INFO SettingsFactory:183 - Automatic session close at end of transaction: disabled
+13:22:04,874  INFO SettingsFactory:190 - JDBC batch size: 15
+13:22:04,874  INFO SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+13:22:04,874  INFO SettingsFactory:198 - Scrollable result sets: enabled
+13:22:04,874 DEBUG SettingsFactory:202 - Wrap result sets: disabled
+13:22:04,874  INFO SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+13:22:04,874  INFO SettingsFactory:214 - Connection release mode: auto
+13:22:04,875  INFO SettingsFactory:238 - Maximum outer join fetch depth: 2
+13:22:04,875  INFO SettingsFactory:241 - Default batch fetch size: 1
+13:22:04,875  INFO SettingsFactory:245 - Generate SQL with comments: disabled
+13:22:04,875  INFO SettingsFactory:249 - Order SQL updates by primary key: disabled
+13:22:04,875  INFO SettingsFactory:253 - Order SQL inserts for batching: disabled
+13:22:04,875  INFO SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+13:22:04,876  INFO ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+13:22:04,876  INFO SettingsFactory:261 - Query language substitutions: {}
+13:22:04,876  INFO SettingsFactory:266 - JPA-QL strict compliance: disabled
+13:22:04,876  INFO SettingsFactory:271 - Second-level cache: enabled
+13:22:04,876  INFO SettingsFactory:275 - Query cache: disabled
+13:22:04,876  INFO SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+13:22:04,877  INFO SettingsFactory:285 - Optimize cache for minimal puts: disabled
+13:22:04,877  INFO SettingsFactory:294 - Structured second-level cache entries: disabled
+13:22:04,877 TRACE SQLExceptionConverterFactory:75 - Using dialect defined converter
+13:22:04,878  INFO SettingsFactory:314 - Echoing all SQL to stdout
+13:22:04,879  INFO SettingsFactory:323 - Statistics: disabled
+13:22:04,879  INFO SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+13:22:04,879  INFO SettingsFactory:343 - Default entity-mode: pojo
+13:22:04,879  INFO SettingsFactory:347 - Named query checking : enabled
+13:22:04,879  INFO SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+13:22:04,888  INFO SessionFactoryImpl:202 - building session factory
+13:22:04,890 DEBUG SessionFactoryImpl:206 - Statistics initialized [enabled=false]}
+13:22:04,891 TRACE TypeFactory:72 - Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@465232e9
+13:22:04,891 DEBUG BasicTypeRegistry:147 - Adding type registration boolean -> org.hibernate.type.BooleanType@3f197a46
+13:22:04,891 DEBUG BasicTypeRegistry:147 - Adding type registration boolean -> org.hibernate.type.BooleanType@3f197a46
+13:22:04,891 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@3f197a46
+13:22:04,891 DEBUG BasicTypeRegistry:147 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@1725dc0f
+13:22:04,891 DEBUG BasicTypeRegistry:147 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@3d74bf60
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration yes_no -> org.hibernate.type.YesNoType@2145b572
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration byte -> org.hibernate.type.ByteType@481a996b
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration byte -> org.hibernate.type.ByteType@481a996b
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@481a996b
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration character -> org.hibernate.type.CharacterType@647e447
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration char -> org.hibernate.type.CharacterType@647e447
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@647e447
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration short -> org.hibernate.type.ShortType@619713e5
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration short -> org.hibernate.type.ShortType@619713e5
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@619713e5
+13:22:04,892 DEBUG BasicTypeRegistry:147 - Adding type registration integer -> org.hibernate.type.IntegerType@243c4f91
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration int -> org.hibernate.type.IntegerType@243c4f91
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@243c4f91
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration long -> org.hibernate.type.LongType@1ea9f6af
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration long -> org.hibernate.type.LongType@1ea9f6af
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@1ea9f6af
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration float -> org.hibernate.type.FloatType@393671df
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration float -> org.hibernate.type.FloatType@393671df
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@393671df
+13:22:04,893 DEBUG BasicTypeRegistry:147 - Adding type registration double -> org.hibernate.type.DoubleType@1afd44cb
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration double -> org.hibernate.type.DoubleType@1afd44cb
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@1afd44cb
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@402bba4f
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@402bba4f
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@dbf57b3
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@dbf57b3
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration string -> org.hibernate.type.StringType@1d9b7cce
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.String -> org.hibernate.type.StringType@1d9b7cce
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration url -> org.hibernate.type.UrlType@6c80d78a
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@6c80d78a
+13:22:04,894 DEBUG BasicTypeRegistry:147 - Adding type registration date -> org.hibernate.type.DateType@8dbdac1
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@8dbdac1
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration time -> org.hibernate.type.TimeType@47af7f3d
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@47af7f3d
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration timestamp -> org.hibernate.type.TimestampType@694abbdc
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@694abbdc
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@694abbdc
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@5ffead27
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration calendar -> org.hibernate.type.CalendarType@4f6ee6e4
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@4f6ee6e4
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@4f6ee6e4
+13:22:04,895 DEBUG BasicTypeRegistry:147 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@6b927fb
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration locale -> org.hibernate.type.LocaleType@7b9a4292
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@7b9a4292
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration currency -> org.hibernate.type.CurrencyType@67d48005
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@67d48005
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@5876a9af
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5876a9af
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration class -> org.hibernate.type.ClassType@2a798d51
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@2a798d51
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@222545dc
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@222545dc
+13:22:04,896 DEBUG BasicTypeRegistry:147 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5158b42f
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@38c6f217
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration binary -> org.hibernate.type.BinaryType@7e07db1f
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration byte[] -> org.hibernate.type.BinaryType@7e07db1f
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration [B -> org.hibernate.type.BinaryType@7e07db1f
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@49ec71f8
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@49ec71f8
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@49ec71f8
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration image -> org.hibernate.type.ImageType@436813f3
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration characters -> org.hibernate.type.CharArrayType@158d2680
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration char[] -> org.hibernate.type.CharArrayType@158d2680
+13:22:04,897 DEBUG BasicTypeRegistry:147 - Adding type registration [C -> org.hibernate.type.CharArrayType@158d2680
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@7f0eb4b4
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@7f0eb4b4
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@7f0eb4b4
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration text -> org.hibernate.type.TextType@4550bb58
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration blob -> org.hibernate.type.BlobType@49e53c76
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@49e53c76
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@55b699ef
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@18078bef
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration clob -> org.hibernate.type.ClobType@48f2bd5b
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@48f2bd5b
+13:22:04,898 DEBUG BasicTypeRegistry:147 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@1aafa419
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@55182842
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@5656be13
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration serializable -> org.hibernate.type.SerializableType@73a1e9a9
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration object -> org.hibernate.type.ObjectType@33d512c1
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@33d512c1
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@798162bc
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@1df8da7a
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@23941fb4
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7486b455
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@660acfb
+13:22:04,899 DEBUG BasicTypeRegistry:147 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@5d908d47
+13:22:04,900 DEBUG BasicTypeRegistry:147 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@5efa40fe
+13:22:04,900 DEBUG BasicTypeRegistry:147 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@1f9f6368
+13:22:04,900 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@536f2a7e
+13:22:04,900  INFO BasicTypeRegistry:150 - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@18078bef
+13:22:04,900 DEBUG BasicTypeRegistry:147 - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@5a59ca5e
+13:22:04,900  INFO BasicTypeRegistry:150 - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@5656be13
+13:22:04,900 DEBUG BasicTypeRegistry:147 - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@70cf32e3
+13:22:04,900  INFO BasicTypeRegistry:150 - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@55182842
+13:22:04,900 DEBUG BasicTypeRegistry:147 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@312aa7c
+13:22:04,900  INFO BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@55b699ef
+13:22:04,901 DEBUG BasicTypeRegistry:147 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@66982506
+13:22:04,901  INFO BasicTypeRegistry:150 - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1aafa419
+13:22:04,901 DEBUG BasicTypeRegistry:147 - Adding type registration blob -> org.hibernate.type.BlobType@c430e6c
+13:22:04,901  INFO BasicTypeRegistry:150 - Type registration [blob] overrides previous : org.hibernate.type.BlobType@49e53c76
+13:22:04,901 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@c430e6c
+13:22:04,901  INFO BasicTypeRegistry:150 - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@49e53c76
+13:22:04,901 DEBUG BasicTypeRegistry:147 - Adding type registration clob -> org.hibernate.type.ClobType@72bc6553
+13:22:04,901  INFO BasicTypeRegistry:150 - Type registration [clob] overrides previous : org.hibernate.type.ClobType@48f2bd5b
+13:22:04,901 DEBUG BasicTypeRegistry:147 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@72bc6553
+13:22:04,901  INFO BasicTypeRegistry:150 - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@48f2bd5b
+13:22:04,902 DEBUG SessionFactoryImpl:228 - Session factory constructed with filter configurations : {}
+13:22:04,902 DEBUG SessionFactoryImpl:232 - instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=/usr/lib/jvm/java-8-oracle/jre/lib/amd64, java.vm.version=25.121-b13, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.country=CO, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/export/estudiantes/andres.ceballoss/workspace/BetUdeA, java.runtime.version=1.8.0_121-b13, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, hibernate.current_session_context_class=org.springframework.orm.hibernate3.SpringSessionContext, java.endorsed.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/endorsed, os.arch=amd64, hibernate.check_nullability=false, java.io.tmpdir=/tmp, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, os.name=Linux, sun.jnu.encoding=UTF-8, java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib, java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.transaction.factory_class=org.springframework.orm.hibernate3.SpringTransactionFactory, os.version=3.19.0-32-generic, user.home=/export/estudiantes/andres.ceballoss, user.timezone=America/Bogota, java.awt.printerjob=sun.print.PSPrinterJob, file.encoding=UTF-8, java.specification.version=1.8, java.class.path=/export/estudiantes/andres.ceballoss/workspace/BetUdeA/bin:/home/lis/.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar:/home/lis/.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/antlr-2.7.6.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/commons-collections-3.1.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/dom4j-1.6.1.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate3.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/javassist-3.12.0.GA.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/jta-1.1.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-api-1.6.1.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-log4j12-1.7.2.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasLog/log4j-1.2.17.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/com.springsource.org.aopalliance-1.0.0.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/commons-logging.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-aop-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-beans-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-context-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-core-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-expression-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-jdbc-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-orm-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar:/export/estudiantes/andres.ceballoss/workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar:/apps/jee-neon/eclipse/configuration/org.eclipse.osgi/388/0/.cp/:/apps/jee-neon/eclipse/configuration/org.eclipse.osgi/387/0/.cp/, user.name=andres.ceballoss, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, javax.persistence.validation.mode=none, java.vm.specification.version=1.8, sun.arch.data.model=64, java.home=/usr/lib/jvm/java-8-oracle/jre, sun.java.command=org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 61425 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test co.edu.udea.iw.bl.imp.SimulacionBLImpTest:testIngresarPeriodo, hibernate.dialect=org.hibernate.dialect.MySQLDialect, java.specification.vendor=Oracle Corporation, user.language=es, awt.toolkit=sun.awt.X11.XToolkit, java.vm.info=mixed mode, java.version=1.8.0_121, java.ext.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext, sun.boot.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes, java.vendor=Oracle Corporation, file.separator=/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, hibernate.connection.provider_class=org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, sun.desktop=gnome, sun.cpu.isalist=}
+13:22:04,915 DEBUG DefaultIdentifierGeneratorFactory:90 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+13:22:04,915 DEBUG DefaultIdentifierGeneratorFactory:90 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+13:22:04,915 DEBUG DefaultIdentifierGeneratorFactory:90 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+13:22:04,968 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [tipoDocumento], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,968 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [numeroDocumento], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,968 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [nombres], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,969 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [apellidos], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,969 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [fechaNacimiento], existing type = [org.hibernate.type.TimestampType@694abbdc], incoming type = [org.hibernate.type.TimestampType@694abbdc]
+13:22:04,969 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [email], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,969 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [password], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,971 DEBUG AbstractEntityPersister:2953 - Static SQL for entity: co.edu.udea.iw.dto.Usuario
+13:22:04,971 DEBUG AbstractEntityPersister:2958 -  Version select: select NOMBRE_USUARIO from usuario where NOMBRE_USUARIO =?
+13:22:04,971 DEBUG AbstractEntityPersister:2961 -  Snapshot select: select usuario_.NOMBRE_USUARIO, usuario_.TIPO_DOCUMENTO as TIPO2_0_, usuario_.NUMERO_DOCUMENTO as NUMERO3_0_, usuario_.NOMBRES as NOMBRES0_, usuario_.APELLIDOS as APELLIDOS0_, usuario_.FECHA_NACIMIENTO as FECHA6_0_, usuario_.EMAIL as EMAIL0_, usuario_.PASSWORD as PASSWORD0_ from usuario usuario_ where usuario_.NOMBRE_USUARIO=?
+13:22:04,971 DEBUG AbstractEntityPersister:2964 -  Insert 0: insert into usuario (TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRES, APELLIDOS, FECHA_NACIMIENTO, EMAIL, PASSWORD, NOMBRE_USUARIO) values (?, ?, ?, ?, ?, ?, ?, ?)
+13:22:04,971 DEBUG AbstractEntityPersister:2965 -  Update 0: update usuario set TIPO_DOCUMENTO=?, NUMERO_DOCUMENTO=?, NOMBRES=?, APELLIDOS=?, FECHA_NACIMIENTO=?, EMAIL=?, PASSWORD=? where NOMBRE_USUARIO=?
+13:22:04,971 DEBUG AbstractEntityPersister:2966 -  Delete 0: delete from usuario where NOMBRE_USUARIO=?
+13:22:04,976 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [periodoSimulacion.id], existing type = [org.hibernate.type.LongType@1ea9f6af], incoming type = [org.hibernate.type.LongType@1ea9f6af]
+13:22:04,976 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [evento], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [fechaEvento], existing type = [org.hibernate.type.TimestampType@694abbdc], incoming type = [org.hibernate.type.TimestampType@694abbdc]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [valorApostado], existing type = [org.hibernate.type.DoubleType@1afd44cb], incoming type = [org.hibernate.type.DoubleType@1afd44cb]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [cuota], existing type = [org.hibernate.type.DoubleType@1afd44cb], incoming type = [org.hibernate.type.DoubleType@1afd44cb]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [opcionSeleccionada], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [estado], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [fechaApuesta], existing type = [org.hibernate.type.TimestampType@694abbdc], incoming type = [org.hibernate.type.TimestampType@694abbdc]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [opcionCorrecta], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [periodoSimulacion], existing type = [org.hibernate.type.ManyToOneType(co.edu.udea.iw.dto.Simulacion)], incoming type = [org.hibernate.type.ManyToOneType(co.edu.udea.iw.dto.Simulacion)]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [periodoSimulacion.id], existing type = [org.hibernate.type.LongType@1ea9f6af], incoming type = [org.hibernate.type.LongType@1ea9f6af]
+13:22:04,977 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [periodoSimulacion.id], existing type = [org.hibernate.type.LongType@1ea9f6af], incoming type = [org.hibernate.type.LongType@1ea9f6af]
+13:22:04,978 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@1ea9f6af], incoming type = [org.hibernate.type.LongType@1ea9f6af]
+13:22:04,978 DEBUG AbstractEntityPersister:2953 - Static SQL for entity: co.edu.udea.iw.dto.Apuesta
+13:22:04,978 DEBUG AbstractEntityPersister:2958 -  Version select: select id from apuesta where id =?
+13:22:04,979 DEBUG AbstractEntityPersister:2961 -  Snapshot select: select apuesta_.id, apuesta_.EVENTO as EVENTO1_, apuesta_.FECHA_EVENTO as FECHA3_1_, apuesta_.VALOR_APOSTADO as VALOR4_1_, apuesta_.CUOTA as CUOTA1_, apuesta_.OPCION_SELECCIONADA as OPCION6_1_, apuesta_.ESTADO as ESTADO1_, apuesta_.FECHA_APUESTA as FECHA8_1_, apuesta_.OPCION_CORRECTA as OPCION9_1_, apuesta_.PERIODO_SIMULACION_ID as PERIODO10_1_ from apuesta apuesta_ where apuesta_.id=?
+13:22:04,979 DEBUG AbstractEntityPersister:2964 -  Insert 0: insert into apuesta (EVENTO, FECHA_EVENTO, VALOR_APOSTADO, CUOTA, OPCION_SELECCIONADA, ESTADO, FECHA_APUESTA, OPCION_CORRECTA, PERIODO_SIMULACION_ID, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+13:22:04,979 DEBUG AbstractEntityPersister:2965 -  Update 0: update apuesta set EVENTO=?, FECHA_EVENTO=?, VALOR_APOSTADO=?, CUOTA=?, OPCION_SELECCIONADA=?, ESTADO=?, FECHA_APUESTA=?, OPCION_CORRECTA=?, PERIODO_SIMULACION_ID=? where id=?
+13:22:04,979 DEBUG AbstractEntityPersister:2966 -  Delete 0: delete from apuesta where id=?
+13:22:04,979 DEBUG AbstractEntityPersister:2970 -  Identity insert: insert into apuesta (EVENTO, FECHA_EVENTO, VALOR_APOSTADO, CUOTA, OPCION_SELECCIONADA, ESTADO, FECHA_APUESTA, OPCION_CORRECTA, PERIODO_SIMULACION_ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario.id], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario.nombreUsuario], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario], existing type = [org.hibernate.type.ManyToOneType(co.edu.udea.iw.dto.Usuario)], incoming type = [org.hibernate.type.ManyToOneType(co.edu.udea.iw.dto.Usuario)]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario.id], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario.id], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario.nombreUsuario], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [usuario.nombreUsuario], existing type = [org.hibernate.type.StringType@1d9b7cce], incoming type = [org.hibernate.type.StringType@1d9b7cce]
+13:22:04,982 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [saldo], existing type = [org.hibernate.type.DoubleType@1afd44cb], incoming type = [org.hibernate.type.DoubleType@1afd44cb]
+13:22:04,983 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [fechaInicio], existing type = [org.hibernate.type.TimestampType@694abbdc], incoming type = [org.hibernate.type.TimestampType@694abbdc]
+13:22:04,983 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [fechaFin], existing type = [org.hibernate.type.TimestampType@694abbdc], incoming type = [org.hibernate.type.TimestampType@694abbdc]
+13:22:04,983 TRACE AbstractPropertyMapping:141 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@1ea9f6af], incoming type = [org.hibernate.type.LongType@1ea9f6af]
+13:22:04,983 DEBUG AbstractEntityPersister:2953 - Static SQL for entity: co.edu.udea.iw.dto.Simulacion
+13:22:04,983 DEBUG AbstractEntityPersister:2958 -  Version select: select ID from periodo_simulacion where ID =?
+13:22:04,983 DEBUG AbstractEntityPersister:2961 -  Snapshot select: select simulacion_.ID, simulacion_.USUARIO_ID as USUARIO2_2_, simulacion_.SALDO as SALDO2_, simulacion_.FECHA_INICIO as FECHA4_2_, simulacion_.FECHA_FIN as FECHA5_2_ from periodo_simulacion simulacion_ where simulacion_.ID=?
+13:22:04,983 DEBUG AbstractEntityPersister:2964 -  Insert 0: insert into periodo_simulacion (USUARIO_ID, SALDO, FECHA_INICIO, FECHA_FIN, ID) values (?, ?, ?, ?, ?)
+13:22:04,983 DEBUG AbstractEntityPersister:2965 -  Update 0: update periodo_simulacion set USUARIO_ID=?, SALDO=?, FECHA_INICIO=?, FECHA_FIN=? where ID=?
+13:22:04,983 DEBUG AbstractEntityPersister:2966 -  Delete 0: delete from periodo_simulacion where ID=?
+13:22:04,983 DEBUG AbstractEntityPersister:2970 -  Identity insert: insert into periodo_simulacion (USUARIO_ID, SALDO, FECHA_INICIO, FECHA_FIN) values (?, ?, ?, ?)
+13:22:04,993 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [NONE]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:04,993 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [READ]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:04,993 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [UPGRADE]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=? for update
+13:22:04,994 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [UPGRADE_NOWAIT]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=? for update
+13:22:04,994 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [FORCE]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=? for update
+13:22:04,994 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [PESSIMISTIC_READ]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=? lock in share mode
+13:22:04,994 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [PESSIMISTIC_WRITE]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=? for update
+13:22:04,994 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [PESSIMISTIC_FORCE_INCREMENT]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=? for update
+13:22:04,994 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [OPTIMISTIC]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:04,995 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Usuario [OPTIMISTIC_FORCE_INCREMENT]: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:04,997 DEBUG EntityLoader:56 - Static select for action ACTION_MERGE on entity co.edu.udea.iw.dto.Usuario: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:04,997 DEBUG EntityLoader:56 - Static select for action ACTION_REFRESH on entity co.edu.udea.iw.dto.Usuario: select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:04,999 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [NONE]: select apuesta0_.id as id1_2_, apuesta0_.EVENTO as EVENTO1_2_, apuesta0_.FECHA_EVENTO as FECHA3_1_2_, apuesta0_.VALOR_APOSTADO as VALOR4_1_2_, apuesta0_.CUOTA as CUOTA1_2_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_2_, apuesta0_.ESTADO as ESTADO1_2_, apuesta0_.FECHA_APUESTA as FECHA8_1_2_, apuesta0_.OPCION_CORRECTA as OPCION9_1_2_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_2_, simulacion1_.ID as ID2_0_, simulacion1_.USUARIO_ID as USUARIO2_2_0_, simulacion1_.SALDO as SALDO2_0_, simulacion1_.FECHA_INICIO as FECHA4_2_0_, simulacion1_.FECHA_FIN as FECHA5_2_0_, usuario2_.NOMBRE_USUARIO as NOMBRE1_0_1_, usuario2_.TIPO_DOCUMENTO as TIPO2_0_1_, usuario2_.NUMERO_DOCUMENTO as NUMERO3_0_1_, usuario2_.NOMBRES as NOMBRES0_1_, usuario2_.APELLIDOS as APELLIDOS0_1_, usuario2_.FECHA_NACIMIENTO as FECHA6_0_1_, usuario2_.EMAIL as EMAIL0_1_, usuario2_.PASSWORD as PASSWORD0_1_ from apuesta apuesta0_ inner join periodo_simulacion simulacion1_ on apuesta0_.PERIODO_SIMULACION_ID=simulacion1_.ID left outer join usuario usuario2_ on simulacion1_.USUARIO_ID=usuario2_.NOMBRE_USUARIO where apuesta0_.id=?
+13:22:04,999 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [READ]: select apuesta0_.id as id1_2_, apuesta0_.EVENTO as EVENTO1_2_, apuesta0_.FECHA_EVENTO as FECHA3_1_2_, apuesta0_.VALOR_APOSTADO as VALOR4_1_2_, apuesta0_.CUOTA as CUOTA1_2_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_2_, apuesta0_.ESTADO as ESTADO1_2_, apuesta0_.FECHA_APUESTA as FECHA8_1_2_, apuesta0_.OPCION_CORRECTA as OPCION9_1_2_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_2_, simulacion1_.ID as ID2_0_, simulacion1_.USUARIO_ID as USUARIO2_2_0_, simulacion1_.SALDO as SALDO2_0_, simulacion1_.FECHA_INICIO as FECHA4_2_0_, simulacion1_.FECHA_FIN as FECHA5_2_0_, usuario2_.NOMBRE_USUARIO as NOMBRE1_0_1_, usuario2_.TIPO_DOCUMENTO as TIPO2_0_1_, usuario2_.NUMERO_DOCUMENTO as NUMERO3_0_1_, usuario2_.NOMBRES as NOMBRES0_1_, usuario2_.APELLIDOS as APELLIDOS0_1_, usuario2_.FECHA_NACIMIENTO as FECHA6_0_1_, usuario2_.EMAIL as EMAIL0_1_, usuario2_.PASSWORD as PASSWORD0_1_ from apuesta apuesta0_ inner join periodo_simulacion simulacion1_ on apuesta0_.PERIODO_SIMULACION_ID=simulacion1_.ID left outer join usuario usuario2_ on simulacion1_.USUARIO_ID=usuario2_.NOMBRE_USUARIO where apuesta0_.id=?
+13:22:04,999 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [UPGRADE]: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=? for update
+13:22:05,000 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [UPGRADE_NOWAIT]: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=? for update
+13:22:05,000 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [FORCE]: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=? for update
+13:22:05,000 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [PESSIMISTIC_READ]: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=? lock in share mode
+13:22:05,000 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [PESSIMISTIC_WRITE]: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=? for update
+13:22:05,001 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [PESSIMISTIC_FORCE_INCREMENT]: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=? for update
+13:22:05,001 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [OPTIMISTIC]: select apuesta0_.id as id1_2_, apuesta0_.EVENTO as EVENTO1_2_, apuesta0_.FECHA_EVENTO as FECHA3_1_2_, apuesta0_.VALOR_APOSTADO as VALOR4_1_2_, apuesta0_.CUOTA as CUOTA1_2_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_2_, apuesta0_.ESTADO as ESTADO1_2_, apuesta0_.FECHA_APUESTA as FECHA8_1_2_, apuesta0_.OPCION_CORRECTA as OPCION9_1_2_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_2_, simulacion1_.ID as ID2_0_, simulacion1_.USUARIO_ID as USUARIO2_2_0_, simulacion1_.SALDO as SALDO2_0_, simulacion1_.FECHA_INICIO as FECHA4_2_0_, simulacion1_.FECHA_FIN as FECHA5_2_0_, usuario2_.NOMBRE_USUARIO as NOMBRE1_0_1_, usuario2_.TIPO_DOCUMENTO as TIPO2_0_1_, usuario2_.NUMERO_DOCUMENTO as NUMERO3_0_1_, usuario2_.NOMBRES as NOMBRES0_1_, usuario2_.APELLIDOS as APELLIDOS0_1_, usuario2_.FECHA_NACIMIENTO as FECHA6_0_1_, usuario2_.EMAIL as EMAIL0_1_, usuario2_.PASSWORD as PASSWORD0_1_ from apuesta apuesta0_ inner join periodo_simulacion simulacion1_ on apuesta0_.PERIODO_SIMULACION_ID=simulacion1_.ID left outer join usuario usuario2_ on simulacion1_.USUARIO_ID=usuario2_.NOMBRE_USUARIO where apuesta0_.id=?
+13:22:05,001 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Apuesta [OPTIMISTIC_FORCE_INCREMENT]: select apuesta0_.id as id1_2_, apuesta0_.EVENTO as EVENTO1_2_, apuesta0_.FECHA_EVENTO as FECHA3_1_2_, apuesta0_.VALOR_APOSTADO as VALOR4_1_2_, apuesta0_.CUOTA as CUOTA1_2_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_2_, apuesta0_.ESTADO as ESTADO1_2_, apuesta0_.FECHA_APUESTA as FECHA8_1_2_, apuesta0_.OPCION_CORRECTA as OPCION9_1_2_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_2_, simulacion1_.ID as ID2_0_, simulacion1_.USUARIO_ID as USUARIO2_2_0_, simulacion1_.SALDO as SALDO2_0_, simulacion1_.FECHA_INICIO as FECHA4_2_0_, simulacion1_.FECHA_FIN as FECHA5_2_0_, usuario2_.NOMBRE_USUARIO as NOMBRE1_0_1_, usuario2_.TIPO_DOCUMENTO as TIPO2_0_1_, usuario2_.NUMERO_DOCUMENTO as NUMERO3_0_1_, usuario2_.NOMBRES as NOMBRES0_1_, usuario2_.APELLIDOS as APELLIDOS0_1_, usuario2_.FECHA_NACIMIENTO as FECHA6_0_1_, usuario2_.EMAIL as EMAIL0_1_, usuario2_.PASSWORD as PASSWORD0_1_ from apuesta apuesta0_ inner join periodo_simulacion simulacion1_ on apuesta0_.PERIODO_SIMULACION_ID=simulacion1_.ID left outer join usuario usuario2_ on simulacion1_.USUARIO_ID=usuario2_.NOMBRE_USUARIO where apuesta0_.id=?
+13:22:05,001 DEBUG EntityLoader:56 - Static select for action ACTION_MERGE on entity co.edu.udea.iw.dto.Apuesta: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=?
+13:22:05,002 DEBUG EntityLoader:56 - Static select for action ACTION_REFRESH on entity co.edu.udea.iw.dto.Apuesta: select apuesta0_.id as id1_0_, apuesta0_.EVENTO as EVENTO1_0_, apuesta0_.FECHA_EVENTO as FECHA3_1_0_, apuesta0_.VALOR_APOSTADO as VALOR4_1_0_, apuesta0_.CUOTA as CUOTA1_0_, apuesta0_.OPCION_SELECCIONADA as OPCION6_1_0_, apuesta0_.ESTADO as ESTADO1_0_, apuesta0_.FECHA_APUESTA as FECHA8_1_0_, apuesta0_.OPCION_CORRECTA as OPCION9_1_0_, apuesta0_.PERIODO_SIMULACION_ID as PERIODO10_1_0_ from apuesta apuesta0_ where apuesta0_.id=?
+13:22:05,002 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [NONE]: select simulacion0_.ID as ID2_1_, simulacion0_.USUARIO_ID as USUARIO2_2_1_, simulacion0_.SALDO as SALDO2_1_, simulacion0_.FECHA_INICIO as FECHA4_2_1_, simulacion0_.FECHA_FIN as FECHA5_2_1_, usuario1_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario1_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario1_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario1_.NOMBRES as NOMBRES0_0_, usuario1_.APELLIDOS as APELLIDOS0_0_, usuario1_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario1_.EMAIL as EMAIL0_0_, usuario1_.PASSWORD as PASSWORD0_0_ from periodo_simulacion simulacion0_ inner join usuario usuario1_ on simulacion0_.USUARIO_ID=usuario1_.NOMBRE_USUARIO where simulacion0_.ID=?
+13:22:05,002 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [READ]: select simulacion0_.ID as ID2_1_, simulacion0_.USUARIO_ID as USUARIO2_2_1_, simulacion0_.SALDO as SALDO2_1_, simulacion0_.FECHA_INICIO as FECHA4_2_1_, simulacion0_.FECHA_FIN as FECHA5_2_1_, usuario1_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario1_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario1_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario1_.NOMBRES as NOMBRES0_0_, usuario1_.APELLIDOS as APELLIDOS0_0_, usuario1_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario1_.EMAIL as EMAIL0_0_, usuario1_.PASSWORD as PASSWORD0_0_ from periodo_simulacion simulacion0_ inner join usuario usuario1_ on simulacion0_.USUARIO_ID=usuario1_.NOMBRE_USUARIO where simulacion0_.ID=?
+13:22:05,002 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [UPGRADE]: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=? for update
+13:22:05,002 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [UPGRADE_NOWAIT]: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=? for update
+13:22:05,003 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [FORCE]: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=? for update
+13:22:05,003 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [PESSIMISTIC_READ]: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=? lock in share mode
+13:22:05,003 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [PESSIMISTIC_WRITE]: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=? for update
+13:22:05,003 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [PESSIMISTIC_FORCE_INCREMENT]: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=? for update
+13:22:05,003 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [OPTIMISTIC]: select simulacion0_.ID as ID2_1_, simulacion0_.USUARIO_ID as USUARIO2_2_1_, simulacion0_.SALDO as SALDO2_1_, simulacion0_.FECHA_INICIO as FECHA4_2_1_, simulacion0_.FECHA_FIN as FECHA5_2_1_, usuario1_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario1_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario1_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario1_.NOMBRES as NOMBRES0_0_, usuario1_.APELLIDOS as APELLIDOS0_0_, usuario1_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario1_.EMAIL as EMAIL0_0_, usuario1_.PASSWORD as PASSWORD0_0_ from periodo_simulacion simulacion0_ inner join usuario usuario1_ on simulacion0_.USUARIO_ID=usuario1_.NOMBRE_USUARIO where simulacion0_.ID=?
+13:22:05,004 DEBUG EntityLoader:123 - Static select for entity co.edu.udea.iw.dto.Simulacion [OPTIMISTIC_FORCE_INCREMENT]: select simulacion0_.ID as ID2_1_, simulacion0_.USUARIO_ID as USUARIO2_2_1_, simulacion0_.SALDO as SALDO2_1_, simulacion0_.FECHA_INICIO as FECHA4_2_1_, simulacion0_.FECHA_FIN as FECHA5_2_1_, usuario1_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario1_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario1_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario1_.NOMBRES as NOMBRES0_0_, usuario1_.APELLIDOS as APELLIDOS0_0_, usuario1_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario1_.EMAIL as EMAIL0_0_, usuario1_.PASSWORD as PASSWORD0_0_ from periodo_simulacion simulacion0_ inner join usuario usuario1_ on simulacion0_.USUARIO_ID=usuario1_.NOMBRE_USUARIO where simulacion0_.ID=?
+13:22:05,004 DEBUG EntityLoader:56 - Static select for action ACTION_MERGE on entity co.edu.udea.iw.dto.Simulacion: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=?
+13:22:05,004 DEBUG EntityLoader:56 - Static select for action ACTION_REFRESH on entity co.edu.udea.iw.dto.Simulacion: select simulacion0_.ID as ID2_0_, simulacion0_.USUARIO_ID as USUARIO2_2_0_, simulacion0_.SALDO as SALDO2_0_, simulacion0_.FECHA_INICIO as FECHA4_2_0_, simulacion0_.FECHA_FIN as FECHA5_2_0_ from periodo_simulacion simulacion0_ where simulacion0_.ID=?
+13:22:05,006 DEBUG SessionFactoryObjectFactory:61 - initializing class SessionFactoryObjectFactory
+13:22:05,006 DEBUG SessionFactoryObjectFactory:99 - registered: 428dcc9a-f6e6-4ed2-b490-0c91b863d25b (unnamed)
+13:22:05,006  INFO SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+13:22:05,006 DEBUG SessionFactoryImpl:369 - instantiated session factory
+13:22:05,006 DEBUG SessionFactoryImpl:539 - Checking 0 named HQL queries
+13:22:05,006 DEBUG SessionFactoryImpl:559 - Checking 0 named SQL queries
+13:22:05,007 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'SessionFactory'
+13:22:05,007 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'transactionManager'
+13:22:05,007 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'transactionManager'
+13:22:05,011 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'transactionManager' to allow for resolving potential circular references
+13:22:05,011 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.orm.hibernate3.HibernateTransactionManager]
+13:22:05,013 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.orm.hibernate3.HibernateTransactionManager]
+13:22:05,013 DEBUG CachedIntrospectionResults:297 - Found bean property 'autodetectDataSource' of type [boolean]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'beanFactory' of type [org.springframework.beans.factory.BeanFactory]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'dataSource' of type [javax.sql.DataSource]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'defaultTimeout' of type [int]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'earlyFlushBeforeCommit' of type [boolean]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'entityInterceptor' of type [org.hibernate.Interceptor]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'entityInterceptorBeanName' of type [java.lang.String]
+13:22:05,014 DEBUG CachedIntrospectionResults:297 - Found bean property 'failEarlyOnGlobalRollbackOnly' of type [boolean]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'globalRollbackOnParticipationFailure' of type [boolean]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'hibernateManagedSession' of type [boolean]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'jdbcExceptionTranslator' of type [org.springframework.jdbc.support.SQLExceptionTranslator]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'nestedTransactionAllowed' of type [boolean]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'prepareConnection' of type [boolean]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'resourceFactory' of type [java.lang.Object]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'rollbackOnCommitFailure' of type [boolean]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'sessionFactory' of type [org.hibernate.SessionFactory]
+13:22:05,015 DEBUG CachedIntrospectionResults:297 - Found bean property 'transactionSynchronization' of type [int]
+13:22:05,016 DEBUG CachedIntrospectionResults:297 - Found bean property 'transactionSynchronizationName' of type [java.lang.String]
+13:22:05,016 DEBUG CachedIntrospectionResults:297 - Found bean property 'validateExistingTransaction' of type [boolean]
+13:22:05,016 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'SessionFactory'
+13:22:05,016 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'DataSource'
+13:22:05,017 DEBUG DefaultListableBeanFactory:1616 - Invoking afterPropertiesSet() on bean with name 'transactionManager'
+13:22:05,017 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'transactionManager'
+13:22:05,017 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'usuarioDAO'
+13:22:05,017 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'usuarioDAO'
+13:22:05,018 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'usuarioDAO' to allow for resolving potential circular references
+13:22:05,018 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.dao.imp.UsuarioDAOImp]
+13:22:05,018 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.dao.imp.UsuarioDAOImp]
+13:22:05,018 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,018 DEBUG CachedIntrospectionResults:297 - Found bean property 'sessionFactory' of type [org.hibernate.SessionFactory]
+13:22:05,019 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'SessionFactory'
+13:22:05,019 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'usuarioDAO'
+13:22:05,019 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'apuestaDAO'
+13:22:05,019 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'apuestaDAO'
+13:22:05,019 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'apuestaDAO' to allow for resolving potential circular references
+13:22:05,019 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.dao.imp.ApuestaDAOImp]
+13:22:05,020 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.dao.imp.ApuestaDAOImp]
+13:22:05,020 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,020 DEBUG CachedIntrospectionResults:297 - Found bean property 'sessionFactory' of type [org.hibernate.SessionFactory]
+13:22:05,021 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'SessionFactory'
+13:22:05,021 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'apuestaDAO'
+13:22:05,021 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'simulacionDAO'
+13:22:05,021 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'simulacionDAO'
+13:22:05,021 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'simulacionDAO' to allow for resolving potential circular references
+13:22:05,021 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.dao.imp.SimulacionDAOImp]
+13:22:05,022 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.dao.imp.SimulacionDAOImp]
+13:22:05,022 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,022 DEBUG CachedIntrospectionResults:297 - Found bean property 'sessionFactory' of type [org.hibernate.SessionFactory]
+13:22:05,022 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'SessionFactory'
+13:22:05,023 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'simulacionDAO'
+13:22:05,023 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'UsuarioBL'
+13:22:05,023 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'UsuarioBL'
+13:22:05,023 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'UsuarioBL' to allow for resolving potential circular references
+13:22:05,023 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.bl.imp.UsuarioBLImp]
+13:22:05,024 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.bl.imp.UsuarioBLImp]
+13:22:05,024 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,024 DEBUG CachedIntrospectionResults:297 - Found bean property 'simulacionDAO' of type [co.edu.udea.iw.dao.SimulacionDAO]
+13:22:05,024 DEBUG CachedIntrospectionResults:297 - Found bean property 'usuarioDAO' of type [co.edu.udea.iw.dao.UsuarioDAO]
+13:22:05,025 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'usuarioDAO'
+13:22:05,025 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'simulacionDAO'
+13:22:05,025 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'UsuarioBL'
+13:22:05,025 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'apuestaBL'
+13:22:05,025 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'apuestaBL'
+13:22:05,025 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'apuestaBL' to allow for resolving potential circular references
+13:22:05,026 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.bl.imp.ApuestaBLImp]
+13:22:05,026 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.bl.imp.ApuestaBLImp]
+13:22:05,026 DEBUG CachedIntrospectionResults:297 - Found bean property 'apuestaDAO' of type [co.edu.udea.iw.dao.ApuestaDAO]
+13:22:05,026 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,027 DEBUG CachedIntrospectionResults:297 - Found bean property 'simulacionDAO' of type [co.edu.udea.iw.dao.SimulacionDAO]
+13:22:05,027 DEBUG CachedIntrospectionResults:297 - Found bean property 'usuarioDAO' of type [co.edu.udea.iw.dao.UsuarioDAO]
+13:22:05,027 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'usuarioDAO'
+13:22:05,027 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'apuestaDAO'
+13:22:05,027 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'simulacionDAO'
+13:22:05,027 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'apuestaBL'
+13:22:05,027 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'SimulacionBL'
+13:22:05,027 DEBUG DefaultListableBeanFactory:450 - Creating instance of bean 'SimulacionBL'
+13:22:05,028 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'SimulacionBL' to allow for resolving potential circular references
+13:22:05,028 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.bl.imp.SimulacionBLImp]
+13:22:05,029 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.bl.imp.SimulacionBLImp]
+13:22:05,029 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,029 DEBUG CachedIntrospectionResults:297 - Found bean property 'simulacionDAO' of type [co.edu.udea.iw.dao.SimulacionDAO]
+13:22:05,029 DEBUG CachedIntrospectionResults:297 - Found bean property 'usuarioDAO' of type [co.edu.udea.iw.dao.UsuarioDAO]
+13:22:05,029 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'usuarioDAO'
+13:22:05,029 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'simulacionDAO'
+13:22:05,029 DEBUG DefaultListableBeanFactory:478 - Finished creating instance of bean 'SimulacionBL'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:22:05,030 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:22:05,031 DEBUG GenericApplicationContext:697 - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@42530531]
+13:22:05,031 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'lifecycleProcessor'
+13:22:05,031 DEBUG GenericApplicationContext:329 - Publishing event in org.springframework.context.support.GenericApplicationContext@2a2d45ba: org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.GenericApplicationContext@2a2d45ba: startup date [Thu May 04 13:22:04 COT 2017]; root of context hierarchy]
+13:22:05,032 DEBUG PropertySourcesPropertyResolver:76 - getProperty("spring.liveBeansView.mbeanDomain", String)
+13:22:05,032 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+13:22:05,032 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+13:22:05,033 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+13:22:05,033 DEBUG DefaultCacheAwareContextLoaderDelegate:88 - Storing ApplicationContext in cache under key [[MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+13:22:05,033 DEBUG cache:105 - Spring test ApplicationContext cache statistics: [ContextCache@d771cc9 size = 1, hitCount = 0, missCount = 1, parentContextCount = 0]
+13:22:05,033 DEBUG CachedIntrospectionResults:265 - Getting BeanInfo for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:05,034 DEBUG CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:05,034 DEBUG CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+13:22:05,035 DEBUG InjectionMetadata:86 - Processing injected element of bean 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest': AutowiredFieldElement for private co.edu.udea.iw.bl.imp.SimulacionBLImp co.edu.udea.iw.bl.imp.SimulacionBLImpTest.simulacionBL
+13:22:05,037 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'SimulacionBL'
+13:22:05,037 DEBUG AutowiredAnnotationBeanPostProcessor:480 - Autowiring by type from bean name 'co.edu.udea.iw.bl.imp.SimulacionBLImpTest' to bean named 'SimulacionBL'
+13:22:05,038 DEBUG TestContextManager:243 - beforeTestMethod(): instance [co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225], method [public void co.edu.udea.iw.bl.imp.SimulacionBLImpTest.testIngresarPeriodo()]
+13:22:05,040 DEBUG AnnotationTransactionAttributeSource:108 - Adding transactional method 'SimulacionBLImpTest.testIngresarPeriodo' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+13:22:05,041 DEBUG TransactionalTestExecutionListener:186 - Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''] found for test context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = testIngresarPeriodo@SimulacionBLImpTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+13:22:05,041 DEBUG TransactionalTestExecutionListener:506 - Retrieved @TransactionConfiguration attributes [null] for test class [class co.edu.udea.iw.bl.imp.SimulacionBLImpTest].
+13:22:05,042 DEBUG TransactionalTestExecutionListener:524 - Retrieved TransactionConfigurationAttributes [TransactionConfigurationAttributes@30c93896 transactionManagerName = '', defaultRollback = true] for class [class co.edu.udea.iw.bl.imp.SimulacionBLImpTest].
+13:22:05,042 DEBUG DefaultCacheAwareContextLoaderDelegate:99 - Retrieved ApplicationContext from cache with key [[MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+13:22:05,042 DEBUG cache:105 - Spring test ApplicationContext cache statistics: [ContextCache@d771cc9 size = 1, hitCount = 1, missCount = 1, parentContextCount = 0]
+13:22:05,042 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'transactionManager'
+13:22:05,043 DEBUG TransactionalTestExecutionListener:384 - Method-level @Rollback(false) overrides default rollback [true] for test context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = testIngresarPeriodo@SimulacionBLImpTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+13:22:05,045 DEBUG HibernateTransactionManager:367 - Creating new transaction with name [co.edu.udea.iw.bl.imp.SimulacionBLImpTest.testIngresarPeriodo]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+13:22:05,086 DEBUG SessionImpl:265 - opened session at timestamp: 14939221250
+13:22:05,089 DEBUG HibernateTransactionManager:498 - Opened new Session [org.hibernate.impl.SessionImpl@ab7395e] for Hibernate transaction
+13:22:05,090 DEBUG HibernateTransactionManager:509 - Preparing JDBC Connection of Hibernate Session [org.hibernate.impl.SessionImpl@ab7395e]
+13:22:05,098 DEBUG JDBCTransaction:78 - begin
+13:22:05,098 DEBUG ConnectionManager:444 - opening JDBC connection
+13:22:05,098 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/apuestas]
+13:22:05,108 DEBUG JDBCTransaction:83 - current autocommit status: true
+13:22:05,108 DEBUG JDBCTransaction:86 - disabling autocommit
+13:22:05,108 TRACE JDBCContext:258 - after transaction begin
+13:22:05,109 DEBUG HibernateTransactionManager:574 - Exposing Hibernate transaction as JDBC transaction [com.mysql.jdbc.JDBC4Connection@29ca3d04]
+13:22:05,109 DEBUG TransactionSynchronizationManager:193 - Bound value [org.springframework.jdbc.datasource.ConnectionHolder@5812f68b] for key [org.springframework.jdbc.datasource.DriverManagerDataSource@b2c5e07] to thread [main]
+13:22:05,109 DEBUG TransactionSynchronizationManager:193 - Bound value [org.springframework.orm.hibernate3.SessionHolder@4426bff1] for key [org.hibernate.impl.SessionFactoryImpl@465232e9] to thread [main]
+13:22:05,109 DEBUG TransactionSynchronizationManager:272 - Initializing transaction synchronization
+13:22:05,109  INFO TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = testIngresarPeriodo@SimulacionBLImpTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@3c7c886c]; rollback [false]
+13:22:05,110 DEBUG TransactionSynchronizationManager:140 - Retrieved value [org.springframework.orm.hibernate3.SessionHolder@4426bff1] for key [org.hibernate.impl.SessionFactoryImpl@465232e9] bound to thread [main]
+13:22:05,112 TRACE DefaultLoadEventListener:261 - loading entity: [co.edu.udea.iw.dto.Usuario#elver]
+13:22:05,112 TRACE DefaultLoadEventListener:434 - attempting to resolve: [co.edu.udea.iw.dto.Usuario#elver]
+13:22:05,112 TRACE DefaultLoadEventListener:471 - object not resolved in any cache: [co.edu.udea.iw.dto.Usuario#elver]
+13:22:05,112 TRACE AbstractEntityPersister:3287 - Fetching entity: [co.edu.udea.iw.dto.Usuario#elver]
+13:22:05,112 DEBUG Loader:2022 - loading entity: [co.edu.udea.iw.dto.Usuario#elver]
+13:22:05,113 DEBUG AbstractBatcher:410 - about to open PreparedStatement (open PreparedStatements: 0, globally: 0)
+13:22:05,114 DEBUG SQL:111 - select usuario0_.NOMBRE_USUARIO as NOMBRE1_0_0_, usuario0_.TIPO_DOCUMENTO as TIPO2_0_0_, usuario0_.NUMERO_DOCUMENTO as NUMERO3_0_0_, usuario0_.NOMBRES as NOMBRES0_0_, usuario0_.APELLIDOS as APELLIDOS0_0_, usuario0_.FECHA_NACIMIENTO as FECHA6_0_0_, usuario0_.EMAIL as EMAIL0_0_, usuario0_.PASSWORD as PASSWORD0_0_ from usuario usuario0_ where usuario0_.NOMBRE_USUARIO=?
+13:22:05,115 TRACE AbstractBatcher:513 - preparing statement
+13:22:05,124 TRACE BasicBinder:82 - binding parameter [1] as [VARCHAR] - elver
+13:22:05,124 TRACE Loader:1751 - Bound [2] parameters total
+13:22:05,124 DEBUG AbstractBatcher:426 - about to open ResultSet (open ResultSets: 0, globally: 0)
+13:22:05,125 TRACE Loader:822 - processing result set
+13:22:05,125 TRACE Loader:849 - done processing result set (0 rows)
+13:22:05,125 DEBUG AbstractBatcher:433 - about to close ResultSet (open ResultSets: 1, globally: 1)
+13:22:05,125 DEBUG AbstractBatcher:418 - about to close PreparedStatement (open PreparedStatements: 1, globally: 1)
+13:22:05,125 TRACE AbstractBatcher:562 - closing statement
+13:22:05,125 TRACE Loader:979 - total objects hydrated: 0
+13:22:05,125 DEBUG StatefulPersistenceContext:893 - initializing non-lazy collections
+13:22:05,125 DEBUG Loader:2050 - done entity load
+13:22:05,126 DEBUG TestContextManager:287 - afterTestMethod(): instance [co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225], method [public void co.edu.udea.iw.bl.imp.SimulacionBLImpTest.testIngresarPeriodo()], exception [java.lang.AssertionError: El usuario no existe en el sistema]
+13:22:05,127 DEBUG TransactionContext:114 - Ending transaction for test context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = testIngresarPeriodo@SimulacionBLImpTest, testException = java.lang.AssertionError: El usuario no existe en el sistema, mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction status [org.springframework.transaction.support.DefaultTransactionStatus@33308786]; rollback [false]
+13:22:05,127 DEBUG HibernateTransactionManager:926 - Triggering beforeCommit synchronization
+13:22:05,127 DEBUG HibernateTransactionManager:939 - Triggering beforeCompletion synchronization
+13:22:05,127 DEBUG HibernateTransactionManager:755 - Initiating transaction commit
+13:22:05,127 DEBUG HibernateTransactionManager:658 - Committing Hibernate transaction on Session [org.hibernate.impl.SessionImpl@ab7395e]
+13:22:05,127 DEBUG JDBCTransaction:130 - commit
+13:22:05,127 TRACE SessionImpl:382 - automatically flushing session
+13:22:05,127 TRACE JDBCContext:249 - before transaction completion
+13:22:05,127 TRACE SessionImpl:570 - before transaction completion
+13:22:05,127 DEBUG JDBCTransaction:223 - re-enabling autocommit
+13:22:05,128 DEBUG JDBCTransaction:143 - committed JDBC Connection
+13:22:05,128 TRACE JDBCContext:263 - after transaction completion
+13:22:05,128 DEBUG ConnectionManager:325 - transaction completed on session with on_close connection release mode; be sure to close the session to release JDBC resources!
+13:22:05,128 TRACE SessionImpl:600 - after transaction completion
+13:22:05,128 DEBUG HibernateTransactionManager:952 - Triggering afterCommit synchronization
+13:22:05,128 DEBUG HibernateTransactionManager:968 - Triggering afterCompletion synchronization
+13:22:05,128 DEBUG TransactionSynchronizationManager:331 - Clearing transaction synchronization
+13:22:05,128 DEBUG TransactionSynchronizationManager:243 - Removed value [org.springframework.orm.hibernate3.SessionHolder@4426bff1] for key [org.hibernate.impl.SessionFactoryImpl@465232e9] from thread [main]
+13:22:05,128 DEBUG TransactionSynchronizationManager:243 - Removed value [org.springframework.jdbc.datasource.ConnectionHolder@5812f68b] for key [org.springframework.jdbc.datasource.DriverManagerDataSource@b2c5e07] from thread [main]
+13:22:05,128 DEBUG HibernateTransactionManager:741 - Closing Hibernate Session [org.hibernate.impl.SessionImpl@ab7395e] after transaction
+13:22:05,128 DEBUG SessionFactoryUtils:818 - Closing Hibernate Session
+13:22:05,128 TRACE SessionImpl:318 - closing session
+13:22:05,129 TRACE ConnectionManager:403 - performing cleanup
+13:22:05,129 DEBUG ConnectionManager:464 - releasing JDBC connection [ (open PreparedStatements: 0, globally: 0) (open ResultSets: 0, globally: 0)]
+13:22:05,129 TRACE JDBCContext:263 - after transaction completion
+13:22:05,130 DEBUG ConnectionManager:325 - transaction completed on session with on_close connection release mode; be sure to close the session to release JDBC resources!
+13:22:05,130 TRACE SessionImpl:600 - after transaction completion
+13:22:05,130  INFO TransactionContext:136 - Committed transaction for test context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = testIngresarPeriodo@SimulacionBLImpTest, testException = java.lang.AssertionError: El usuario no existe en el sistema, mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+13:22:05,131 DEBUG DirtiesContextTestExecutionListener:86 - After test method: context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = co.edu.udea.iw.bl.imp.SimulacionBLImpTest@6574b225, testMethod = testIngresarPeriodo@SimulacionBLImpTest, testException = java.lang.AssertionError: El usuario no existe en el sistema, mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class dirties context [false], class mode [null], method dirties context [false].
+13:22:05,132 DEBUG TestContextManager:330 - afterTestClass(): class [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:05,133 DEBUG DirtiesContextTestExecutionListener:118 - After test class: context [DefaultTestContext@2669b199 testClass = SimulacionBLImpTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2344fc66 testClass = SimulacionBLImpTest, locations = '{classpath:SpringConfig.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], dirtiesContext [false].
+13:22:05,133  INFO GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@2a2d45ba: startup date [Thu May 04 13:22:04 COT 2017]; root of context hierarchy
+13:22:05,134 DEBUG GenericApplicationContext:329 - Publishing event in org.springframework.context.support.GenericApplicationContext@2a2d45ba: org.springframework.context.event.ContextClosedEvent[source=org.springframework.context.support.GenericApplicationContext@2a2d45ba: startup date [Thu May 04 13:22:04 COT 2017]; root of context hierarchy]
+13:22:05,134 DEBUG DefaultListableBeanFactory:248 - Returning cached instance of singleton bean 'lifecycleProcessor'
+13:22:05,134 DEBUG DefaultListableBeanFactory:512 - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@782663d3: defining beans [DataSource,SessionFactory,transactionManager,usuarioDAO,apuestaDAO,simulacionDAO,UsuarioBL,apuestaBL,SimulacionBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor]; root of factory hierarchy
+13:22:05,134 DEBUG DefaultListableBeanFactory:568 - Retrieved dependent beans for bean 'SimulacionBL': [co.edu.udea.iw.bl.imp.SimulacionBLImpTest]
+13:22:05,136 DEBUG DisposableBeanAdapter:245 - Invoking destroy() on bean with name 'SessionFactory'
+13:22:05,136  INFO LocalSessionFactoryBean:225 - Closing Hibernate SessionFactory
+13:22:05,136  INFO SessionFactoryImpl:927 - closing

@@ -19,12 +19,38 @@ import co.edu.udea.iw.exception.MyException;
 @Transactional
 public interface SimulacionBL {
 
-
-	public void ingresarPeriodo(String usuario_id, Double saldo, Date fecha_inicio, Date fecha_fin) throws MyException;
 	
-	public List<Simulacion> consultarPeriodos (String usuario_id) throws MyException; 
+	/**
+	 * Metodo para registrar un periodo en la base de datos
+	 * @param usuario_id
+	 * @param saldo
+	 * @param fecha_inicio
+	 * @param fecha_fin
+	 * @throws MyException
+	 */
+	public void registrarPeriodo(String nombreUsuario) throws MyException;
 	
+	/**
+	 * Metodo para consultar la lista de periodos dado el nombre de usuario
+	 * @param nombreUsuario
+	 * @return Lista periodos de simulacion
+	 * @throws MyException
+	 */
+	public List<Simulacion> obtenerPeriodos (String nombreUsuario) throws MyException; 
+	
+	/**
+	 * Metodo para consultar un periodo de simulacion dado el nombre de usuario
+	 * @param periodoSimulacionId
+	 * @return periodo de simulacion
+	 * @throws MyException
+	 */
 	public Simulacion obtenerPeriodo(Long periodoSimulacionId) throws MyException;
 	
-	public Simulacion periodoActivo(String usuario_id) throws MyException;
+	/**
+	 * Metodo para consultar el periodo de simulacion activo de un usuario
+	 * @param nombreUsuario
+	 * @return
+	 * @throws MyException
+	 */
+	public Simulacion obtenerPeriodoActivo(String nombreUsuario) throws MyException;
 }

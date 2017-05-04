@@ -37,6 +37,7 @@ public class SimulacionBLImpTest {
 
 	/**
 	 * Test method for {@link co.edu.udea.iw.bl.imp.SimulacionBLImp#ingresarPeriodo(Long, String, Long, java.util.Date, java.util.Date).
+	 * Prueba para registrar un periodo de simulacion
 	 */
 	@Test
 	@Rollback(false)
@@ -49,21 +50,23 @@ public class SimulacionBLImpTest {
 		Date fecha = calendar.getTime();		
 		
 		try{
-			simulacionBL.ingresarPeriodo("dcamolaay", 30000D, fecha , null);
+			simulacionBL.registrarPeriodo("elver");
 		}catch(MyException e)
 		{
+			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
 
 	/**
 	 * Test method for {@link co.edu.udea.iw.bl.imp.SimulacionBLImp#consultarPeriodos(String).
+	 * Prueba para consultar los periodos de simulacion de un usuario
 	 */
 	@Test
 	public void testConsultarPeriodos() {
 		List<Simulacion> periodos = null;
 		try{
-			periodos = simulacionBL.consultarPeriodos("dcamolaay");
+			periodos = simulacionBL.obtenerPeriodos("dcamolaay");
 			assertNotNull(periodos);			
 		}
 		catch(MyException e)
@@ -74,12 +77,13 @@ public class SimulacionBLImpTest {
 	
 	/**
 	 * Test method for {@link co.edu.udea.iw.bl.imp.SimulacionBLImp#obtenerPeriodo(Long).
+	 * Prueba para consultar un periodo de simulacion especifico
 	 */
 	@Test
 	public void testObtenerPeriodo() {
 		Simulacion periodo = null;
 		try{
-			periodo = simulacionBL.obtenerPeriodo(100003L);
+			periodo = simulacionBL.obtenerPeriodo(1L);
 			assertNotNull(periodo);
 		}
 		catch(MyException e)
@@ -90,17 +94,17 @@ public class SimulacionBLImpTest {
 	
 	/**
 	 * Test method for {@link co.edu.udea.iw.bl.imp.SimulacionBLImp#obtenerPeriodo(String).
+	 * Prueba para consultar el periodo activo de un usuario
 	 */
 	@Test
 	public void testPeriodoActivo() {
 		Simulacion periodo = null;
 		try{
-			periodo = simulacionBL.periodoActivo("dcamolaay");
+			periodo = simulacionBL.obtenerPeriodoActivo("sergio");
 			assertNotNull(periodo);
 		}
 		catch(MyException e)
 		{
-			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}

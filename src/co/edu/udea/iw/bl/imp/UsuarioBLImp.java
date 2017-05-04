@@ -10,8 +10,10 @@ import java.util.regex.Pattern;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.bl.UsuarioBL;
+import co.edu.udea.iw.dao.SimulacionDAO;
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dao.imp.UsuarioDAOImp;
+import co.edu.udea.iw.dto.Simulacion;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.encode.Cipher;
 import co.edu.udea.iw.exception.MyException;
@@ -22,10 +24,11 @@ import co.edu.udea.iw.exception.MyException;
  * @version 1.0
  */
 @Transactional
-public class UsuarioBLImp implements UsuarioBL{
+public class UsuarioBLImp implements UsuarioBL{	
 	
+	/*Atributos*/
 	private UsuarioDAO usuarioDAO;
-	
+	private SimulacionDAO simulacionDAO;	
 	
 	/**
 	 * @return the usuarioDAO
@@ -40,6 +43,22 @@ public class UsuarioBLImp implements UsuarioBL{
 	 */
 	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
 		this.usuarioDAO = usuarioDAO;
+	}
+	
+	
+	/**
+	 * @return the simulacionDAO
+	 */
+	public SimulacionDAO getSimulacionDAO() {
+		return simulacionDAO;
+	}
+
+
+	/**
+	 * @param simulacionDAO the simulacionDAO to set
+	 */
+	public void setSimulacionDAO(SimulacionDAO simulacionDAO) {
+		this.simulacionDAO = simulacionDAO;
 	}
 
 
@@ -108,17 +127,17 @@ public class UsuarioBLImp implements UsuarioBL{
 	    }
 		
 		/*Validar longitud de los campos*/
-		if(numeroDocumento.length() < 5)
+		if(numeroDocumento.length() < 5  || numeroDocumento.length() > 15)
 		{
-			throw new MyException("La cédula debe tener más de 5 caracteres");
+			throw new MyException("La cédula debe contener entre 5 y 15 caracteres");
 		}
 		if(password.length()< 5)
 		{
 			throw new MyException("La contraseña debe tener más de 5 caracteres");
 		}
-		if(nombreUsuario.length()<5)
+		if(nombreUsuario.length()<5 || nombreUsuario.length() > 10)
 		{
-			throw new MyException("El nombre de usuario debe tener más de 5 caracteres");
+			throw new MyException("El nombre de usuario debe contener entre 5 y 10 caracteres");
 		}
 		
 		/*Validar que la cuenta no haya sido creada previamente*/
@@ -145,9 +164,16 @@ public class UsuarioBLImp implements UsuarioBL{
 		usuario.setApellidos(apellidos);
 		usuario.setFechaNacimiento(fechaNacimiento);
 		usuario.setEmail(email);
-		usuario.setPassword(cipher.encrypt(password));
-		
+		usuario.setPassword(cipher.encrypt(password));		
 		usuarioDAO.registrar(usuario);
+		
+		Simulacion simulacion = new Simulacion();
+		simulacion.setUsuario(usuario);
+		simulacion.setSaldo(SimulacionBLImp.SALDO_INICIAL);
+		simulacion.setFechaInicio(new Date());
+		simulacion.setFechaFin(null);
+		
+		simulacionDAO.registrarPeriodo(simulacion);
 	}
 	
 	/**
@@ -272,6 +298,6 @@ public class UsuarioBLImp implements UsuarioBL{
 		{
 			throw new MyException("Contraseña incorrecta.");
 		}
-		usuario.setPassword(newPassword);
+		usuario.setPassword(cipher.encrypt(newPassword));
 	}
 }
