@@ -40,9 +40,9 @@
 			<column name="opcion_correcta" length="15" not-null="true"/>
 		</property>
 		
-	<!-- 	<many-to-one class="co.edu.udea.iw.dto.PeriodoSimulacion" name="periodoSimulacion" lazy="false" fetch="join">
+	<many-to-one class="co.edu.udea.iw.dto.PeriodoSimulacion" name="periodoSimulacion" lazy="false" fetch="join">
 			<column name="periodo_simulacion_id" precision="12" not-null="true"/>
-		</many-to-one> -->
+		</many-to-one> 
 		
 	</class>
 </hibernate-mapping>

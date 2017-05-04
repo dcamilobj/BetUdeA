@@ -44,11 +44,11 @@
 	<bean name="apuestaDAO" class="co.edu.udea.iw.dao.imp.ApuestaDAOImp">
 		<property name="sessionFactory" ref="SessionFactory"></property>
 	</bean>
-	<!--  
+	 
 	<bean name="apuestaBL" class="co.edu.udea.iw.bl.imp.ApuestaBLImp">
 		<property name="usuarioDAO" ref="usuarioDAO"></property>
 		<property name="apuestaDAO" ref="apuestaDAO"></property>
 		<property name="periodoSimulacionDAO" ref="periodoSimulacionDAO"></property>
-	</bean> -->
+	</bean> 
 	
 </beans>
