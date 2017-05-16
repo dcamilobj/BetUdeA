@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>BetUdeA</display-name>
+  
+  <!-- Servlet para responder las peticiones del servicio web -->
+  <servlet>
+  	<servlet-name>ServiciosBetUdeA</servlet-name>
+  	<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+  	<!-- <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class> -->
+  	<!-- Establecer parametro iniciales qeu tal vez los servlets necesiten -->
+  	<init-param>
+  		<param-name>com.sun.jersey.config.property.packages</param-name>
+  		<param-value>co.edu.udea.iw.ws</param-value>
+  	</init-param>
+  	<!-- Cuando la app carga la primer vez, con la línea de abajo se invoca EL SERVLET con el índice
+  	que detalla la prioridad -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- Definir el mapping, la url con la que el server va a responder(nombre debe coincidir con el 
+  del servlet definido previamente) -->
+  <servlet-mapping>
+  	<servlet-name>ServiciosBetUdeA</servlet-name>
+  	<!-- Ruta para que el servlet responda -->
+  	<url-pattern>/BetUdeA/*</url-pattern>
+  </servlet-mapping>
+  
+	<!-- Bootstraps the root web application context before servlet initialization -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:SpringConfig.xml</param-value>
+	</context-param>
+
+
+</web-app>

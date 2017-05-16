@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar"/>
@@ -28,7 +27,6 @@
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/commons-collections-3.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasHibernate/antlr-2.7.6.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jsr311-api-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jettison-1.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jersey-server-1.4.jar"/>
@@ -41,5 +39,10 @@
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jackson-core-asl-1.5.5.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/asm-3.1.jar"/>
 	<classpathentry kind="lib" path="/home/camilo/Workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/contribs/jersey-spring-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
