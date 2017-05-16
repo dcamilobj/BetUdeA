@@ -107,4 +107,27 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		return usuario;
 	}
 
+	/**
+	 * Implementación de método para obtener un usuario de la base de datos dado su documento.
+	 * @param documento
+	 * @return Usuario con el documento dado
+	 * @throws MyException
+	 */
+	@Override
+	public Usuario obtenerPorDocumento(String documento) throws MyException {
+		Usuario usuario = null;
+		Session session = null;
+		try{
+			session = sessionFactory.getCurrentSession();
+			Criteria criteria = session.createCriteria(Usuario.class);
+			criteria.add(Restrictions.eq("numeroDocumento", documento));
+			usuario = (Usuario)criteria.uniqueResult();
+		}
+		catch(HibernateException e)
+		{
+			throw new MyException("Error consultando el usuario por su documento.");
+		}
+		return usuario;
+	}
+
 }

@@ -148,6 +148,20 @@ public class UsuarioBLImp implements UsuarioBL{
 			throw new MyException("El nombre de usuario ingresado ya existe");
 		}
 		
+		/*Validar el correo del usuario*/
+		comprobarUsuario = usuarioDAO.obtenerPorEmail(email);
+		if(comprobarUsuario != null)
+		{
+			throw new MyException("El correo electrónico ingresado ya existe");
+		}
+		
+		/*Validar el número de documento del usuario*/
+		comprobarUsuario = usuarioDAO.obtenerPorDocumento(numeroDocumento);
+		if(comprobarUsuario != null)
+		{
+			throw new MyException("El número de documento ingresado ya existe");
+		}
+			
 		/*Validar que el usuario sea mayor de edad*/
 		Date fechaActual = new Date();
 		Long diferenciaFechas = fechaActual.getTime() - fechaNacimiento.getTime();
@@ -251,7 +265,6 @@ public class UsuarioBLImp implements UsuarioBL{
 		usuario = usuarioDAO.obtenerPorEmail(currentEmail);
 		if(usuario == null)
 		{
-			System.out.println("\n\n Siempre me vengo por null \n\n");
 			throw new MyException("Correo inválido");
 		}
 		if(!usuario.getPassword().equals(cipher.encrypt(currentPassword)))

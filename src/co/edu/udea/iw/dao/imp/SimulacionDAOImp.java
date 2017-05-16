@@ -49,6 +49,7 @@ public class SimulacionDAOImp implements SimulacionDAO{
 	public void registrarPeriodo(Simulacion simulacion) throws MyException {
 		Session session = null;
 		try {
+			System.out.println("Usuario: " + simulacion.getUsuario());
 			session = sessionFactory.getCurrentSession();
 			session.save(simulacion);
 		} catch(HibernateException e) {

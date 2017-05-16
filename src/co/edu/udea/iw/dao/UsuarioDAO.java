@@ -36,4 +36,12 @@ public interface UsuarioDAO {
 	 * @throws MyException
 	 */
 	public Usuario obtenerPorEmail(String email) throws MyException;
+	
+	/**
+	 * Definición de método para obtener un usuario de la base de datos dado su documento.
+	 * @param documento
+	 * @return Usuario con el documento dado
+	 * @throws MyException
+	 */
+	public Usuario obtenerPorDocumento(String documento) throws MyException;
 }
