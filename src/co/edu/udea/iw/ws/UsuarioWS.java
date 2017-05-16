@@ -106,6 +106,13 @@ public class UsuarioWS {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param currentEmail
+	 * @param currentPassword
+	 * @param newPassword
+	 * @throws RemoteException
+	 */
 public void editarPassword(@QueryParam("currentEmail")String currentEmail, 
 		@QueryParam("currentPassword")String currentPassword,
 		@QueryParam("newPassword")String newPassword) throws RemoteException
