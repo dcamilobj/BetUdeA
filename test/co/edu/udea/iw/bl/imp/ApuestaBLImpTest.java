@@ -43,10 +43,10 @@ public class ApuestaBLImpTest {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.YEAR, 2017);
 		calendar.set(Calendar.MONTH, Calendar.MAY);
-		calendar.set(Calendar.DAY_OF_MONTH, 10);
+		calendar.set(Calendar.DAY_OF_MONTH, 20);
 		Date fecha = calendar.getTime();	
 		try{			
-			apuestaBL.registrar("Lakers vs America", fecha, 3000D, 2.5D, "Lakers", "sergio");
+			apuestaBL.registrar("Golden State Warriors vs Thunders", fecha, 5000D, 1.8D, "GSW", "elver");
 		}
 		catch(MyException e)
 		{
