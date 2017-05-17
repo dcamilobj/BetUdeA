@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -53,7 +54,7 @@ public class SimulacionWS {
 	 * @throws RemoteException
 	 */
 	public List<Simulacion> obtenerPeriodos(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException {
-		
+		return null;
 	}
 	
 	@GET
@@ -66,7 +67,7 @@ public class SimulacionWS {
 	 * @throws RemoteException
 	 */
 	public Simulacion obtenerPeriodo(@QueryParam("periodoSimulacionId")Long periodoSimulacionId) throws RemoteException{
-		
+		return null;
 	}
 	
 	@GET
@@ -79,6 +80,6 @@ public class SimulacionWS {
 	 * @throws RemoteException
 	 */
 	public Simulacion obtenerPeriodoActivo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
-
+		return null;
 	}
 }

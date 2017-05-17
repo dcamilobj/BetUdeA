@@ -45,8 +45,8 @@ public class UsuarioBLImpTest {
 		Date fecha = calendar.getTime();		
 		
 		try{
-			usuarioBL.registrar("elver3","CC","103412w3","Camilo",
-					"Bedoya",fecha,"sdf@gmail.com","cualquiercosa");
+			usuarioBL.registrar("elver2","CC","10341a2w3","Camilo",
+					"Bedoya",fecha,"sds@gmail.com","cualquiercosa");
 			
 		}catch(MyException e)
 		{
