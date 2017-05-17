@@ -16,6 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.udea.iw.bl.UsuarioBL;
 import co.edu.udea.iw.bl.imp.UsuarioBLImp;
 import co.edu.udea.iw.exception.MyException;
 
@@ -29,7 +30,7 @@ import co.edu.udea.iw.exception.MyException;
 public class UsuarioBLImpTest {
 
 	@Autowired
-	private UsuarioBLImp usuarioBL;
+	private UsuarioBL usuarioBL;
 	/**
 	 * Test method for {@link co.edu.udea.iw.bl.imp.UsuarioBLImp#registrar(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
 	 * Prueba que valida el registro de un usuario
@@ -45,8 +46,8 @@ public class UsuarioBLImpTest {
 		Date fecha = calendar.getTime();		
 		
 		try{
-			usuarioBL.registrar("elver2","CC","10341a2w3","Camilo",
-					"Bedoya",fecha,"sds@gmail.com","cualquiercosa");
+			usuarioBL.registrar("elver","CC","1036987451","Elver",
+					"Suarez",fecha,"elveer@gmail.com","123456");
 			
 		}catch(MyException e)
 		{
