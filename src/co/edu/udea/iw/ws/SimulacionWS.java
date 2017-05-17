@@ -9,6 +9,7 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,27 +34,51 @@ public class SimulacionWS {
 	
 	@POST
 	@Produces(MediaType.TEXT_HTML)
-	public void registrarPeriodo(String nombreUsuario) throws RemoteException{
+	/**
+	 * 
+	 * 
+	 * @param nombreUsuario
+	 * @throws RemoteException
+	 */
+	public void registrarPeriodo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
 		
 	}
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	@Path("1")
-	public List<Simulacion> obtenerPeriodos(String nombreUsuario) throws RemoteException {
+	/**
+	 * 
+	 * @param nombreUsuario
+	 * @return List<Simulacion>
+	 * @throws RemoteException
+	 */
+	public List<Simulacion> obtenerPeriodos(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException {
 		
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	@Path("2")
-	public Simulacion obtenerPeriodo(Long periodoSimulacionId) throws RemoteException{
+	/**
+	 * 
+	 * @param periodoSimulacionId
+	 * @return Simulacion
+	 * @throws RemoteException
+	 */
+	public Simulacion obtenerPeriodo(@QueryParam("periodoSimulacionId")Long periodoSimulacionId) throws RemoteException{
 		
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
-	@Path("2")
-	public Simulacion obtenerPeriodoActivo(String nombreUsuario) throws RemoteException{
+	@Path("3")
+	/**
+	 * 
+	 * @param nombreUsuario
+	 * @return Simulacion
+	 * @throws RemoteException
+	 */
+	public Simulacion obtenerPeriodoActivo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
 
 	}
 }
