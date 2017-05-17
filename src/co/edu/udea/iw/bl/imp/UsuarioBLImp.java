@@ -200,6 +200,7 @@ public class UsuarioBLImp implements UsuarioBL{
 	 */
 	public void autenticar(String nombreUsuario, String password) throws MyException
 	{
+		System.out.println(nombreUsuario);
 		Cipher cipher = new Cipher();
 		if(nombreUsuario == null || nombreUsuario.isEmpty())
 		{

@@ -17,8 +17,13 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.udea.iw.bl.UsuarioBL;
 import co.edu.udea.iw.bl.imp.UsuarioBLImp;
+import co.edu.udea.iw.encode.Cipher;
 import co.edu.udea.iw.exception.MyException;
 
 /**
@@ -30,12 +35,13 @@ import co.edu.udea.iw.exception.MyException;
 public class UsuarioWS {
 	
 	@Autowired
-	private UsuarioBLImp usuarioBLImp;
+	private UsuarioBL usuarioBL;
 
 	@POST
 	@Produces(MediaType.TEXT_HTML)
 	/**
-	 * ?nombreUsuario="Camilo"&tipoDocumento="CC"&numeroDocumento="qwdasd"&nombres="Camilo"&apellidos="Bedoya"&fechaNacimiento=1996-04-04&email="loca@gmail.com"&password="oeoeoeo"
+	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario
+	 * ?nombreUsuario=Camilo&tipoDocumento=CC&numeroDocumento=qwdasd&nombres=Camilo&apellidos=Bedoya&fechaNacimiento=1996-04-04&email=loca@gmail.com&password=oeoeoeo
 	 * @param nombreUsuario
 	 * @param tipoDocumento
 	 * @param numeroDocumento
@@ -56,7 +62,7 @@ public class UsuarioWS {
 			@QueryParam("password")String password) throws RemoteException
 	{
 		try{
-			usuarioBLImp.registrar(nombreUsuario, tipoDocumento, numeroDocumento,
+			usuarioBL.registrar(nombreUsuario, tipoDocumento, numeroDocumento,
 					nombres, apellidos, fechaNacimiento, email, password);
 
 			
@@ -67,9 +73,10 @@ public class UsuarioWS {
 	}
 	
 	@GET
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.APPLICATION_XML)
+	@Path("1")
 	/**
-	 * 
+	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/1?nombreUsuario=elver&password=cualquiercosa
 	 * @param nombreUsuario
 	 * @param password
 	 * @throws RemoteException
@@ -78,7 +85,9 @@ public class UsuarioWS {
 			@QueryParam("password")String password) throws RemoteException
 	{
 		try{
-			usuarioBLImp.autenticar(nombreUsuario, password);
+			System.out.println("\n\n" +nombreUsuario +"\n\n");
+			usuarioBL.autenticar(nombreUsuario, password);
+			
 		}catch(MyException e)
 		{
 			throw new RemoteException("Error en el servicio para autenticar usuario", e);
@@ -99,7 +108,7 @@ public class UsuarioWS {
 			@QueryParam("newEmail")String newEmail) throws RemoteException
 	{
 		try{
-			usuarioBLImp.editarEmail(currentEmail, currentPassword, newEmail);
+			usuarioBL.editarEmail(currentEmail, currentPassword, newEmail);
 		}catch(MyException e)
 		{
 			throw new RemoteException("Error en el servicio para editar el correo de un usuario", e);
@@ -118,13 +127,13 @@ public void editarPassword(@QueryParam("currentEmail")String currentEmail,
 		@QueryParam("newPassword")String newPassword) throws RemoteException
 	{
 		try{
-			usuarioBLImp.editarPassword(currentEmail, currentPassword, newPassword);
+			usuarioBL.editarPassword(currentEmail, currentPassword, newPassword);
 		}
 		catch(MyException e)
 		{
 			throw new RemoteException("Error en el servicio para editar la contraseña de un usuario", e);
 		}
-	}
+	} 
 }
 
 
