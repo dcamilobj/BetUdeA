@@ -95,9 +95,10 @@ public class UsuarioWS {
 	}
 	
 	@POST
-	@Produces(MediaType.APPLICATION_JSON)
+	@Path("2")
 	/**
-	 * 
+	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/
+	 * 2?currentEmail=sdf@gmail.com&currentPassword=cualquiercosa&newEmail=nuevo@gmail.com
 	 * @param currentEmail
 	 * @param currentPassword
 	 * @param newEmail
@@ -115,8 +116,11 @@ public class UsuarioWS {
 		}
 	}
 	
+	@POST
+	@Path("3")
 	/**
-	 * 
+	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/
+	 * 3?currentEmail=nuevo@gmail.com&currentPassword=cualquiercosa&newPassword=otracosa
 	 * @param currentEmail
 	 * @param currentPassword
 	 * @param newPassword
