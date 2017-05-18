@@ -72,7 +72,8 @@ public class UsuarioWS {
 			
 		}catch(MyException e)
 		{
-			throw new RemoteException("Error en el servicio para registrar usuario");
+			//throw new RemoteException("Error en el servicio para registrar usuario");
+			return e.getMessage();
 		} catch (ParseException e) {
 			throw new RemoteException("Error en la fecha de nacimiento ingresada");
 		}

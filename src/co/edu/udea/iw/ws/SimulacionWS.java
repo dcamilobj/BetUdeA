@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -35,7 +36,7 @@ public class SimulacionWS {
 	private SimulacionBL simulacionBL;
 	
 	@POST
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.TEXT_HTML)	
 	/**
 	 * 
 	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion?nombreUsuario=elver
@@ -48,7 +49,7 @@ public class SimulacionWS {
 
 		}catch(MyException e)
 		{
-			throw new RemoteException("Error en el servicio para registrar un periodo de simulación", e);
+			throw new RemoteException("Error en el servicio para registrar un periodo de simulaciï¿½n", e);
 		}
 	
 	}
@@ -75,7 +76,7 @@ public class SimulacionWS {
 	
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("2")
 	/**
 	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/2?periodoSimulacionId=1
@@ -89,14 +90,14 @@ public class SimulacionWS {
 			respuesta=simulacionBL.obtenerPeriodo(periodoSimulacionId);
 		}
 		catch(MyException e){
-				throw new RemoteException("Error obteniendo el periodo de simulación con ese Id",e);
+				throw new RemoteException("Error obteniendo el periodo de simulaciï¿½n con ese Id",e);
 		}
 		return respuesta;
 	
 	}
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)	
 	@Path("3")
 	/**
 	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/3?nombreUsuario=elver
@@ -110,7 +111,7 @@ public class SimulacionWS {
 			respuesta=simulacionBL.obtenerPeriodoActivo(nombreUsuario);
 		}
 		catch(MyException e){
-				throw new RemoteException("Error obteniendo el periodo de simulación activo",e);
+				throw new RemoteException("Error obteniendo el periodo de simulaciï¿½n activo",e);
 		}
 		return respuesta;
 	}
