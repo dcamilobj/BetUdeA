@@ -49,7 +49,7 @@ public class ApuestaWS {
 	 */
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
-	public String registrar(@QueryParam("evento") String evento, @QueryParam("fecha") String strFechaEvento,
+	public void registrar(@QueryParam("evento") String evento, @QueryParam("fecha") String strFechaEvento,
 						  @QueryParam("valor") Double valorApostado, @QueryParam("cuota") Double cuota,
 						  @QueryParam("opcion") String opcionSeleccionada, @QueryParam("usuario") String usuario) throws RemoteException{
 		
@@ -63,20 +63,18 @@ public class ApuestaWS {
 		} catch(ParseException e) {
 			throw new RemoteException("Error en la fecha ingresada");
 		}
-		
-		return "Apuesta registrada exitosamente";
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<ApuestaJersey> consultar(@QueryParam("periodo") Long periodoSimulacion) throws RemoteException {
+	public List<Apuesta> consultar(@QueryParam("periodo") Long periodoSimulacion) throws RemoteException {
 		List<Apuesta> apuestas = null;
-		List<ApuestaJersey> resultado = new ArrayList<>();
-		ApuestaJersey apuestaWS = null;
+		List<Apuesta> resultado = new ArrayList<>();
+		Apuesta apuestaWS = null;
 		try {
 			apuestas = apuestaBL.consultar(periodoSimulacion);
 			for(Apuesta apuesta: apuestas) {
-				apuestaWS = new ApuestaJersey();
+				apuestaWS = new Apuesta();
 				apuestaWS.setId(apuesta.getId());
 				apuestaWS.setEvento(apuesta.getEvento());
 				apuestaWS.setValorApostado(apuesta.getValorApostado());

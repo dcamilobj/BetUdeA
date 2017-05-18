@@ -32,7 +32,7 @@ import co.edu.udea.iw.exception.MyException;
  * @author Duban Camilo Bedoya Jiménez(dcamilo.bedoya@udea.edu.co)
  * @version 1.0
  */
-@Path("Usuario")
+@Path("usuarios")
 @Component
 public class UsuarioWS {
 	
@@ -40,9 +40,8 @@ public class UsuarioWS {
 	private UsuarioBL usuarioBL;
 
 	@POST
-	@Produces(MediaType.TEXT_PLAIN)
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario
+	 * http://localhost:8080/BetUdeA/usuarios
 	 * ?nombreUsuario=Camilo&tipoDocumento=CC&numeroDocumento=qwdasd&nombres=Camilo&apellidos=Bedoya&fechaNacimiento=1996-04-04&email=loca@gmail.com&password=cualquiercosa
 	 * @param nombreUsuario
 	 * @param tipoDocumento
@@ -54,7 +53,7 @@ public class UsuarioWS {
 	 * @param password
 	 * @throws RemoteException
 	 */
-	public String registrarUsuario(@QueryParam("nombreUsuario")String nombreUsuario,
+	public void registrarUsuario(@QueryParam("nombreUsuario")String nombreUsuario,
 			@QueryParam("tipoDocumento")String tipoDocumento,
 			@QueryParam("numeroDocumento")String numeroDocumento,
 			@QueryParam("nombres")String nombres, 
@@ -70,27 +69,31 @@ public class UsuarioWS {
 			usuarioBL.registrar(nombreUsuario, tipoDocumento, numeroDocumento,
 					nombres, apellidos, fechaNacimientoD, email, password);
 			
-		}catch(MyException e)
+		}
+		catch(MyException e)
 		{
-			//throw new RemoteException("Error en el servicio para registrar usuario");
-			return e.getMessage();
-		} catch (ParseException e) {
+			throw new RemoteException("Error en el servicio para registrar usuario");
+		} 
+		catch (ParseException e)
+		{
 			throw new RemoteException("Error en la fecha de nacimiento ingresada");
 		}
-		
-		return "Usuario registrado exitosamente.";
+		catch(NullPointerException e)
+		{
+			throw new RemoteException("Se debe ingresar una fecha de nacimiento");
+		}
 	}
 	
-	@GET
+	@POST
 	@Produces(MediaType.APPLICATION_XML)
-	@Path("1")
+	@Path("autenticar")
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/1?nombreUsuario=Camilo&password=cualquiercosa
+	 * http://localhost:8080/BetUdeA/usuarios?nombreUsuario=Camilo&password=cualquiercosa
 	 * @param nombreUsuario
 	 * @param password
 	 * @throws RemoteException
 	 */
-	public String autenticar(@QueryParam("nombreUsuario")String nombreUsuario,
+	public void autenticar(@QueryParam("nombreUsuario")String nombreUsuario,
 			@QueryParam("password")String password) throws RemoteException
 	{
 		try{
@@ -102,20 +105,20 @@ public class UsuarioWS {
 			throw new RemoteException("Error en el servicio para autenticar usuario", e);
 		}
 		
-		return "Usuario autenticado exitosamente.";
 	}
 	
 	@POST
-	@Path("2")
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("editaremail")
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/
-	 * 2?currentEmail=loca@gmail.com&currentPassword=cualquiercosa&newEmail=nuevo@gmail.com
+	 * http://localhost:8080/BetUdeA/Usuarios/
+	 * editaremail?currentEmail=loca@gmail.com&currentPassword=cualquiercosa&newEmail=nuevo@gmail.com
 	 * @param currentEmail
 	 * @param currentPassword
 	 * @param newEmail
 	 * @throws RemoteException
 	 */
-	public String editarEmail(@QueryParam("currentEmail")String currentEmail,
+	public void editarEmail(@QueryParam("currentEmail")String currentEmail,
 			@QueryParam("currentPassword")String currentPassword,
 			@QueryParam("newEmail")String newEmail) throws RemoteException
 	{
@@ -126,20 +129,20 @@ public class UsuarioWS {
 			throw new RemoteException("Error en el servicio para editar el correo de un usuario", e);
 		}
 		
-		return "Correo electrónico modificado exitosamente.";
 	}
 	
 	@POST
-	@Path("3")
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("editarpassword")
 	/**
 	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/
-	 * 3?currentEmail=nuevo@gmail.com&currentPassword=cualquiercosa&newPassword=otracosa
+	 * editarpassword?currentEmail=nuevo@gmail.com&currentPassword=cualquiercosa&newPassword=otracosa
 	 * @param currentEmail
 	 * @param currentPassword
 	 * @param newPassword
 	 * @throws RemoteException
 	 */
-public String editarPassword(@QueryParam("currentEmail")String currentEmail, 
+public void editarPassword(@QueryParam("currentEmail")String currentEmail, 
 		@QueryParam("currentPassword")String currentPassword,
 		@QueryParam("newPassword")String newPassword) throws RemoteException
 	{
@@ -151,7 +154,6 @@ public String editarPassword(@QueryParam("currentEmail")String currentEmail,
 			throw new RemoteException("Error en el servicio para editar la contraseña de un usuario", e);
 		}
 		
-		return "Contraseña modificada exitosamente.";
 	} 
 }
 

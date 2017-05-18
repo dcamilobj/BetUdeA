@@ -5,12 +5,15 @@ package co.edu.udea.iw.dto;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase DTO para la tabla "apuesta"
  * @author Andres Ceballos Sanchez - andres.ceballoss@udea.edu.co
  * @version 1.0
  *
  */
+@XmlRootElement
 public class Apuesta {
 	
 	/*Atributos de la clase*/
