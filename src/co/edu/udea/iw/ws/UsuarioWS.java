@@ -108,7 +108,7 @@ public class UsuarioWS {
 	@Path("2")
 	/**
 	 * http://localhost:8080/BetUdeA/BetUdeA/Usuario/
-	 * 2?currentEmail=sdf@gmail.com&currentPassword=cualquiercosa&newEmail=nuevo@gmail.com
+	 * 2?currentEmail=loca@gmail.com&currentPassword=cualquiercosa&newEmail=nuevo@gmail.com
 	 * @param currentEmail
 	 * @param currentPassword
 	 * @param newEmail
