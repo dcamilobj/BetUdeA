@@ -5,11 +5,14 @@ package co.edu.udea.iw.dto;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase implementa todos los atributos de la tabla "periodo_simulacion" con sus getters y setters. 
  * @author Sergio Llanos Garcia
  * @version 1.0
  */
+@XmlRootElement
 public class Simulacion {
 	/**
 	 * Atributos de la clase
