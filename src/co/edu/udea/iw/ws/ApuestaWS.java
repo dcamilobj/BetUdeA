@@ -26,7 +26,7 @@ import co.edu.udea.iw.exception.MyException;
 
 /**
  * Servicio Web para la entidad Apuesta
- * @author Andrés Ceballos Sánchez - andres.ceballoss@udea.edu.co
+ * @author Andrï¿½s Ceballos Sï¿½nchez - andres.ceballoss@udea.edu.co
  * @version 1.0
  *
  */

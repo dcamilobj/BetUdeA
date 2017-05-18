@@ -13,177 +13,177 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/com.springsource.org.aopalliance-1.0.0.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/commons-logging.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-aop-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-beans-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-orm-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-context-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-jdbc-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-core-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-expression-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-expression-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-core-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-jdbc-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-context-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-orm-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-beans-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-test-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/spring-aop-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-tx-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/commons-logging.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasSpring/spring-web-4.1.6.RELEASE.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasSpring/com.springsource.org.aopalliance-1.0.0.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasMySql/mysql-connector-java-5.1.22-bin.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasLog/log4j-1.2.17.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasLog/log4j-1.2.17.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/antlr-2.7.6.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jsr311-api-1.1.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/commons-collections-3.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jettison-1.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/dom4j-1.6.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jersey-server-1.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate3.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jersey-json-1.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jersey-core-1.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/javassist-3.12.0.GA.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jersey-client-1.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/jta-1.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jackson-xc-1.5.5.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-api-1.6.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jackson-mapper-asl-1.5.5.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasHibernate/slf4j-log4j12-1.7.2.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jackson-jaxrs-1.5.5.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/asm-3.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/jackson-core-asl-1.5.5.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jackson-core-asl-1.5.5.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/lib/asm-3.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jackson-jaxrs-1.5.5.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/contribs/jersey-spring-1.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jackson-mapper-asl-1.5.5.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/antlr-2.7.6.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jackson-xc-1.5.5.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/commons-collections-3.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jersey-client-1.4.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/dom4j-1.6.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jersey-core-1.4.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/hibernate3.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jersey-json-1.4.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jersey-server-1.4.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/javassist-3.12.0.GA.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jettison-1.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/jta-1.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/Jersey/jsr311-api-1.1.1.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/slf4j-api-1.6.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/ANDRES/ECLIPSE/workspace/BetUdeA/Librerias/LibreriasJersey/jersey-archive-1.4/jersey-archive-1.4/contribs/jersey-spring-1.4.jar">
+	<classpathentry kind="lib" path="/home/camilo/Workspace/IngWeb/Librerias/LibreriasHibernate/slf4j-log4j12-1.7.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
