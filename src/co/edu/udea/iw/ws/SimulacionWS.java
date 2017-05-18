@@ -67,7 +67,7 @@ public class SimulacionWS {
 			respuesta=simulacionBL.obtenerPeriodos(nombreUsuario);
 		}
 		catch(MyException e){
-				throw new RemoteException("Error obteniendo clientes",e);
+				throw new RemoteException("Error obteniendo los periodos de simulacion de ese usuario",e);
 		}
 		return respuesta;
 					}
@@ -78,25 +78,40 @@ public class SimulacionWS {
 	@Produces(MediaType.APPLICATION_XML)
 	@Path("2")
 	/**
-	 * 
+	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/2?periodoSimulacionId=1
 	 * @param periodoSimulacionId
 	 * @return Simulacion
 	 * @throws RemoteException
 	 */
 	public Simulacion obtenerPeriodo(@QueryParam("periodoSimulacionId")Long periodoSimulacionId) throws RemoteException{
-		return null;
+		Simulacion respuesta=null;
+		try{
+			respuesta=simulacionBL.obtenerPeriodo(periodoSimulacionId);
+		}
+		catch(MyException e){
+				throw new RemoteException("Error obteniendo el periodo de simulación con ese Id",e);
+		}
+		return respuesta;
+	
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	@Path("3")
 	/**
-	 * 
-	 * @param nombreUsuario
+	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/3?nombreUsuario=elver
+	 * @param nombreUsuarior
 	 * @return Simulacion
 	 * @throws RemoteException
 	 */
 	public Simulacion obtenerPeriodoActivo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
-		return null;
+		Simulacion respuesta=null;
+		try{
+			respuesta=simulacionBL.obtenerPeriodoActivo(nombreUsuario);
+		}
+		catch(MyException e){
+				throw new RemoteException("Error obteniendo el periodo de simulación activo",e);
+		}
+		return respuesta;
 	}
 }
