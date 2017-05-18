@@ -4,6 +4,7 @@
 package co.edu.udea.iw.ws;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -26,7 +27,7 @@ import co.edu.udea.iw.exception.MyException;
  *
  */
 
-@Path("simulacion")
+@Path("Simulacion")
 @Component
 public class SimulacionWS {
 
@@ -37,25 +38,41 @@ public class SimulacionWS {
 	@Produces(MediaType.TEXT_HTML)
 	/**
 	 * 
-	 * 
+	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion?nombreUsuario=elver
 	 * @param nombreUsuario
 	 * @throws RemoteException
 	 */
 	public void registrarPeriodo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
-		
+		try{
+			simulacionBL.registrarPeriodo(nombreUsuario);
+
+		}catch(MyException e)
+		{
+			throw new RemoteException("Error en el servicio para registrar un periodo de simulación", e);
+		}
+	
 	}
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("1")
 	/**
-	 * 
+	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/1?nombreUsuario=elver
 	 * @param nombreUsuario
 	 * @return List<Simulacion>
 	 * @throws RemoteException
 	 */
 	public List<Simulacion> obtenerPeriodos(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException {
-		return null;
-	}
+		List<Simulacion> respuesta = null; 
+		try{
+			respuesta=simulacionBL.obtenerPeriodos(nombreUsuario);
+		}
+		catch(MyException e){
+				throw new RemoteException("Error obteniendo clientes",e);
+		}
+		return respuesta;
+					}
+	
+	
 	
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
