@@ -11,6 +11,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -28,90 +29,105 @@ import co.edu.udea.iw.exception.MyException;
  *
  */
 
-@Path("Simulacion")
+@Path("periodos")
 @Component
 public class SimulacionWS {
 
 	@Autowired
 	private SimulacionBL simulacionBL;
-	
-	@POST
-	@Produces(MediaType.TEXT_HTML)	
+
 	/**
+	 * Servicio web para registrar un periodo de simulacion
+	 * http://localhost:8080/BetUdeA/periodos?nombreUsuario=usertest
 	 * 
-	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion?nombreUsuario=elver
 	 * @param nombreUsuario
 	 * @throws RemoteException
 	 */
-	public void registrarPeriodo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
-		try{
+	@POST
+	public void registrarPeriodo(@QueryParam("nombreUsuario") String nombreUsuario) throws RemoteException {
+		try {
 			simulacionBL.registrarPeriodo(nombreUsuario);
 
-		}catch(MyException e)
-		{
+		} catch (MyException e) {
 			throw new RemoteException("Error en el servicio para registrar un periodo de simulaci�n", e);
 		}
-	
+
 	}
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("1")
+
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/1?nombreUsuario=elver
+	 * Servicio web para consultar los periodos de simulacion de un usuario dado
+	 * http://localhost:8080/BetUdeA/periodos?nombreUsuario=usertest
+	 * 
 	 * @param nombreUsuario
 	 * @return List<Simulacion>
 	 * @throws RemoteException
 	 */
-	public List<Simulacion> obtenerPeriodos(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException {
-		List<Simulacion> respuesta = null; 
-		try{
-			respuesta=simulacionBL.obtenerPeriodos(nombreUsuario);
-		}
-		catch(MyException e){
-				throw new RemoteException("Error obteniendo los periodos de simulacion de ese usuario",e);
-		}
-		return respuesta;
-					}
-	
-	
-	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("2")
+	public List<Simulacion> consultarPeriodos(@QueryParam("nombreUsuario") String nombreUsuario)
+			throws RemoteException {
+		List<Simulacion> resultado = new ArrayList<>();
+		List<Simulacion> periodos = null;
+		Simulacion simulacionWS = null;
+		try {
+			periodos = simulacionBL.obtenerPeriodos(nombreUsuario);
+			for (Simulacion simulacion : periodos) {
+				simulacionWS = new Simulacion();
+				simulacionWS.setId(simulacion.getId());
+				simulacionWS.setFechaInicio(simulacion.getFechaInicio());
+				simulacionWS.setSaldo(simulacion.getSaldo());
+				resultado.add(simulacionWS);
+			}
+		} catch (MyException e) {
+			throw new RemoteException("Error obteniendo los periodos de simulacion de ese usuario", e);
+		}
+		return resultado;
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{periodoSimulacionId}")
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/2?periodoSimulacionId=1
+	 * http://localhost:8080/BetUdeA/periodos/100005
 	 * @param periodoSimulacionId
 	 * @return Simulacion
 	 * @throws RemoteException
 	 */
-	public Simulacion obtenerPeriodo(@QueryParam("periodoSimulacionId")Long periodoSimulacionId) throws RemoteException{
-		Simulacion respuesta=null;
-		try{
-			respuesta=simulacionBL.obtenerPeriodo(periodoSimulacionId);
-		}
-		catch(MyException e){
-				throw new RemoteException("Error obteniendo el periodo de simulaci�n con ese Id",e);
+	public Simulacion consultarPeriodo(@PathParam("periodoSimulacionId") Long periodoSimulacionId)
+			throws RemoteException {
+		Simulacion periodo = null;
+		Simulacion respuesta = new Simulacion();
+		try {
+			periodo = simulacionBL.obtenerPeriodo(periodoSimulacionId);
+			respuesta.setId(periodo.getId());
+			respuesta.setFechaInicio(periodo.getFechaInicio());
+			respuesta.setFechaFin(periodo.getFechaFin());
+			respuesta.setSaldo(periodo.getSaldo());
+		} catch (MyException e) {
+			throw new RemoteException("Error obteniendo el periodo de simulaci�n con ese Id", e);
+		} catch(NullPointerException e) {
+			throw new RemoteException("El periodo especificado no existe en el sistema");
 		}
 		return respuesta;
-	
+
 	}
+
 	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)	
-	@Path("3")
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/3?nombreUsuario=elver
+	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/3?nombreUsuario=elver	  
 	 * @param nombreUsuarior
 	 * @return Simulacion
 	 * @throws RemoteException
 	 */
-	public Simulacion obtenerPeriodoActivo(@QueryParam("nombreUsuario")String nombreUsuario) throws RemoteException{
-		Simulacion respuesta=null;
-		try{
-			respuesta=simulacionBL.obtenerPeriodoActivo(nombreUsuario);
-		}
-		catch(MyException e){
-				throw new RemoteException("Error obteniendo el periodo de simulaci�n activo",e);
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("periodoactivo")
+	public Simulacion consultarPeriodoActivo(@QueryParam("nombreUsuario") String nombreUsuario) throws RemoteException {
+		Simulacion respuesta = null;
+		try {
+			respuesta = simulacionBL.obtenerPeriodoActivo(nombreUsuario);
+		} catch (MyException e) {
+			throw new RemoteException("Error obteniendo el periodo de simulaci�n activo", e);
 		}
 		return respuesta;
 	}
