@@ -19,6 +19,7 @@ import co.edu.udea.iw.bl.UsuarioBL;
 import co.edu.udea.iw.exception.MyException;
 
 /**
+ * Servicios web para entidad Usuario
  * @author Duban Camilo Bedoya JimÃ©nez(dcamilo.bedoya@udea.edu.co)
  * @version 1.0
  */
@@ -112,9 +113,9 @@ public class UsuarioWS {
 	}
 
 	/**
-	 * Servicio web para editar la contraseña de un usuario
+	 * Servicio web para editar la contraseï¿½a de un usuario
 	 * http://localhost:8080/BetUdeA/usuarios/editarpassword?
-	 * currentEmail=test@gmail.com&currentPassword=passwordtest&newPassword=newpasswordtest 
+	 * currentEmail=newtest@gmail.com&currentPassword=passwordtest&newPassword=newpasswordtest 
 	 * @param currentEmail
 	 * @param currentPassword
 	 * @param newPassword

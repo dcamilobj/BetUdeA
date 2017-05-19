@@ -69,8 +69,8 @@ public class ApuestaWS {
 	}
 	
 	/**
-	 * Servicio web para consultar las apuestas dado un periodo de simulación
-	 * http://localhost:8080/BetUdeA/apuestas?periodo=100005
+	 * Servicio web para consultar las apuestas dado un periodo de simulaciï¿½n
+	 * http://localhost:8080/BetUdeA/apuestas?periodo=...
 	 * @param periodoSimulacion
 	 * @return
 	 * @throws RemoteException

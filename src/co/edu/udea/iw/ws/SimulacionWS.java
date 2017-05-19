@@ -23,7 +23,8 @@ import co.edu.udea.iw.dto.Simulacion;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * @author Sergio
+ * Servicios web para entidad periodo de simulación.
+ * @author Sergio Llanos García
  * @version 1.0
  *
  */
@@ -88,7 +89,7 @@ public class SimulacionWS {
 	@Path("{periodoSimulacionId}")
 	/**
 	 * Servicio web para consultar un periodo de simulacion dado su id
-	 * http://localhost:8080/BetUdeA/periodos/100005
+	 * http://localhost:8080/BetUdeA/periodos/...
 	 * @param periodoSimulacionId
 	 * @return Simulacion
 	 * @throws RemoteException
@@ -115,7 +116,7 @@ public class SimulacionWS {
 	
 	/**
 	 * Servicio web para consultar el periodo de simulacion activo de un usuario
-	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/3?nombreUsuario=elver	  
+	 * http://localhost:8080/BetUdeA/periodos/periodoactivo?nombreUsuario=usertest	  
 	 * @param nombreUsuarior
 	 * @return Simulacion
 	 * @throws RemoteException
