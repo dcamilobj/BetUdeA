@@ -30,7 +30,7 @@ import co.edu.udea.iw.exception.MyException;
  * @version 1.0
  *
  */
-@Path("apuesta")
+@Path("apuestas")
 @Component
 public class ApuestaWS {
 	
@@ -38,7 +38,9 @@ public class ApuestaWS {
 	private ApuestaBL apuestaBL;
 	
 	/**
-	 * http://localhost:8080/BetUdeA/BetUdeA/apuesta?evento=Spurs vs Cleveland&fecha=2017-05-18&valor=4000&cuota=2.3&opcion=Spurs&usuario=elver
+	 * Servicio web para registrar una apuesta de un evento deportivo
+	 * http://localhost:8080/BetUdeA/apuestas?
+	 * evento=Spurs vs Cleveland&fecha=2017-05-20&valor=4000&cuota=2.3&opcion=Spurs&usuario=usertest
 	 * @param evento
 	 * @param strFechaEvento
 	 * @param valorApostado
@@ -48,7 +50,6 @@ public class ApuestaWS {
 	 * @throws RemoteException
 	 */
 	@POST
-	@Produces(MediaType.TEXT_PLAIN)
 	public void registrar(@QueryParam("evento") String evento, @QueryParam("fecha") String strFechaEvento,
 						  @QueryParam("valor") Double valorApostado, @QueryParam("cuota") Double cuota,
 						  @QueryParam("opcion") String opcionSeleccionada, @QueryParam("usuario") String usuario) throws RemoteException{
@@ -62,12 +63,21 @@ public class ApuestaWS {
 			throw new RemoteException("Error registrando la apuesta");
 		} catch(ParseException e) {
 			throw new RemoteException("Error en la fecha ingresada");
+		} catch(NullPointerException e) {
+			
 		}
 	}
 	
+	/**
+	 * Servicio web para consultar las apuestas dado un periodo de simulación
+	 * http://localhost:8080/BetUdeA/apuestas?periodo=100005
+	 * @param periodoSimulacion
+	 * @return
+	 * @throws RemoteException
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Apuesta> consultar(@QueryParam("periodo") Long periodoSimulacion) throws RemoteException {
+	public List<Apuesta> consultarApuestas(@QueryParam("periodo") Long periodoSimulacion) throws RemoteException {
 		List<Apuesta> apuestas = null;
 		List<Apuesta> resultado = new ArrayList<>();
 		Apuesta apuestaWS = null;
@@ -77,10 +87,12 @@ public class ApuestaWS {
 				apuestaWS = new Apuesta();
 				apuestaWS.setId(apuesta.getId());
 				apuestaWS.setEvento(apuesta.getEvento());
+				apuestaWS.setFechaEvento(apuesta.getFechaEvento());				
 				apuestaWS.setValorApostado(apuesta.getValorApostado());
 				apuestaWS.setCuota(apuesta.getCuota());
-				apuestaWS.setFechaApuesta(apuesta.getFechaApuesta());
 				apuestaWS.setOpcionSeleccionada(apuesta.getOpcionSeleccionada());
+				apuestaWS.setEstado(apuesta.getEstado());
+				apuestaWS.setFechaApuesta(apuesta.getFechaApuesta());
 				apuestaWS.setOpcionCorrecta(apuesta.getOpcionCorrecta());
 				resultado.add(apuestaWS);
 			}
