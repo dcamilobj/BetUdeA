@@ -7,7 +7,6 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -88,6 +87,7 @@ public class SimulacionWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{periodoSimulacionId}")
 	/**
+	 * Servicio web para consultar un periodo de simulacion dado su id
 	 * http://localhost:8080/BetUdeA/periodos/100005
 	 * @param periodoSimulacionId
 	 * @return Simulacion
@@ -114,6 +114,7 @@ public class SimulacionWS {
 
 	
 	/**
+	 * Servicio web para consultar el periodo de simulacion activo de un usuario
 	 * http://localhost:8080/BetUdeA/BetUdeA/Simulacion/3?nombreUsuario=elver	  
 	 * @param nombreUsuarior
 	 * @return Simulacion
@@ -123,11 +124,18 @@ public class SimulacionWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("periodoactivo")
 	public Simulacion consultarPeriodoActivo(@QueryParam("nombreUsuario") String nombreUsuario) throws RemoteException {
-		Simulacion respuesta = null;
+		Simulacion periodo = null;
+		Simulacion respuesta = new Simulacion();
 		try {
-			respuesta = simulacionBL.obtenerPeriodoActivo(nombreUsuario);
+			periodo = simulacionBL.obtenerPeriodoActivo(nombreUsuario);
+			respuesta.setId(periodo.getId());
+			respuesta.setFechaInicio(periodo.getFechaInicio());
+			respuesta.setFechaFin(periodo.getFechaFin());
+			respuesta.setSaldo(periodo.getSaldo());
 		} catch (MyException e) {
-			throw new RemoteException("Error obteniendo el periodo de simulaci�n activo", e);
+			throw new RemoteException("Error obteniendo el periodo de simulaci�n con ese Id", e);
+		} catch(NullPointerException e) {
+			throw new RemoteException("El periodo especificado no existe en el sistema");
 		}
 		return respuesta;
 	}
