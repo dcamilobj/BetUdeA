@@ -1,0 +1,42 @@
+<meta charset="ISO-8859-1">
+<form class="form">
+	<div>
+		<label for="nombreUsuario">Nombre de usuario:</label> <input id="nombreUsuario" type="text"
+			 ng-model="usuario.nombreUsuario" required>
+	</div>
+	<div>
+		<label for="passwd">Contraseña:</label> <input id="passwd" type="password"
+			 ng-model="usuario.password" required>
+	</div>
+	<div>
+		<label for="tipodcto">Tipo de documento:</label> <input id="tipodcto" type="text"
+			 ng-model="usuario.tipoDocumento"  required>
+	</div>
+		<div>
+		<label for="nrodcto">Número de documento:</label> <input id="nrodcto" type="text"
+			   ng-model="usuario.numeroDocumento" required>
+	</div>
+		<div>
+		<label for="nombres">Nombres:</label> <input id="nombres" type="text"
+			  ng-model="usuario.nombres" required>
+	</div>
+		<div>
+		<label for="apellidos">Apellidos:</label> <input id="apellidos" type="text"
+			   ng-model="usuario.apellidos" required>
+	</div>
+		<div>
+		<label for="fechanaci">Fecha de nacimiento:</label> <input id="fechanaci" type="date"
+			  ng-model="usuario.fechaNacimiento" required>
+	</div>
+		<div>
+		<label for="email">Email:</label> <input id="email" type="email"
+			 ng-model="usuario.email"  required>
+	</div>
+	<div class="buttons">
+	<button type="submit" class="btn" ng-click="guardar()" >Aceptar</a>
+	<button class="btn registerb" ng-click="RegisterBack()" >volver</a>
+
+	
+	</div>
+
+</form>
