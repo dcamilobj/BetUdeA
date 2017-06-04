@@ -60,9 +60,6 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 	$scope.Register = function() {
 		$location.url('/registrarse');
 		}		
-	$scope.RegisterBack = function() {
-		$location.url('/');
-		}	
 });
 
 
@@ -88,6 +85,9 @@ appUser.controller('Registro',
 					$location.url('/');
 				});
 					}
+			$scope.RegisterBack = function() {
+				$location.url('/');
+				}	
 		});
 
 
