@@ -1,0 +1,28 @@
+body{
+	background-color:#2bbbad;
+}
+.form{
+	width:50%;
+	border: 1px solid;
+	margin:0 auto;
+	padding:15px;
+	background-color:white;
+
+}
+.title{
+	color:black; 
+	font-size:6em;
+	 font-family: 'Rock Salt', cursive;
+}
+.divt{
+	
+	margin:0 auto;
+	margin-top:8%;
+	text-align:center;
+}
+.buttons{
+	text-align:center;
+}
+.registerb{
+	margin-left:10px;
+}
