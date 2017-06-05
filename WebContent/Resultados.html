@@ -1,0 +1,44 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a>Mi perfil</a></li>
+  <li><a>Ayuda</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Salirse</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a>Ingles</a></li>
+  <li><a>Frances</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!/resultados" class="brand-logo">BetUdeA</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a class="dropdown-button" data-belowOrigin="true" data-activates="dropdown2">Idioma<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a>Contacto</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" data-belowOrigin="true" data-activates="dropdown1"><i class="material-icons">face<i class="material-icons right">arrow_drop_down</i></i></a></li>
+    </ul>
+  </div>
+</nav>
+<div class="resultados">
+<table>
+<thead>
+<tr>
+<td>Resultados</td>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="game in games" ng-if="game.date<fecha">
+<td>{{game.awayTeam.Name}}
+</td>
+<td>{{game.homeTeam.Name}}
+</td>
+<td>{{game.date}}
+</td>
+<td>{{fecha}}
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+        

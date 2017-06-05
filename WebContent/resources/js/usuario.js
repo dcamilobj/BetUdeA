@@ -34,6 +34,30 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 	
 });
 
+appUser.service('resultados', function($http, $location) {
+	this.allGames = function(season) {
+		return $http({
+			url : 'https://www.mysportsfeeds.com/api/feed/pull/nba/'+season+'/full_game_schedule.json',
+			method : 'GET',
+			headers: {
+				"Authorization": "Basic " + btoa("ceballos1019" + ":" + "1036954574")
+			}
+		});
+	}
+	this.currentSeason = function(date) {
+		return $http({
+			url : 'https://www.mysportsfeeds.com/api/feed/pull/nba/current_season.json',
+			method : 'GET',
+			params: {
+				fordate : date
+			},
+			headers: {
+				"Authorization": "Basic " + btoa("ceballos1019" + ":" + "1036954574")
+			}
+		});
+	}
+});
+
 appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 	$scope.nombreUsuario = '';
 	$scope.passwd = '';
@@ -63,8 +87,7 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 });
 
 
-appUser.controller('Registro',
-		function($scope, $location, usuarios) {
+appUser.controller('Registro', function($scope, $location, usuarios) {
 			$scope.usuario = {
 				nombreUsuario : '',
 				tipoDocumento : '',
@@ -77,7 +100,6 @@ appUser.controller('Registro',
 			};
 			$scope.guardar = function() {
 				//NO estoy seguro de que asi se modifique la fecha para mandarla por la url
-				console.log($scope.usuario.fechaNacimiento.toLocaleDateString())
 				var d=($scope.usuario.fechaNacimiento.toLocaleDateString()).slice(0, 10).split('-');
 				$scope.usuario.fechaNacimiento=d[2]+'-'+d[1]+'-'+d[0];
 				usuarios.registrarUsuario($scope.usuario).then(function success(data) {
@@ -88,6 +110,27 @@ appUser.controller('Registro',
 			$scope.RegisterBack = function() {
 				$location.url('/');
 				}	
+		});
+
+appUser.controller('Resultados', function($scope, $location,resultados) {
+	//Obtener la fecha y modificarla para mandarla como parametro 
+	var date= new Date();
+	date= (date.toISOString()).slice(0, 10).split('-');
+	$scope.fecha=date[0]+'-'+date[1]+'-'+date[2];
+	date=date[0]+date[1]+date[2];
+	var season;
+//Obtenemos la temporada actual para mandarla como parametro
+	resultados.currentSeason(date).then(function success(data){
+     season=data.data.currentseason.season["0"].details.slug;
+     //Obtenemos todos los juegos de esa temporada
+     resultados.allGames(season).then(function success(data) {
+    	  $scope.games=data.data.fullgameschedule.gameentry;
+    	console.log($scope.games);
+     });	
+	});
+	
+	
+	      
 		});
 
 
