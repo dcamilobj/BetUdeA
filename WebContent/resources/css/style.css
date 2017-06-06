@@ -61,6 +61,9 @@ thead tr{
 	margin-top:20px;
 	
 }
+h2,h3{
+	text-align:center;
+}
 
 /* latin */
 @font-face {

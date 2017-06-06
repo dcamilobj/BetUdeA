@@ -1,0 +1,25 @@
+<div>
+	<div>
+	<h2>Cuenta</h2> 
+	<h3>Edita la configuración de tu cuenta y cambia tu correo aquí.</h3>
+	<form name="loginform" class="form">
+	<div>
+		<label for="passwd">Contraseña:</label> <input id="passwd" type="password" placeholder="Ingrese su contraseña"
+			 ng-model="password" required>
+	</div>
+		<div>
+			<label for="email">Email:</label>
+			 <input id="email" type="email" placeholder="Ingrese su correo actual"
+			 ng-model="cemail"  required>
+			 <input id="email" type="email" placeholder="Ingrese su nuevo correo"
+			 ng-model="nemail"  required>
+	</div>
+	<div class="buttonsp">
+		<button class="btn" ng-disabled="loginform.$invalid" ng-click="guardar()" >Guardar</button>
+	</div>
+		<div class="buttonsp">
+		<button class="btn" ng-click="perfilBack()" >Volver</button>
+	</div>
+	</form>
+		</div>
+</div>

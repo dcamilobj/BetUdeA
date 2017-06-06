@@ -31,19 +31,19 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 			}
 		});
 	}
-	/*
-	this.editarContraseña=function(currentEmail,currentPassword,newEmail){
+	
+	this.editarCorreo=function(cemail,password,nemail){
 		return $http({
-		url : 'http://localhost:8080/BetUdeA/BetUdeA/usuarios/editaremail
-		method : 'GET',
+		url : 'http://localhost:8080/BetUdeA/BetUdeA/usuarios/editaremail',
+		method : 'POST',
 		params: {
-			currentEmail:,
-			currentPassword:,
-			newEmail: 
+			currentEmail: cemail,
+			currentPassword: password,
+			newEmail: nemail
 		}
 			});
 	}
-*/
+
 });
 
 appUser.service('resultados', function($http, $location) {
@@ -161,15 +161,41 @@ appUser.controller('Resultados', function($scope, $location,resultados) {
 
 		});
 
-appUser.controller('Perfil', function($scope, $location,resultados) {
+appUser.controller('Perfil', function($scope, $location) {
 	
 	$scope.nombreUsuario=usuario;
 	$scope.editarCorreo=function(){
-		
+		$location.url('/editarCorreo');
 	}
-	
+	$scope.editarContrasena=function(){
+		$location.url('/editarContrasena');
+	}
 	$scope.perfilB=function(){
 		$location.url('/resultados');
+	}
+		});
+
+appUser.controller('EditarCorreo', function($scope, $location,usuarios) {
+	
+
+		$scope.password = '';
+		$scope.cemail = '';
+		$scope.nemail = '';
+		$scope.guardar=function(){
+			usuarios.editarCorreo($scope.cemail,$scope.password,$scope.nemail).then(
+					function success(data){
+						alert("Cambios realizados efectivamente ");
+						$location.url('/perfil');
+			},
+			function failure(data) {
+				alert("Email o contraseña incorrecta");
+			})
+			
+		}
+	
+	
+	$scope.perfilBack=function(){
+		$location.url('/perfil');
 	}
 		});
 
@@ -199,5 +225,13 @@ appUser.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/perfil', {
 		templateUrl : 'Perfil.html',
 		controller : 'Perfil'
+	});
+	$routeProvider.when('/editarCorreo', {
+		templateUrl : 'EditarCorreo.html',
+		controller : 'EditarCorreo'
+	});
+	$routeProvider.when('/editarContrasena', {
+		templateUrl : 'EditarContrasena.html',
+		controller : 'EditarContrasena'
 	});
 } ]);
