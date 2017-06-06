@@ -1,7 +1,7 @@
 <meta charset="ISO-8859-1">
 <div class="cuentatitle">Crea tu cuenta</div>
 <div class="cuentasubtitle">Totalmente gratis, unete y empieza a ganar sin parar</div>
-<form class="form">
+<form name="loginform" class="form">
 	<div>
 		<label for="nombreUsuario">Nombre de usuario:</label> <input id="nombreUsuario" type="text"
 			 ng-model="usuario.nombreUsuario" required>
@@ -35,8 +35,8 @@
 			 ng-model="usuario.email"  required>
 	</div>
 	<div class="buttons">
-	<button type="submit" class="btn" ng-click="guardar()" >Aceptar</a></button>
-	<button class="btn registerb" ng-click="RegisterBack()" >volver</a></button>
+	<button type="submit" ng-disabled="loginform.$invalid" class="btn" ng-click="guardar()" >Aceptar</button>
+	<button class="btn registerb" ng-click="RegisterBack()" >volver</button>
 	</form>
 	</div>
 	

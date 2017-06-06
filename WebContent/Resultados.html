@@ -1,6 +1,6 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a>Mi perfil</a></li>
+  <li><a ng-click="perfil()">Mi perfil</a></li>
   <li><a>Ayuda</a></li>
   <li class="divider"></li>
   <li><a href="#!">Salirse</a></li>
@@ -14,28 +14,29 @@
     <a href="#!/resultados" class="brand-logo">BetUdeA</a>
     <ul class="right hide-on-med-and-down">
       <li><a class="dropdown-button" data-belowOrigin="true" data-activates="dropdown2">Idioma<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a>Contacto</a></li>
+      <li><a ng-click="contacto()">Contacto</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" data-belowOrigin="true" data-activates="dropdown1"><i class="material-icons">face<i class="material-icons right">arrow_drop_down</i></i></a></li>
     </ul>
   </div>
 </nav>
+<div class="titletable">Juegos de la temporada</div>
 <div class="resultados">
 <table>
 <thead>
 <tr>
-<td>Resultados</td>
+<th>Fecha</th>
+<th>Equipo local</th>
+<th>Equipo visitante</th>
 </tr>
 </thead>
 <tbody>
-<tr ng-repeat="game in games" ng-if="game.date<fecha">
+<tr ng-repeat="game in games| orderBy:'-date'" ng-if="game.date<fecha" ng-click="details(game.date)">
+<td>{{game.date}}
+</td>
 <td>{{game.awayTeam.Name}}
 </td>
 <td>{{game.homeTeam.Name}}
-</td>
-<td>{{game.date}}
-</td>
-<td>{{fecha}}
 </td>
 </tr>
 </tbody>

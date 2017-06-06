@@ -2,7 +2,7 @@
 <div class="divt">
 	 <label class="title" for="titulo"><img src="resources/img/Basketball.png" style="height:80px"/>BetUdea</label>
 </div>
-<div class="form">
+<form name="loginform" class="form">
 	<div>
 		<label for="nombreUsuario">Nombre de usuario:</label> <input id="nombreUsuario" type="text"
 			 ng-model="nombreUsuario" required>
@@ -12,9 +12,8 @@
 			 ng-model="passwd" required>
 	</div>
 	<div class="buttons">
-		<a class="btn" ng-click="login()" >Aceptar</a>
-		<a class="btn registerb" ng-click="Register()" >Registrarse</a>
-	
+		<button type="submit" ng-disabled="loginform.$invalid" class="btn" ng-click="login()" >Aceptar</button>
+		<button class="btn registerb" ng-click="Register()" >Registrarse</button>
+	</form>
 	</div>
 
-</div>

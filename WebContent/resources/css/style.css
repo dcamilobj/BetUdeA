@@ -39,9 +39,29 @@ nav{
 .brand-logo{
 	font-family:'Rock Salt', cursive;
 }
-.resultados{
+td,th{
 	text-align:center;
+	border: 1px solid;
+	
 }
+tr:nth-child(even){
+    background-color: #F0F8FF;
+
+}
+thead tr{
+	background-color:#008B8B
+}
+
+.titletable{
+	text-align:center;
+	font-size:4em;
+}
+.buttonsp{
+	text-align:center;
+	margin-top:20px;
+	
+}
+
 /* latin */
 @font-face {
   font-family: 'Gloria Hallelujah';
