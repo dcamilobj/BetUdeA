@@ -1,0 +1,39 @@
+<div style="backgroun-color:white;">
+<table>
+<thead>
+<tr>
+<th>Fecha apuesta</th>
+<th>Valor apostado</th>
+<th>Estado</th>
+<th>Opcion seleccionada</th>
+<th>Opcion correcta</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="apuesta in apuestas">
+<td>{{apuesta.fecha_apuesta}}
+</td>
+<td>{{apuesta.valor_apostado}}
+</td>
+<td>{{apuesta.estado}}
+</td>
+<td>{{apuesta.estado}}
+</td>
+<td>{{apuesta.opcion_seleccionada}}
+</td>
+<td>{{apuesta.opcion_correcta}}
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li ng-repeat="periodo in periodos"><a ng-click="periodoId(periodo.id)">{{periodo.fechaInicio}}</a></li>
+</ul>
+    <ul class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <li class="listali"><a class="dropdown-button" data-belowOrigin="true" data-activates="dropdown1">Lista de periodos de simulacion<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+
+</div>

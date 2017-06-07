@@ -64,7 +64,10 @@ thead tr{
 h2,h3{
 	text-align:center;
 }
-
+.listali{
+border :1px solid;	
+background-color:white;
+}
 /* latin */
 @font-face {
   font-family: 'Gloria Hallelujah';

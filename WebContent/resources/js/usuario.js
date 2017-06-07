@@ -43,6 +43,18 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 		}
 			});
 	}
+	
+	this.editarContrasena=function(cemail,password,npassword){
+		return $http({
+		url : 'http://localhost:8080/BetUdeA/BetUdeA/usuarios/editarpassword',
+		method : 'POST',
+		params: {
+			currentEmail: cemail,
+			currentPassword: password,
+			newPassword: npassword
+		}
+			});
+	}
 
 });
 
@@ -65,6 +77,50 @@ appUser.service('resultados', function($http, $location) {
 			},
 			headers: {
 				"Authorization": "Basic " + btoa("ceballos1019" + ":" + "1036954574")
+			}
+		});
+	}
+});
+
+appUser.service('simulacion', function($http, $location) {
+	this.registrarPeriodo = function(usuario) {
+		return $http({
+			url : 'http://localhost:8080/BetUdeA/BetUdeA/periodos',
+			method : 'POST',
+			params : {
+				nombreUsuario : usuario
+			}
+		});
+	}
+	
+	this.consultarPeriodos = function(usuario) {
+		return $http({
+			url : 'http://localhost:8080/BetUdeA/BetUdeA/periodos',
+			method : 'GET',
+			params : {
+				nombreUsuario : usuario
+			}
+		});
+	}
+	
+	this.consultarPeriodoActivo = function(usuario) {
+		return $http({
+			url : 'http://localhost:8080/BetUdeA/BetUdeA/periodos/periodoactivo',
+			method : 'GET',
+			params : {
+				nombreUsuario : usuario
+			}
+		});
+	}
+});
+
+appUser.service('apuestas', function($http, $location) {
+	this.consultarApuestas = function(periodoId) {
+		return $http({
+			url : 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
+			method : 'GET',
+			params : {
+				periodo : periodoId
 			}
 		});
 	}
@@ -116,6 +172,7 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 				//NO estoy seguro de que asi se modifique la fecha para mandarla por la url
 				var d=($scope.usuario.fechaNacimiento.toLocaleDateString()).slice(0, 10).split('-');
 				$scope.usuario.fechaNacimiento=d[2]+'-'+d[1]+'-'+d[0];
+				alert($scope.usuario.fechaNacimiento);
 				usuarios.registrarUsuario($scope.usuario).then(function success(data) {
 					alert('Cliente creado');
 					$location.url('/');
@@ -161,7 +218,7 @@ appUser.controller('Resultados', function($scope, $location,resultados) {
 
 		});
 
-appUser.controller('Perfil', function($scope, $location) {
+appUser.controller('Perfil', function($scope, $location,simulacion) {
 	
 	$scope.nombreUsuario=usuario;
 	$scope.editarCorreo=function(){
@@ -173,6 +230,20 @@ appUser.controller('Perfil', function($scope, $location) {
 	$scope.perfilB=function(){
 		$location.url('/resultados');
 	}
+	$scope.verApuestas=function(){
+		$location.url('/listaPeriodos');
+	}
+	
+	$scope.registrarSimulacion=function(){
+		 //Obtenemos todos los juegos de esa temporada
+	     simulacion.registrarPeriodo($scope.nombreUsuario).then(function success(data) {
+	    	  alert("periodo registrado");
+	     },
+				function failure(data) {
+					alert("No fue posible crear otro periodo de simulacion");
+	     });	
+	}
+	
 		});
 
 appUser.controller('EditarCorreo', function($scope, $location,usuarios) {
@@ -192,12 +263,72 @@ appUser.controller('EditarCorreo', function($scope, $location,usuarios) {
 			})
 			
 		}
-	
-	
 	$scope.perfilBack=function(){
 		$location.url('/perfil');
 	}
 		});
+
+
+appUser.controller('EditarContrasena', function($scope, $location,usuarios) {
+
+	$scope.password = '';
+	$scope.cemail = '';
+	$scope.npassword = '';
+	$scope.guardar=function(){
+		usuarios.editarContrasena($scope.cemail,$scope.password,$scope.npassword).then(
+				function success(data){
+					alert("Cambios realizados efectivamente ");
+					$location.url('/perfil');
+		},
+		function failure(data) {
+			alert("Email o contraseña incorrecta");
+		})
+		
+	}
+$scope.perfilBack=function(){
+	$location.url('/perfil');
+}
+	});
+
+appUser.controller('listaPeriodos', function($scope, $location,simulacion,apuestas) {
+
+	$scope.nombreUsuario=usuario;
+
+		simulacion.consultarPeriodos($scope.nombreUsuario).then(
+				function success(data){
+					$scope.periodos=data.data.simulacion;
+		},
+		function failure(data) {
+			console.log("Sin periodos");
+		})
+		
+		simulacion.consultarPeriodoActivo($scope.nombreUsuario).then(
+				function success(data){
+					apuestas.consultarApuestas(data.data.id).then(
+						function success(data){
+							$scope.apuestas=data.data.apuestas;
+							},
+						function failure(data) {
+							console.log("Sin apuestas");
+						})
+					},
+					function failure(data) {
+						console.log("Sin periodos activos");
+				
+		})
+		
+		
+		$scope.periodoId=function(id){
+			
+		}
+		
+	
+$scope.perfilBack=function(){
+	$location.url('/perfil');
+}
+	});
+
+
 
 
 appUser.config([ '$routeProvider', function($routeProvider) {
@@ -233,5 +364,9 @@ appUser.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/editarContrasena', {
 		templateUrl : 'EditarContrasena.html',
 		controller : 'EditarContrasena'
+	});
+	$routeProvider.when('/listaPeriodos', {
+		templateUrl : 'listaPeriodos.html',
+		controller : 'listaPeriodos'
 	});
 } ]);
