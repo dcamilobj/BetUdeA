@@ -1,43 +1,65 @@
-<meta charset="ISO-8859-1">
-<div class="cuentatitle">Crea tu cuenta</div>
-<div class="cuentasubtitle">Totalmente gratis, unete y empieza a ganar sin parar</div>
-<form name="loginform" class="form">
-	<div>
-		<label for="nombreUsuario">Nombre de usuario:</label> <input id="nombreUsuario" type="text"
-			 ng-model="usuario.nombreUsuario" required>
-	</div>
-	<div>
-		<label for="passwd">Contrase�a:</label> <input id="passwd" type="password"
-			 ng-model="usuario.password" required>
-	</div>
-	<div>
-		<label for="tipodcto">Tipo de documento:</label> <input id="tipodcto" type="text"
-			 ng-model="usuario.tipoDocumento"  required>
-	</div>
-		<div>
-		<label for="nrodcto">N�mero de documento:</label> <input id="nrodcto" type="text"
-			   ng-model="usuario.numeroDocumento" required>
-	</div>
-		<div>
-		<label for="nombres">Nombres:</label> <input id="nombres" type="text"
-			  ng-model="usuario.nombres" required>
-	</div>
-		<div>
-		<label for="apellidos">Apellidos:</label> <input id="apellidos" type="text"
-			   ng-model="usuario.apellidos" required>
-	</div>
-		<div>
-		<label for="fechanaci">Fecha de nacimiento:</label> <input id="fechanaci" type="date"
-			  ng-model="usuario.fechaNacimiento" required>
-	</div>
-		<div>
-		<label for="email">Email:</label> <input id="email" type="email"
-			 ng-model="usuario.email"  required>
-	</div>
-	<div class="buttons">
-	<button type="submit" ng-disabled="loginform.$invalid" class="btn" ng-click="guardar()" >Aceptar</button>
-	<button class="btn registerb" ng-click="RegisterBack()" >volver</button>
-	</form>
-	</div>
-	
-		
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hola ome</title>
+        <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="cuentatitle">Crea tu cuenta</div>
+    <div class="cuentasubtitle">Totalmente gratis, unete y empieza a ganar sin parar</div>
+    <form name="registerform" class="form">
+    	<div>
+    		<label for="nombreUsuario">Nombre de usuario:</label>
+    		<input type="text" ng-model="usuario.nombreUsuario" id="nombreUsuario" name="nombreUsuario"
+    		ng-minlength="5"  ng-maxlength="10" required>
+    		<span ng-show="registerform.nombreUsuario.$error.minlength ||
+    		registerform.nombreUsuario.$error.maxlength">El nombre de usuario debe contener entre 5 y
+    		10 caracteres.</span>
+    	</div>
+   		 <div>
+    		<label for="passwd">Contraseña:</label> <input id="passwd" name="password" type="password"
+    			 ng-model="usuario.password" required ng-minlength="6">
+    			 <span ng-show="registerform.password.$error.minlength">La contraseña debe tener más de
+    			 5 caracteres.</span>
+    	</div>
+    	<div>
+    		<label for="tipoD">Tipo de documento:</label>
+    		<select>
+    			<option>Hola</option>
+    			<option>Cómo</option>
+    			<option>Estás</option>
+    		</select>
+    	</div>
+    		<div>
+    		<label for="nrodcto">Número de documento:</label> <input id="nrodcto" type="number"
+    			   ng-model="usuario.numeroDocumento" required>
+    	</div>
+    		<div>
+    		<label for="nombres">Nombres:</label> <input id="nombres" type="text"
+    			  ng-model="usuario.nombres" required>
+    	</div>
+    		<div>
+    		<label for="apellidos">Apellidos:</label> <input id="apellidos" type="text"
+    			   ng-model="usuario.apellidos" required>
+    	</div>
+    		<div>
+    		<label for="fechanaci">Fecha de nacimiento:</label> <input id="fechanaci" type="date"
+    			  ng-model="usuario.fechaNacimiento" required>
+    	</div>
+    		<div>
+    		<label for="email">Email:</label> <input id="email" type="email"
+    			 ng-model="usuario.email"  required>
+    	</div>
+    	<div class="buttons">
+    		<button type="submit" ng-disabled="registerForm.$invalid" class="btn" ng-click="guardar()" >Aceptar</button>
+    		<button class="btn registerb" ng-click="RegisterBack()" >volver</button>
+    	</div>
+
+    <select class="" name="">
+      <option value="hola">hola</option>
+      <option value="bye">bye</option>
+    </select>
+  </body>
+</html>
+

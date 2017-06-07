@@ -3,6 +3,10 @@
  */
 var appUser = angular.module('usuarios', [ 'ngRoute', 'ngCookies' ]);
 var usuario;
+var equipo;     //Equipo seleccionado por el usuario
+var local, guest;   //Cuotas para equipo local y equipo visitante
+var premio;
+var select=false;
 appUser.service('usuarios', function($http, $cookies, $location) {
 	this.autenticar = function(usuario, passwd) {
 		return $http({
@@ -114,7 +118,7 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 			};
 			$scope.guardar = function() {
 				//NO estoy seguro de que asi se modifique la fecha para mandarla por la url
-				var d=($scope.usuario.fechaNacimiento.toLocaleDateString()).slice(0, 10).split('-');
+				var d=($scope.usuario.fechaNacimiento.toLocaleDateString()).slice(0, 10).split('/');
 				$scope.usuario.fechaNacimiento=d[2]+'-'+d[1]+'-'+d[0];
 				usuarios.registrarUsuario($scope.usuario).then(function success(data) {
 					alert('Cliente creado');
@@ -147,9 +151,14 @@ appUser.controller('Resultados', function($scope, $location,resultados) {
      });	
 	});
 	
-	$scope.details=function(date){
-		console.log(date);
-		$location.url('/detalles');
+	$scope.equipo="BetUdeA";
+	$scope.local= 1.5;
+	$scope.guest= 1;
+	$scope.details=function(team,cuota){
+		console.log(team);
+		$scope.equipo=team;
+		$scope.premio = $scope.valorApuesta*cuota;
+		$scope.select = !$scope.select;
 	}
 	
 	$scope.contacto=function(){

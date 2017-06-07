@@ -22,24 +22,34 @@
 </nav>
 <div class="titletable">Juegos de la temporada</div>
 <div class="resultados">
-<table>
-<thead>
-<tr>
-<th>Fecha</th>
-<th>Equipo local</th>
-<th>Equipo visitante</th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="game in games| orderBy:'-date'" ng-if="game.date<fecha" ng-click="details(game.date)">
-<td>{{game.date}}
-</td>
-<td>{{game.awayTeam.Name}}
-</td>
-<td>{{game.homeTeam.Name}}
-</td>
-</tr>
-</tbody>
+<table  width="70%">
+	<thead>
+		<tr>
+		<th>Fecha</th>
+		<th>Equipo local</th>
+		<th>Equipo visitante</th>
+		</tr> 
+	</thead>
+	<tbody>
+		<tr ng-repeat="game in games| orderBy:'+date'" ng-if="game.date>=fecha">
+			<td bgcolor="">{{game.date}}</td>
+			<td ng-click="details(game.awayTeam.Name,guest)">{{game.awayTeam.Name}}({{guest}})</td>
+			<td ng-click="details(game.homeTeam.Name,local)">{{game.homeTeam.Name}}({{local}})</td>
+		</tr>
+	</tbody>
 </table>
 </div>
+  <aside>
+      <h1 style="text-align: center;">Realizar apuesta</h1>
+      <h2 class="izq" >Valor premio</h2>
+      <h2 class="der">${{premio}}</h2>
+      <h2 class="izq">Saldo</h2>
+      <h2 class="der">$30000</h2>
+      <h2 class="izq">Equipo</h2>
+      <h2 class="der">{{equipo}}</h2>
+      <h2 class="izq">Saldo apuesta</h2>
+      <input style="float: right;width: 40%;" ng-model="valorApuesta" type="number" name="apues" value="apues"><br>
+      <button class="buttons" type="submit" name="button">Confirmar</button>
+    </aside>
+
         

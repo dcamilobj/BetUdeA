@@ -168,7 +168,7 @@ public class UsuarioBLImp implements UsuarioBL{
 		if(diferenciaFechas < 568156314877L)
 		{
 			throw new MyException("El sistema sólo permite usuarios mayores de edad.");
-		}		
+		}	
 		/*Si se cumplen todas las validaciones se registra el usuario*/
 		Usuario usuario = new Usuario();
 		usuario.setNombreUsuario(nombreUsuario);
