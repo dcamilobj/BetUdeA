@@ -1,7 +1,7 @@
 /**
  * 
  */
-var appUser = angular.module('usuarios', [ 'ngRoute', 'ngCookies' ]);
+var appUser = angular.module('usuarios', [ 'ngRoute', 'ngCookies',  ]);
 var usuario;
 appUser.service('usuarios', function($http, $cookies, $location) {
 	this.autenticar = function(usuario, passwd) {
@@ -14,6 +14,7 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 			}
 		});
 	}
+	
 	
 	this.registrarUsuario = function(usuario) {
 		return $http({
@@ -115,6 +116,7 @@ appUser.service('simulacion', function($http, $location) {
 });
 
 appUser.service('apuestas', function($http, $location) {
+	
 	this.consultarApuestas = function(periodoId) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
@@ -231,6 +233,9 @@ appUser.controller('Perfil', function($scope, $location,simulacion) {
 		$location.url('/resultados');
 	}
 	$scope.verApuestas=function(){
+		$location.url('/listaApuestas');
+	}
+	$scope.verPeriodos=function(){
 		$location.url('/listaPeriodos');
 	}
 	
@@ -290,23 +295,14 @@ $scope.perfilBack=function(){
 }
 	});
 
-appUser.controller('listaPeriodos', function($scope, $location,simulacion,apuestas) {
-
-	$scope.nombreUsuario=usuario;
-
-		simulacion.consultarPeriodos($scope.nombreUsuario).then(
-				function success(data){
-					$scope.periodos=data.data.simulacion;
-		},
-		function failure(data) {
-			console.log("Sin periodos");
-		})
-		
-		simulacion.consultarPeriodoActivo($scope.nombreUsuario).then(
+appUser.controller('listaApuestas', function($scope, $location,simulacion,apuestas) {
+		$scope.nombreUsuario=usuario;
+		simulacion.consultarPeriodoActivo(usuario).then(
 				function success(data){
 					apuestas.consultarApuestas(data.data.id).then(
 						function success(data){
-							$scope.apuestas=data.data.apuestas;
+							console.log(data.data.apuesta);
+							$scope.apuestas=data.data;
 							},
 						function failure(data) {
 							console.log("Sin apuestas");
@@ -314,7 +310,6 @@ appUser.controller('listaPeriodos', function($scope, $location,simulacion,apuest
 					},
 					function failure(data) {
 						console.log("Sin periodos activos");
-				
 		})
 		
 		
@@ -329,6 +324,22 @@ $scope.perfilBack=function(){
 	});
 
 
+
+appUser.controller('listaPeriodos', function($scope, $location,simulacion) {
+	$scope.nombreUsuario=usuario;
+simulacion.consultarPeriodos($scope.nombreUsuario).then(
+		function success(data){
+			$scope.periodos=data.data.simulacion;
+			console.log($scope.periodos)
+},
+function failure(data) {
+	console.log("Sin periodos");
+})
+
+$scope.perfilBack=function(){
+	$location.url('/perfil');
+}
+	});
 
 
 appUser.config([ '$routeProvider', function($routeProvider) {
@@ -364,6 +375,10 @@ appUser.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/editarContrasena', {
 		templateUrl : 'EditarContrasena.html',
 		controller : 'EditarContrasena'
+	});
+	$routeProvider.when('/listaApuestas', {
+		templateUrl : 'listaApuestas.html',
+		controller : 'listaApuestas'
 	});
 	$routeProvider.when('/listaPeriodos', {
 		templateUrl : 'listaPeriodos.html',

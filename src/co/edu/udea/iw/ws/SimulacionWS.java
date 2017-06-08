@@ -75,6 +75,7 @@ public class SimulacionWS {
 				simulacionWS = new Simulacion();
 				simulacionWS.setId(simulacion.getId());
 				simulacionWS.setFechaInicio(simulacion.getFechaInicio());
+				simulacionWS.setFechaFin(simulacion.getFechaFin());
 				simulacionWS.setSaldo(simulacion.getSaldo());
 				resultado.add(simulacionWS);
 			}
