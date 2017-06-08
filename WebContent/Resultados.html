@@ -1,30 +1,19 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-	<li><a ng-click="perfil()">Mi perfil</a></li>
-	<li><a>Ayuda</a></li>
-	<li class="divider"></li>
-	<li><a href="#!">Salirse</a></li>
-</ul>
-<ul id="dropdown2" class="dropdown-content">
-	<li><a>Ingles</a></li>
-	<li><a>Frances</a></li>
-</ul>
-<nav>
-	<div class="nav-wrapper">
-		<a href="#!/resultados" class="brand-logo">BetUdeA</a>
-		<ul class="right hide-on-med-and-down">
-			<li><a class="dropdown-button" data-belowOrigin="true"
-				data-activates="dropdown2">Idioma<i class="material-icons right">arrow_drop_down</i></a></li>
-			<li><a ng-click="contacto()">Contacto</a></li>
-			<!-- Dropdown Trigger -->
-			<li><a class="dropdown-button" data-belowOrigin="true"
-				data-activates="dropdown1"><i class="material-icons">face<i
-						class="material-icons right">arrow_drop_down</i></i></a></li>
-		</ul>
-	</div>
+
+<nav class="nav">
+  <div class="nav-wrapper">
+    <a href="#!/resultados" class="brand-logo">BetUdeA</a>
+    <ul class="right hide-on-med-and-down">
+           <li><a ng-click="contacto()">Contacto</a></li>
+         <li><a ng-click="perfil()">Mi perfil</a></li>
+          <li><a  ng-click="login()">Salirse</a></li>
+      <!-- Dropdown Trigger -->
+    </ul>
+  </div>
 </nav>
-<div class="titletable">Juegos de la temporada</div>
+<div class="titletable">Juegos de la temporada <h6>Para empezar a apostar y ganar escoge un juego</h6></div>
+
 <div class="resultados">
+<<<<<<< HEAD
 	<div class="row">
 		<div class="col s8">
 			<table width="70%">
