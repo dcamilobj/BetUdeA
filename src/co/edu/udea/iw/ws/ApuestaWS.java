@@ -54,7 +54,6 @@ public class ApuestaWS {
 						  @QueryParam("valor") Double valorApostado, @QueryParam("cuota") Double cuota,
 						  @QueryParam("opcion") String opcionSeleccionada, @QueryParam("usuario") String usuario) throws RemoteException{
 		
-		System.out.println("Estoy en el servicio");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date fechaEvento = null;
 		try {	

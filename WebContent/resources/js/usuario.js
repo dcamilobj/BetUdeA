@@ -3,6 +3,7 @@
  */
 var appUser = angular.module('usuarios', [ 'ngRoute', 'ngCookies',  ]);
 var usuario;
+var apuesta;
 var equipo;     //Equipo seleccionado por el usuario
 var local, guest;   //Cuotas para equipo local y equipo visitante
 var premio;
@@ -133,7 +134,7 @@ appUser.service('simulacion', function($http, $location) {
 	}
 });
 
-appUser.service('apuestas', function($http, $location) {
+appUser.service('apuestas', function($http, $location, $cookies) {
 	
 	this.registrarApuesta = function(apuesta)
 	{
@@ -141,12 +142,12 @@ appUser.service('apuestas', function($http, $location) {
 			url: 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
 			method: 'POST',
 			params: {
-				evento : apuesta.evento,
-				fecha : apuesta.fecha,
+				evento : 'SpursvsCled',
+				fecha : '2017-08-06',
 				valor : apuesta.valor,
-				cuota : apuesta.couta,
+				cuota : apuesta.cuota,
 				opcion : apuesta.opcion,
-				usuario : usuario.nombreUsuario
+				usuario : $cookies.nombreUsuario
 			}
 		});
 	}
@@ -220,7 +221,7 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 			
 		});
 
-appUser.controller('Resultados', function($scope, $location,$cookies,resultados) {
+appUser.controller('Resultados', function($scope, $location,$cookies,resultados, apuestas) {
 	//Cambiamos el color de fondo
 	document.body.style.backgroundColor = "white";	
 	//Obtener la fecha y modificarla para mandarla como parametro para obtener el nombre de la temporada 	
@@ -242,8 +243,8 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados)
 	});
 	
 	$scope.equipo="BetUdeA";
-	$scope.local= 1.5;
-	$scope.guest= 1;
+	$scope.local=  (Math.random() * (1.7 - 1.1) + 1.1).toFixed(2);
+	$scope.guest=  (Math.random() * (1.7 - 1.1) + 1.1).toFixed(2);
 	$scope.details=function(team,cuota){
 	    $('.table').on('click', 'td', function() {    
 	    	$('td').removeClass('actives');
@@ -255,7 +256,7 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados)
 	  });
 		console.log(team);
 		$scope.equipo=team;
-		$scope.premio = $scope.valorApuesta*cuota;
+		$scope.premio = $scope.apuesta.valor*cuota;
 		$scope.select = !$scope.select;
 		}
 	
@@ -269,6 +270,15 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados)
 		document.body.style.backgroundColor = "#2bbbad";
 		$cookies.nombreUsuario='';
 		$location.url('/');
+	}
+	$scope.registrarApuesta=function(cuota,opcion)
+	{
+		$scope.apuesta.cuota = cuota;
+		$scope.apuesta.opcion= opcion;
+		apuestas.registrarApuesta($scope.apuesta).then(function success(data) {
+			alert('Apuesta registrada');
+			$location.url('/resultados');
+		});
 	}
 
 		});
