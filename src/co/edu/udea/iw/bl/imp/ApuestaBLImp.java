@@ -78,6 +78,7 @@ public class ApuestaBLImp implements ApuestaBL{
 	public void registrar(String evento, Date fechaEvento, Double valorApostado, Double cuota, String opcionSeleccionada,
 			String nombreUsuario) throws MyException {
 		
+		System.out.println("Paso estas validaciones");
 		/*Validar que la información de la apuesta no sea nula o este vacia*/
 		if(evento == null || evento.isEmpty()) {
 			throw new MyException("El evento de la apuesta no puede ser nulo o vacio");
@@ -115,7 +116,7 @@ public class ApuestaBLImp implements ApuestaBL{
 		if(periodoSimulacion == null) {
 			throw new MyException("El usuario no tiene ningun periodo de simulación activo");
 		} 
-		
+		System.out.println("Paso estas validaciones");
 		/*Validar que el valor de la apuesta no supere el saldo del usuario*/
 		Double saldo = periodoSimulacion.getSaldo();		
 		if(valorApostado > saldo) {

@@ -135,6 +135,22 @@ appUser.service('simulacion', function($http, $location) {
 
 appUser.service('apuestas', function($http, $location) {
 	
+	this.registrarApuesta = function(apuesta)
+	{
+		return $http({
+			url: 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
+			method: 'POST',
+			params: {
+				evento : apuesta.evento,
+				fecha : apuesta.fecha,
+				valor : apuesta.valor,
+				cuota : apuesta.couta,
+				opcion : apuesta.opcion,
+				usuario : usuario.nombreUsuario
+			}
+		});
+	}
+	
 	this.consultarApuestas = function(periodoId) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
@@ -250,13 +266,14 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados)
 		$location.url('/perfil');
 	}
 	$scope.login=function(){
+		document.body.style.backgroundColor = "#2bbbad";
 		$cookies.nombreUsuario='';
 		$location.url('/');
 	}
 
 		});
 
-appUser.controller('Perfil', function($scope, $location,simulacion) {
+appUser.controller('Perfil', function($cookies,$scope, $location,simulacion, $cookies) {
 	
 	$scope.nombreUsuario=usuario;
 	$scope.editarCorreo=function(){
@@ -274,6 +291,12 @@ appUser.controller('Perfil', function($scope, $location,simulacion) {
 	$scope.verPeriodos=function(){
 		$location.url('/listaPeriodos');
 	}
+	$scope.login=function(){
+		document.body.style.backgroundColor = "#2bbbad";
+		$cookies.nombreUsuario='';
+		$location.url('/');
+	}
+
 	
 	$scope.registrarSimulacion=function(){
 		 //Obtenemos todos los juegos de esa temporada
@@ -287,7 +310,7 @@ appUser.controller('Perfil', function($scope, $location,simulacion) {
 	
 		});
 
-appUser.controller('EditarCorreo', function($scope, $location,usuarios) {
+appUser.controller('EditarCorreo', function($cookies,$scope, $location,usuarios, $cookies) {
 	
 
 		$scope.password = '';
@@ -307,10 +330,16 @@ appUser.controller('EditarCorreo', function($scope, $location,usuarios) {
 	$scope.perfilBack=function(){
 		$location.url('/perfil');
 	}
+	$scope.login=function(){
+		document.body.style.backgroundColor = "#2bbbad";
+		$cookies.nombreUsuario='';
+		$location.url('/');
+	}
+
 		});
 
 
-appUser.controller('EditarContrasena', function($scope, $location,usuarios) {
+appUser.controller('EditarContrasena', function($cookies,$scope, $location,usuarios, $cookies) {
 
 	$scope.password = '';
 	$scope.cemail = '';
@@ -329,15 +358,25 @@ appUser.controller('EditarContrasena', function($scope, $location,usuarios) {
 $scope.perfilBack=function(){
 	$location.url('/perfil');
 }
+$scope.login=function(){
+	document.body.style.backgroundColor = "#2bbbad";
+	$cookies.nombreUsuario='';
+	$location.url('/');
+}
+
 	});
 
-appUser.controller('listaApuestas', function($scope, $location,simulacion,apuestas) {
+appUser.controller('listaApuestas', function($cookies,$scope, $location,simulacion,apuestas, $cookies) {
 		simulacion.consultarPeriodoActivo(usuario).then(
 				function success(data){
 					apuestas.consultarApuestas(data.data.id).then(
 						function success(data){
-							console.log(data.data.apuesta);
-							$scope.apuestas=data.data;
+							console.log(data.data);
+							if(data.data.apuesta.length==undefined){
+								$scope.apuestas=data.data;
+								}else{
+									$scope.apuestas=data.data.apuesta;
+								}
 							},
 						function failure(data) {
 							console.log("Sin apuestas");
@@ -351,7 +390,12 @@ appUser.controller('listaApuestas', function($scope, $location,simulacion,apuest
 		$scope.periodoId=function(id){
 			
 		}
-		
+		$scope.login=function(){
+			document.body.style.backgroundColor = "#2bbbad";
+			$cookies.nombreUsuario='';
+			$location.url('/');
+		}
+
 	
 $scope.perfilBack=function(){
 	$location.url('/perfil');
@@ -360,15 +404,24 @@ $scope.perfilBack=function(){
 
 
 
-appUser.controller('listaPeriodos', function($scope, $location,simulacion) {
+appUser.controller('listaPeriodos', function($cookies,$scope, $location,simulacion, $cookies) {
 simulacion.consultarPeriodos(usuario).then(
 		function success(data){
-			$scope.periodos=data.data.simulacion;
-			console.log($scope.periodos)
+			if(data.data.simulacion.length==undefined){
+				$scope.periodos=data.data;
+				}else{
+					$scope.periodos=data.data.simulacion;
+				}
 },
 function failure(data) {
 	console.log("Sin periodos");
 })
+
+$scope.login=function(){
+	document.body.style.backgroundColor = "#2bbbad";
+	$cookies.nombreUsuario='';
+	$location.url('/');
+}
 
 $scope.perfilBack=function(){
 	$location.url('/perfil');

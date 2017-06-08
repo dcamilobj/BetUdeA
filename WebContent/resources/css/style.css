@@ -76,7 +76,6 @@ h2,h3{
 border :1px solid;	
 background-color:white;
 }
-/* latin */
 @font-face {
   font-family: 'Gloria Hallelujah';
   font-style: normal;
@@ -85,7 +84,8 @@ background-color:white;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
-/* latin */*@font-face {
+/* latin */
+@font-face {
   font-family: 'Rock Salt';
   font-style: normal;
   font-weight: 400;
