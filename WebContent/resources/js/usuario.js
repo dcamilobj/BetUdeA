@@ -83,7 +83,7 @@ appUser.service('resultados', function($http, $location, $cookies) {
 	}
 		this.validarEstado = function() {
 			if (typeof ($cookies.nombreUsuario) == 'undefined'
-					|| $cookies.nombreUsuario == "") {
+					|| $cookies.nombreUsuario == "" ) {
 				$location.url('/');
 				return false;
 			}
@@ -416,6 +416,8 @@ appUser.config([ '$routeProvider', function($routeProvider) {
 
 appUser.run(function($rootScope, resultados) {
 	$rootScope.$on('$routeChangeStart', function() {
+			console.log($rootScope.$on);	
 		resultados.validarEstado();
+		
 	});
 })
