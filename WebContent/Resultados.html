@@ -39,15 +39,15 @@
 				<h2 class="izq">Valor premio</h2>
 				<h2 class="der">${{premio}}</h2>
 				<h2 class="izq">Saldo</h2>
-				<h2 class="der">$30000</h2>
+				<h2 class="der">{{saldo}}</h2>
 				<h2 class="izq">Equipo</h2>
 				<h2 class="der">{{equipo}}</h2>
 				<h2 class="izq">Cuota</h2>
-				<h2 class="der">{{guest}}</h2>
+				<h2 class="der">{{cuota}}</h2>
 				<h2 class="izq">Saldo apuesta</h2>
-				<input style="float: right; width: 40%;" ng-model="apuesta.valor"
+				<input style="float: right; width: 40%;" min="3000" ng-model="apuesta.valor"
 					type="number" ><br>
-				<button class="buttons" type="submit" ng-click="registrarApuesta(guest,equipo)" name="button">Confirmar</button>
+				<button class="buttons" type="submit" ng-click="registrarApuesta(cuota,equipo)" name="button">Confirmar</button>
 			</aside>
 			<!-- <aside>
 				<h1 style="text-align: center;">Realizar apuesta</h1>

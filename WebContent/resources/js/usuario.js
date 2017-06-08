@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 var appUser = angular.module('usuarios', [ 'ngRoute', 'ngCookies',  ]);
 var usuario;
@@ -8,6 +8,9 @@ var equipo;     //Equipo seleccionado por el usuario
 var local, guest;   //Cuotas para equipo local y equipo visitante
 var premio;
 var select=false;
+var cuota = 0.0;
+
+//Servicio para autenticar y registrar usuarios
 appUser.service('usuarios', function($http, $cookies, $location) {
 	this.autenticar = function(usuario, passwd) {
 		return $http({
@@ -20,14 +23,14 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 		});
 	}
 	
-	
+	//Función para registrar usuario
 	this.registrarUsuario = function(usuario) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/usuarios',
 			method : 'POST',
 			params : {
 				nombreUsuario : usuario.nombreUsuario,
-				tipoDocumento : usuario.tipoDocumento,
+				tipoDocumento : 'CC',
 				numeroDocumento : usuario.numeroDocumento,
 				nombres : usuario.nombres,
 				apellidos : usuario.apellidos,
@@ -38,6 +41,7 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 		});
 	}
 	
+	//Función para editar el correo de un usuario
 	this.editarCorreo=function(cemail,password,nemail){
 		return $http({
 		url : 'http://localhost:8080/BetUdeA/BetUdeA/usuarios/editaremail',
@@ -49,7 +53,7 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 		}
 			});
 	}
-	
+	//Función para editar la contraseña de un usuario
 	this.editarContrasena=function(cemail,password,npassword){
 		return $http({
 		url : 'http://localhost:8080/BetUdeA/BetUdeA/usuarios/editarpassword',
@@ -63,8 +67,9 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 	}
 
 });
-
+//Servicio que trae los resultados del API
 appUser.service('resultados', function($http, $location, $cookies) {
+	//Función que trae todos los juegos de una temporada
 	this.allGames = function(season) {
 		return $http({
 			url : 'https://www.mysportsfeeds.com/api/feed/pull/nba/'+season+'/full_game_schedule.json',
@@ -74,6 +79,7 @@ appUser.service('resultados', function($http, $location, $cookies) {
 			}
 		});
 	}
+	//Función que nos devuelve la temporada de la fecha actual
 	this.currentSeason = function(date) {
 		return $http({
 			url : 'https://www.mysportsfeeds.com/api/feed/pull/nba/current_season.json',
@@ -86,6 +92,7 @@ appUser.service('resultados', function($http, $location, $cookies) {
 			}
 		});
 	}
+	//Función para validar el ingreso por la url
 		this.validarEstado = function() {
 			if($location.url() == '/'|| $location.url() == '/registrarse') {
 				return true;
@@ -102,7 +109,9 @@ appUser.service('resultados', function($http, $location, $cookies) {
 	
 });
 
+//Servicio de los periodos de simulación
 appUser.service('simulacion', function($http, $location) {
+	//Función para registrar un perido de un usuario
 	this.registrarPeriodo = function(usuario) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/periodos',
@@ -112,7 +121,7 @@ appUser.service('simulacion', function($http, $location) {
 			}
 		});
 	}
-	
+	//Función para consultar los periodos de un usuario
 	this.consultarPeriodos = function(usuario) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/periodos',
@@ -122,7 +131,7 @@ appUser.service('simulacion', function($http, $location) {
 			}
 		});
 	}
-	
+	//Función para consultar el periodo activo de un usuario
 	this.consultarPeriodoActivo = function(usuario) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/periodos/periodoactivo',
@@ -134,16 +143,17 @@ appUser.service('simulacion', function($http, $location) {
 	}
 });
 
+//Servicio para consultar y registrar una apuesta
 appUser.service('apuestas', function($http, $location, $cookies) {
-	
+	//Función para registrar apuesto
 	this.registrarApuesta = function(apuesta)
 	{
 		return $http({
 			url: 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
 			method: 'POST',
 			params: {
-				evento : 'SpursvsCled',
-				fecha : '2017-08-06',
+				evento : 'Warriors vs Cavaliers',
+				fecha : '2017-06-12',
 				valor : apuesta.valor,
 				cuota : apuesta.cuota,
 				opcion : apuesta.opcion,
@@ -152,6 +162,7 @@ appUser.service('apuestas', function($http, $location, $cookies) {
 		});
 	}
 	
+	//Función para consultar apuestas
 	this.consultarApuestas = function(periodoId) {
 		return $http({
 			url : 'http://localhost:8080/BetUdeA/BetUdeA/apuestas',
@@ -163,10 +174,12 @@ appUser.service('apuestas', function($http, $location, $cookies) {
 	}
 });
 
+//Controlador del login
 appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 	
 	$scope.nombreUsuario = '';
 	$scope.passwd = '';
+	//Función que utiliza el servicio para autenticar
 	$scope.login = function() {
 		usuarios.autenticar($scope.nombreUsuario, $scope.passwd).then(
 				function success(data) {
@@ -186,13 +199,14 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 				})
 	};	
 	
+	//Función para dirigirse al registro
 	$scope.Register = function() {
 		$location.url('/registrarse');
 		}		
 
 });
 
-
+//Controlador del registro
 appUser.controller('Registro', function($scope, $location, usuarios) {
 			$scope.usuario = {
 				nombreUsuario : '',
@@ -205,7 +219,7 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 				password : ''
 			};
 			$scope.guardar = function() {
-				//NO estoy seguro de que asi se modifique la fecha para mandarla por la url
+				//modificar la fecha para mandarla por la url
 				var d=($scope.usuario.fechaNacimiento.toLocaleDateString()).slice(0, 10).split('/');
 				$scope.usuario.fechaNacimiento=d[2]+'-'+d[1]+'-'+d[0];
 				alert($scope.usuario.fechaNacimiento);
@@ -214,14 +228,15 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 					$location.url('/');
 				});
 					}
+			//Función para devolver al login
 			$scope.RegisterBack = function() {
 				$location.url('/');
 				};
 			
 			
 		});
-
-appUser.controller('Resultados', function($scope, $location,$cookies,resultados, apuestas) {
+//Controlador de resultados
+appUser.controller('Resultados', function($scope, $location,$cookies,resultados, apuestas, simulacion) {
 	//Cambiamos el color de fondo
 	document.body.style.backgroundColor = "white";	
 	//Obtener la fecha y modificarla para mandarla como parametro para obtener el nombre de la temporada 	
@@ -230,7 +245,9 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados,
 	$scope.fecha=date[0]+'-'+date[1]+'-'+date[2];
 	date=date[0]+date[1]+date[2];
 	var season;
-	
+	simulacion.consultarPeriodoActivo($cookies.nombreUsuario).then(function success(data){
+		$scope.saldo = data.data.saldo;
+	});
 //Obtenemos la temporada actual para mandarla como parametro
 	resultados.currentSeason(date).then(function success(data){
      season=data.data.currentseason.season["0"].details.slug;
@@ -242,7 +259,8 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados,
      });	
 	});
 	
-	$scope.equipo="BetUdeA";
+	$scope.cuota = "0.0";
+	$scope.equipo="Seleccione uno";
 	$scope.local=  (Math.random() * (1.7 - 1.1) + 1.1).toFixed(2);
 	$scope.guest=  (Math.random() * (1.7 - 1.1) + 1.1).toFixed(2);
 	$scope.details=function(team,cuota){
@@ -253,10 +271,10 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados,
 	    	 	} else {
 	    	 		$(this).addClass('actives');
 	    	 	}
-	  });
-		console.log(team);
+	  });		
+		$scope.cuota = cuota;
 		$scope.equipo=team;
-		$scope.premio = $scope.apuesta.valor*cuota;
+		$scope.premio = ($scope.apuesta.valor*cuota).toFixed(2);
 		$scope.select = !$scope.select;
 		}
 	

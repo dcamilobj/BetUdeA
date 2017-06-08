@@ -143,6 +143,8 @@ public class ApuestaBLImp implements ApuestaBL{
 		
 		apuestaDAO.registrar(apuesta);
 		
+		periodoSimulacion.setSaldo(saldo - valorApostado);
+		
 		
 	}
 
