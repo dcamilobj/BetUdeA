@@ -59,7 +59,7 @@ appUser.service('usuarios', function($http, $cookies, $location) {
 
 });
 
-appUser.service('resultados', function($http, $location) {
+appUser.service('resultados', function($http, $location, $cookies) {
 	this.allGames = function(season) {
 		return $http({
 			url : 'https://www.mysportsfeeds.com/api/feed/pull/nba/'+season+'/full_game_schedule.json',
@@ -81,6 +81,18 @@ appUser.service('resultados', function($http, $location) {
 			}
 		});
 	}
+		this.validarEstado = function() {
+			if (typeof ($cookies.nombreUsuario) == 'undefined'
+					|| $cookies.nombreUsuario == "") {
+				$location.url('/');
+				return false;
+			}
+			if($location.url() == '/') {
+				
+			}
+			return true;
+		}
+	
 });
 
 appUser.service('simulacion', function($http, $location) {
@@ -136,7 +148,6 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 		console.log(nombreUsuario);
 		usuarios.autenticar($scope.nombreUsuario, $scope.passwd).then(
 				function success(data) {
-					console.log(data);
 					usuario=$scope.nombreUsuario;
 					if (data.data != '') {
 						alert(data.data);
@@ -185,9 +196,9 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 				}	
 		});
 
-appUser.controller('Resultados', function($scope, $location,resultados) {
+appUser.controller('Resultados', function($scope, $location,$cookies,resultados) {
 	//Cambiamos el color de fondo
-	document.body.style.backgroundColor = "white";
+	document.body.style.backgroundColor = "white";	
 	//Obtener la fecha y modificarla para mandarla como parametro para obtener el nombre de la temporada 	
 	var date= new Date();
 	date= (date.toISOString()).slice(0, 10).split('-');
@@ -216,6 +227,10 @@ appUser.controller('Resultados', function($scope, $location,resultados) {
 	}
 	$scope.perfil=function(){
 		$location.url('/perfil');
+	}
+	$scope.login=function(){
+		$cookies.nombreUsuario='';
+		$location.url('/');
 	}
 
 		});
@@ -296,7 +311,6 @@ $scope.perfilBack=function(){
 	});
 
 appUser.controller('listaApuestas', function($scope, $location,simulacion,apuestas) {
-		$scope.nombreUsuario=usuario;
 		simulacion.consultarPeriodoActivo(usuario).then(
 				function success(data){
 					apuestas.consultarApuestas(data.data.id).then(
@@ -326,7 +340,21 @@ $scope.perfilBack=function(){
 
 
 appUser.controller('listaPeriodos', function($scope, $location,simulacion) {
-	$scope.nombreUsuario=usuario;
+simulacion.consultarPeriodos(usuario).then(
+		function success(data){
+			$scope.periodos=data.data.simulacion;
+			console.log($scope.periodos)
+},
+function failure(data) {
+	console.log("Sin periodos");
+})
+
+$scope.perfilBack=function(){
+	$location.url('/perfil');
+}
+	});
+
+appUser.controller('Detalles', function($scope, $location,apuestas) {
 simulacion.consultarPeriodos($scope.nombreUsuario).then(
 		function success(data){
 			$scope.periodos=data.data.simulacion;
@@ -385,3 +413,9 @@ appUser.config([ '$routeProvider', function($routeProvider) {
 		controller : 'listaPeriodos'
 	});
 } ]);
+
+appUser.run(function($rootScope, resultados) {
+	$rootScope.$on('$routeChangeStart', function() {
+		resultados.validarEstado();
+	});
+})

@@ -1,15 +1,16 @@
-<nav>
+<nav class="nav">
   <div class="nav-wrapper">
     <a href="#!/resultados" class="brand-logo">BetUdeA</a>
     <ul class="right hide-on-med-and-down">
            <li><a ng-click="contacto()">Contacto</a></li>
          <li><a ng-click="perfil()">Mi perfil</a></li>
-          <li><a href="#!">Salirse</a></li>
+          <li><a  ng-click="login()">Salirse</a></li>
       <!-- Dropdown Trigger -->
     </ul>
   </div>
 </nav>
-<div class="titletable">Juegos de la temporada</div>
+<div class="titletable">Juegos de la temporada <h6>Para empezar a apostar y ganar escoge un juego</h6></div>
+
 <div class="resultados">
 <table>
 <thead>
@@ -20,7 +21,7 @@
 </tr>
 </thead>
 <tbody>
-<tr ng-repeat="game in games| orderBy:'-date'" ng-if="game.date<fecha" ng-click="details(game.date)">
+<tr ng-repeat="game in games| orderBy:'-date'" ng-if="game.date>fecha" ng-click="details(game.date)">
 <td>{{game.date}}
 </td>
 <td>{{game.awayTeam.Name}}

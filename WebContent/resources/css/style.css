@@ -14,11 +14,19 @@ body{
 	font-size:6em;
 	 font-family: 'Rock Salt', cursive;
 }
+.cuentasubtitle {
+	padding:10px;
+}
 .divt{
 	
 	margin:0 auto;
-	margin-top:8%;
 	text-align:center;
+}
+h4{
+	padding-left:50px;
+	padding-right:50px;
+	padding-top:15px;
+	padding-bottom:15px;
 }
 .buttons{
 	text-align:center;
