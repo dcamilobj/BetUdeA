@@ -86,15 +86,17 @@ appUser.service('resultados', function($http, $location, $cookies) {
 		});
 	}
 		this.validarEstado = function() {
+			if($location.url() == '/'|| $location.url() == '/registrarse') {
+				return true;
+			}
 			if (typeof ($cookies.nombreUsuario) == 'undefined'
 					|| $cookies.nombreUsuario == "" ) {
+		
 				$location.url('/');
 				return false;
 			}
-			if($location.url() == '/') {
-				
-			}
-			return true;
+		
+			
 		}
 	
 });
@@ -148,14 +150,6 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 	
 	$scope.nombreUsuario = '';
 	$scope.passwd = '';
-	$('.dropdown-button').dropdown({
-		alignment: 'left',
-		inDuration: 200,
-		outDuration: 150,
-		constrain_width: true,
-		hover: false,
-		gutter: 1
-		});
 	$scope.login = function() {
 		usuarios.autenticar($scope.nombreUsuario, $scope.passwd).then(
 				function success(data) {
@@ -207,15 +201,6 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 				$location.url('/');
 				};
 			
-			$('.dropdown-button').dropdown({
-			    belowOrigin: true, 
-			    alignment: 'left', 
-			    inDuration: 200,
-			    outDuration: 150,
-			    constrain_width: true,
-			    hover: false, 
-			    gutter: 1
-			  });
 			
 		});
 
@@ -244,6 +229,14 @@ appUser.controller('Resultados', function($scope, $location,$cookies,resultados)
 	$scope.local= 1.5;
 	$scope.guest= 1;
 	$scope.details=function(team,cuota){
+	    $('.table').on('click', 'td', function() {    
+	    	$('td').removeClass('actives');
+	    	if($(this).hasClass("actives")){
+	    	 	   $(this).removeClass('actives');    		
+	    	 	} else {
+	    	 		$(this).addClass('actives');
+	    	 	}
+	  });
 		console.log(team);
 		$scope.equipo=team;
 		$scope.premio = $scope.valorApuesta*cuota;
@@ -443,8 +436,7 @@ appUser.config([ '$routeProvider', function($routeProvider) {
 } ]);
 
 appUser.run(function($rootScope, resultados) {
-	$rootScope.$on('$routeChangeStart', function() {
-			console.log($rootScope.$on);	
+	$rootScope.$on('$routeChangeStart', function() {	
 		resultados.validarEstado();
 		
 	});

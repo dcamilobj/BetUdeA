@@ -21,11 +21,11 @@
 </thead>
 <tbody>
 <tr ng-repeat="periodo in periodos">
-<td>{{periodo.fechaInicio}}
+<td >{{periodo.fechaInicio | date : longDate}}
 </td>
 <td>{{periodo.saldo}}
 </td>
-<td>{{periodo.fechaFin}}
+<td ng-if="periodo.fechaFin">{{periodo.fechaFin | date : longDate}}<td ng-if="periodo.fechaFin==null">Activo</td>
 </td>
 </tr>
 </tbody>

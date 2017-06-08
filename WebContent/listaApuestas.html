@@ -23,7 +23,7 @@
 </thead>
 <tbody>
 <tr ng-repeat="apuesta in apuestas">
-<td>{{apuesta.fechaApuesta}}
+<td>{{apuesta.fechaApuesta | date : longDate}}
 </td>
 <td>{{apuesta.valorApostado}}
 </td>
