@@ -78,11 +78,17 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 	
 	$scope.nombreUsuario = '';
 	$scope.passwd = '';
+	$('.dropdown-button').dropdown({
+		alignment: 'left',
+		inDuration: 200,
+		outDuration: 150,
+		constrain_width: true,
+		hover: false,
+		gutter: 1
+		});
 	$scope.login = function() {
-		console.log(nombreUsuario);
 		usuarios.autenticar($scope.nombreUsuario, $scope.passwd).then(
 				function success(data) {
-					console.log(data);
 					usuario=$scope.nombreUsuario;
 					if (data.data != '') {
 						alert(data.data);
@@ -97,7 +103,8 @@ appUser.controller('login', function($scope, $location, usuarios,$cookies) {
 				function failure(data) {
 					alert("Nombre de usuario o contraseña incorrecta");
 				})
-	} 
+	};	
+	
 	$scope.Register = function() {
 		$location.url('/registrarse');
 		}		
@@ -127,7 +134,18 @@ appUser.controller('Registro', function($scope, $location, usuarios) {
 					}
 			$scope.RegisterBack = function() {
 				$location.url('/');
-				}	
+				};
+			
+			$('.dropdown-button').dropdown({
+			    belowOrigin: true, 
+			    alignment: 'left', 
+			    inDuration: 200,
+			    outDuration: 150,
+			    constrain_width: true,
+			    hover: false, 
+			    gutter: 1
+			  });
+			
 		});
 
 appUser.controller('Resultados', function($scope, $location,resultados) {
@@ -159,7 +177,7 @@ appUser.controller('Resultados', function($scope, $location,resultados) {
 		$scope.equipo=team;
 		$scope.premio = $scope.valorApuesta*cuota;
 		$scope.select = !$scope.select;
-	}
+		}
 	
 	$scope.contacto=function(){
 		$location.url('/contacto');

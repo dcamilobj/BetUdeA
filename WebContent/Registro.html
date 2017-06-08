@@ -4,6 +4,19 @@
 <meta charset="utf-8">
 <title>Hola ome</title>
 <!-- <link href="resources/css/style.css" rel="stylesheet">-->
+<script>
+		$(document).ready(function() {
+			$('.dropdown-button').dropdown({
+				alignment : 'left',
+				inDuration : 200,
+				outDuration : 150,
+				constrain_width : true,
+				hover : false,
+				gutter : 1
+			});
+
+		});
+	</script>
 </head>
 <body>
 	<div class="cuentatitle">Crea tu cuenta</div>
@@ -58,7 +71,7 @@
 			<button class="btn registerb" ng-click="RegisterBack()">volver</button>
 		</div>
 		<div class="input-field col s12"></div>
-	</form>
+	</form>	
 </body>
 </html>
 

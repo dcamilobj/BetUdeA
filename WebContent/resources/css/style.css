@@ -87,11 +87,7 @@ h2,h3{
 }
 
 aside{
-	width: 30%;
-	height: auto;
-	background: white;
-	float: right;
-	border-style: outset;
+	
 }
 aside h1
 {
@@ -113,4 +109,12 @@ aside h1
 	float: right;
 	width: 40%;
 	font-size: 20px;
+}
+
+.active {
+	background-color: #2196F3;
+}
+
+table:hover {
+	cursor: pointer;
 }
